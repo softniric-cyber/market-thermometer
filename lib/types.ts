@@ -1,0 +1,93 @@
+export interface Metadata {
+  generated_at: string;
+  version: string;
+  source: string;
+}
+
+export interface MarketScore {
+  score: number | null;
+  label: string;
+  emoji: string;
+  description: string;
+  trend: "up" | "down" | "stable";
+}
+
+export interface Indicator {
+  name: string;
+  current: number | null;
+  previous?: number | null;
+  change?: number | null;
+  change_pct?: number | null;
+  trend?: "up" | "down" | "stable" | null;
+  unit?: string;
+  description?: string;
+  series?: Array<Record<string, unknown>>;
+  // affordability extras
+  monthly_payment?: number;
+  annual_cost?: number;
+  price_to_income?: number;
+  affordable?: boolean;
+  // rental yield
+  avg_yield?: number;
+  top_barrios?: Array<Record<string, unknown>>;
+  // price drop ratio
+  drop_ratio?: number;
+  total_active?: number;
+  with_drops?: number;
+}
+
+export interface MacroIndicator {
+  name: string;
+  current: number | null;
+  previous?: number | null;
+  change?: number | null;
+  trend?: "up" | "down" | "stable" | null;
+  unit?: string;
+}
+
+export interface Zone {
+  name: string;
+  median_price: number | null;
+  price_per_sqm: number | null;
+  active_count?: number;
+  days_to_sell?: number | null;
+}
+
+export interface RentalYield {
+  barrio: string;
+  distrito: string;
+  gross_yield: number | null;
+  rent_median: number | null;
+  sale_price_sqm?: number | null;
+}
+
+export interface TrendPoint {
+  week?: string;
+  week_start?: string;
+  avg_sqm?: number;
+  avg_price?: number;
+  n_listings?: number;
+}
+
+export interface Alert {
+  level: "critical" | "warning" | "info";
+  title: string;
+  message: string;
+}
+
+export interface MetricsData {
+  metadata: Metadata;
+  market_score: MarketScore;
+  indicators: Record<string, Indicator>;
+  macro: Record<string, MacroIndicator>;
+  zones: Zone[];
+  rental_yields: RentalYield[];
+  trends: {
+    market: TrendPoint[];
+    by_district: Array<Record<string, unknown>>;
+  };
+  notarial_gap: Array<Record<string, unknown>>;
+  price_drop_stats: Record<string, unknown>;
+  db_stats: Record<string, unknown>;
+  alerts: Alert[];
+}
