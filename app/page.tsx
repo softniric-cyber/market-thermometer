@@ -64,7 +64,7 @@ export default function Home() {
         <img
           src="/logo.png"
           alt="madridhome.tech — El termómetro del mercado inmobiliario de Madrid"
-          className="h-32 sm:h-40 w-auto"
+          className="h-40 sm:h-52 w-auto"
         />
       </header>
 
