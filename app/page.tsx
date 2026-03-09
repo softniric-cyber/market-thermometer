@@ -60,13 +60,12 @@ export default function Home() {
   return (
     <main className="min-h-screen px-4 py-8 max-w-6xl mx-auto">
       {/* Header */}
-      <header className="text-center mb-10 animate-fade-in">
-        <h1 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-          Termómetro Inmobiliario Madrid
-        </h1>
-        <p className="text-slate-400 text-sm mt-2">
-          Indicadores agregados del mercado de compraventa en Madrid
-        </p>
+      <header className="flex justify-center mb-10 animate-fade-in">
+        <img
+          src="/logo.png"
+          alt="madridhome.tech — El termómetro del mercado inmobiliario de Madrid"
+          className="h-32 sm:h-40 w-auto"
+        />
       </header>
 
       {/* Thermometer + Score */}

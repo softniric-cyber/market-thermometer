@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Termómetro Inmobiliario Madrid",
+  title: "madridhome.tech",
   description:
-    "Indicadores agregados del mercado inmobiliario de Madrid en tiempo real. Score de mercado, precios por distrito, tendencias y más.",
+    "El termómetro del mercado inmobiliario de Madrid. Indicadores agregados en tiempo real: score de mercado, precios por distrito, tendencias y más.",
   keywords: [
     "inmobiliario",
     "madrid",
@@ -12,10 +12,11 @@ export const metadata: Metadata = {
     "precios",
     "mercado",
     "indicadores",
+    "madridhome",
   ],
   openGraph: {
-    title: "Termómetro Inmobiliario Madrid",
-    description: "El pulso del mercado inmobiliario madrileño",
+    title: "madridhome.tech",
+    description: "El termómetro del mercado inmobiliario de Madrid",
     type: "website",
   },
 };
