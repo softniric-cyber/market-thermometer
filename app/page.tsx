@@ -62,9 +62,10 @@ export default function Home() {
       {/* Header */}
       <header className="flex justify-center mb-10 animate-fade-in">
         <img
-          src="/logo.png"
+          src="/logo2.jpg"
           alt="madridhome.tech — El termómetro del mercado inmobiliario de Madrid"
           className="h-40 sm:h-52 w-auto"
+          style={{ mixBlendMode: "screen" }}
         />
       </header>
 
