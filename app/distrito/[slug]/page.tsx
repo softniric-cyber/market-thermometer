@@ -11,6 +11,7 @@ import {
   getAllSlugs,
   getDistrictMetrics,
 } from "@/lib/districts";
+import { getBarriosForDistrict, toBarrioSlug } from "@/lib/barrios";
 import { fmtEur, fmtEurSqm, fmtNum } from "@/lib/utils";
 
 import Breadcrumb from "@/components/Breadcrumb";
@@ -206,6 +207,34 @@ export default async function DistrictPage({
             </>
           )}
         </p>
+      </section>
+
+      {/* Barrios del distrito */}
+      <section className="mb-8">
+        <h2 className="text-slate-300 font-semibold text-sm mb-3">
+          Barrios de {distrito}
+        </h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+          {getBarriosForDistrict(distrito).map(([, barrio]) => {
+            const bData = data.barrios?.find((b) => b.barrio === barrio);
+            return (
+              <Link
+                key={barrio}
+                href={`/barrio/${toBarrioSlug(barrio)}`}
+                className="rounded-lg bg-slate-800/50 border border-slate-700/40 px-3 py-2 hover:bg-slate-700/50 hover:border-cyan-500/30 transition-all"
+              >
+                <p className="text-slate-200 text-xs font-medium truncate">{barrio}</p>
+                {bData?.price_per_sqm ? (
+                  <p className="text-cyan-400 font-mono text-[10px] mt-0.5">
+                    {bData.price_per_sqm.toLocaleString("es-ES")} €/m²
+                  </p>
+                ) : (
+                  <p className="text-slate-600 text-[10px] mt-0.5">Sin datos</p>
+                )}
+              </Link>
+            );
+          })}
+        </div>
       </section>
 
       {/* District Navigation */}

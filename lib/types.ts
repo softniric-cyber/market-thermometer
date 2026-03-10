@@ -75,6 +75,27 @@ export interface Alert {
   message: string;
 }
 
+export interface BarrioData {
+  barrio: string;
+  distrito: string;
+  active_count: number | null;
+  median_price: number | null;
+  price_per_sqm: number | null;
+  avg_size_sqm: number | null;
+  avg_rooms: number | null;
+  avg_days_market: number | null;
+  gross_yield: number | null;
+  rent_median: number | null;
+}
+
+export interface BarrioTrend {
+  barrio: string;
+  week: string;
+  week_start: string;
+  median_price_sqm: number | null;
+  listing_count: number | null;
+}
+
 export interface MetricsData {
   metadata: Metadata;
   market_score: MarketScore;
@@ -87,6 +108,8 @@ export interface MetricsData {
     by_district: Array<Record<string, unknown>>;
   };
   notarial_gap: Array<Record<string, unknown>>;
+  barrios: BarrioData[];
+  barrio_trends: BarrioTrend[];
   price_drop_stats: Record<string, unknown>;
   db_stats: Record<string, unknown>;
   alerts: Alert[];

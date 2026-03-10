@@ -1,7 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import type { RentalYield } from "@/lib/types";
 import { fmtPct, fmtEur } from "@/lib/utils";
+import { toBarrioSlug } from "@/lib/barrios";
 
 interface Props {
   yields: RentalYield[];
@@ -24,9 +26,13 @@ export default function RentalYields({ yields }: Props) {
         {yields.slice(0, 10).map((y) => {
           const barW = maxYield > 0 ? ((y.gross_yield ?? 0) / maxYield) * 100 : 0;
           return (
-            <div key={y.barrio} className="px-4 py-2.5 flex items-center gap-3 hover:bg-slate-700/20 transition-colors">
+            <Link
+              key={y.barrio}
+              href={`/barrio/${toBarrioSlug(y.barrio)}`}
+              className="px-4 py-2.5 flex items-center gap-3 hover:bg-slate-700/20 transition-colors"
+            >
               <div className="flex-1 min-w-0">
-                <div className="text-white text-xs font-medium truncate">{y.barrio}</div>
+                <div className="text-white text-xs font-medium truncate hover:text-cyan-300 transition-colors">{y.barrio}</div>
                 <div className="text-slate-500 text-[10px]">{y.distrito}</div>
               </div>
               <div className="w-20 h-1.5 rounded-full bg-slate-700 overflow-hidden hidden sm:block">
@@ -41,7 +47,7 @@ export default function RentalYields({ yields }: Props) {
               <div className="text-slate-500 text-[10px] w-16 text-right hidden md:block">
                 {y.rent_median ? `${fmtEur(y.rent_median)}/m` : ""}
               </div>
-            </div>
+            </Link>
           );
         })}
       </div>

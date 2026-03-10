@@ -1,11 +1,26 @@
 import Link from "next/link";
 
-interface Props {
-  district: string;
-  slug: string;
+interface BreadcrumbItem {
+  label: string;
+  href?: string;
 }
 
-export default function Breadcrumb({ district, slug }: Props) {
+interface Props {
+  /** Generic items array: [{ label, href? }, ...]. Last item is current page (no link). */
+  items?: BreadcrumbItem[];
+  /** Legacy — district page: single level below Home */
+  district?: string;
+  slug?: string;
+}
+
+export default function Breadcrumb({ items, district, slug }: Props) {
+  // Normalise to items array
+  const crumbs: BreadcrumbItem[] =
+    items ??
+    (district && slug
+      ? [{ label: district, href: `/distrito/${slug}` }]
+      : []);
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -16,12 +31,12 @@ export default function Breadcrumb({ district, slug }: Props) {
         name: "Inicio",
         item: "https://madridhome.tech",
       },
-      {
+      ...crumbs.map((c, i) => ({
         "@type": "ListItem",
-        position: 2,
-        name: district,
-        item: `https://madridhome.tech/distrito/${slug}`,
-      },
+        position: i + 2,
+        name: c.label,
+        ...(c.href ? { item: `https://madridhome.tech${c.href}` } : {}),
+      })),
     ],
   };
 
@@ -32,14 +47,24 @@ export default function Breadcrumb({ district, slug }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <nav aria-label="Breadcrumb" className="text-sm text-slate-500 mb-6">
-        <ol className="flex items-center gap-1.5">
+        <ol className="flex items-center gap-1.5 flex-wrap">
           <li>
             <Link href="/" className="hover:text-slate-300 transition-colors">
               Inicio
             </Link>
           </li>
-          <li aria-hidden="true">/</li>
-          <li className="text-slate-300">{district}</li>
+          {crumbs.map((c, i) => (
+            <li key={i} className="flex items-center gap-1.5">
+              <span aria-hidden="true">/</span>
+              {c.href ? (
+                <Link href={c.href} className="hover:text-slate-300 transition-colors">
+                  {c.label}
+                </Link>
+              ) : (
+                <span className="text-slate-300">{c.label}</span>
+              )}
+            </li>
+          ))}
         </ol>
       </nav>
     </>
