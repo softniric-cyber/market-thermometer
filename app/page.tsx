@@ -1,6 +1,5 @@
-"use client";
-
-import { useEffect, useState } from "react";
+import { readFile } from "fs/promises";
+import { join } from "path";
 import type { MetricsData } from "@/lib/types";
 
 import Thermometer from "@/components/Thermometer";
@@ -11,56 +10,60 @@ import AlertsBanner from "@/components/AlertsBanner";
 import RentalYields from "@/components/RentalYields";
 import Footer from "@/components/Footer";
 
-export default function Home() {
-  const [data, setData] = useState<MetricsData | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+// ISR: revalidar cada hora (3600s). Vercel sirve HTML cacheado
+// y lo regenera en background cuando expira.
+export const revalidate = 3600;
 
-  useEffect(() => {
-    async function fetchMetrics() {
-      try {
-        const res = await fetch("/api/metrics");
-        if (!res.ok) throw new Error("Datos no disponibles");
-        const json: MetricsData = await res.json();
-        setData(json);
-      } catch (e) {
-        setError((e as Error).message);
-      } finally {
-        setLoading(false);
-      }
-    }
-    fetchMetrics();
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <div className="w-12 h-12 border-4 border-cyan-500 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-          <p className="text-slate-400 text-sm">Cargando datos de mercado...</p>
-        </div>
-      </div>
-    );
+async function getMetrics(): Promise<MetricsData | null> {
+  try {
+    const filePath = join(process.cwd(), "public", "metrics.json");
+    const raw = await readFile(filePath, "utf-8");
+    return JSON.parse(raw) as MetricsData;
+  } catch {
+    return null;
   }
+}
 
-  if (error || !data) {
+function formatDate(iso: string): string {
+  return new Date(iso).toLocaleDateString("es-ES", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+}
+
+export default async function Home() {
+  const data = await getMetrics();
+
+  if (!data) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center max-w-md">
           <div className="text-4xl mb-4">📊</div>
-          <h2 className="text-white text-lg font-semibold mb-2">Datos no disponibles</h2>
+          <h1 className="text-white text-lg font-semibold mb-2">
+            Precio vivienda Madrid — Datos no disponibles
+          </h1>
           <p className="text-slate-400 text-sm">
-            {error ?? "No se han podido cargar los indicadores de mercado. Inténtalo más tarde."}
+            No se han podido cargar los indicadores de mercado. Inténtalo más
+            tarde.
           </p>
         </div>
       </div>
     );
   }
 
+  const medianSqm = data.zones.length
+    ? Math.round(
+        data.zones.reduce((s, z) => s + (z.price_per_sqm ?? 0), 0) /
+          data.zones.filter((z) => z.price_per_sqm).length
+      )
+    : null;
+
   return (
     <main className="min-h-screen px-4 py-8 max-w-6xl mx-auto">
       {/* Header */}
-      <header className="flex justify-center mb-10 animate-fade-in">
+      <header className="flex flex-col items-center mb-10 animate-fade-in">
         <img
           src="/logo.png"
           alt="madridhome.tech — El termómetro del mercado inmobiliario de Madrid"
@@ -68,15 +71,13 @@ export default function Home() {
         />
       </header>
 
-      {/* Fecha de actualización */}
-      <p className="text-center text-slate-400 text-sm -mt-6 mb-8 animate-fade-in">
-        Datos actualizados el{" "}
-        {new Date(data.metadata.generated_at).toLocaleDateString("es-ES", {
-          weekday: "long",
-          day: "numeric",
-          month: "long",
-          year: "numeric",
-        })}
+      {/* H1 SEO — visible pero discreto */}
+      <h1 className="text-center text-slate-300 text-base sm:text-lg font-medium -mt-6 mb-1">
+        Precio vivienda Madrid — Mercado inmobiliario en tiempo real
+      </h1>
+      <p className="text-center text-slate-500 text-sm mb-8">
+        Datos actualizados el {formatDate(data.metadata.generated_at)}
+        {medianSqm && <> · Mediana: <strong className="text-slate-400">{medianSqm.toLocaleString("es-ES")} €/m²</strong></>}
       </p>
 
       {/* Thermometer + Score */}
@@ -104,17 +105,26 @@ export default function Home() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
         {/* Price Trend Chart */}
         <section className="animate-fade-in animate-delay-3">
+          <h2 className="text-white font-semibold text-sm mb-3">
+            Evolución precio vivienda Madrid (€/m²)
+          </h2>
           <PriceTrendChart data={data.trends.market} />
         </section>
 
         {/* Rental Yields */}
         <section className="animate-fade-in animate-delay-4">
+          <h2 className="text-white font-semibold text-sm mb-3">
+            Rentabilidad alquiler por barrio en Madrid
+          </h2>
           <RentalYields yields={data.rental_yields} />
         </section>
       </div>
 
       {/* District Table */}
       <section className="mb-8 animate-fade-in animate-delay-4">
+        <h2 className="text-white font-semibold text-sm mb-3">
+          Precio medio por distrito en Madrid
+        </h2>
         <DistrictTable zones={data.zones} />
       </section>
 
