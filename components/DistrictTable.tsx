@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import type { Zone } from "@/lib/types";
 import { fmtEur, fmtEurSqm, fmtNum } from "@/lib/utils";
+import { toSlug } from "@/lib/districts";
 
 interface Props {
   zones: Zone[];
@@ -76,7 +78,12 @@ export default function DistrictTable({ zones }: Props) {
                   }`}
                 >
                   <td className="px-4 py-2.5 text-left">
-                    <span className="text-white font-medium">{zone.name}</span>
+                    <Link
+                      href={`/distrito/${toSlug(zone.name)}`}
+                      className="text-white font-medium hover:text-cyan-300 transition-colors"
+                    >
+                      {zone.name}
+                    </Link>
                   </td>
                   <td className="px-4 py-2.5 text-right">
                     <div className="flex items-center justify-end gap-2">
