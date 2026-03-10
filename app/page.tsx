@@ -68,6 +68,17 @@ export default function Home() {
         />
       </header>
 
+      {/* Fecha de actualización */}
+      <p className="text-center text-slate-400 text-sm -mt-6 mb-8 animate-fade-in">
+        Datos actualizados el{" "}
+        {new Date(data.metadata.generated_at).toLocaleDateString("es-ES", {
+          weekday: "long",
+          day: "numeric",
+          month: "long",
+          year: "numeric",
+        })}
+      </p>
+
       {/* Thermometer + Score */}
       <section className="flex justify-center mb-10 animate-fade-in animate-delay-1">
         <Thermometer score={data.market_score} />
