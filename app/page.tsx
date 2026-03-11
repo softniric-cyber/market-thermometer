@@ -2,6 +2,7 @@ import { readFile } from "fs/promises";
 import { join } from "path";
 import type { MetricsData } from "@/lib/types";
 
+import Link from "next/link";
 import Thermometer from "@/components/Thermometer";
 import KpiCards from "@/components/KpiCards";
 import DistrictTable from "@/components/DistrictTable";
@@ -126,6 +127,17 @@ export default async function Home() {
           Precio medio por distrito en Madrid
         </h2>
         <DistrictTable zones={data.zones} />
+      </section>
+
+      {/* FAQ link */}
+      <section className="mb-8 text-center">
+        <Link
+          href="/preguntas-frecuentes"
+          className="inline-block px-5 py-2.5 rounded-lg bg-slate-800/60 border border-slate-700/50 text-slate-300 text-sm hover:bg-slate-700/50 hover:text-white transition-colors"
+        >
+          ¿Tienes dudas? Consulta las{" "}
+          <span className="text-cyan-400">preguntas frecuentes →</span>
+        </Link>
       </section>
 
       {/* Footer */}
