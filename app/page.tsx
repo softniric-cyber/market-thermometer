@@ -129,6 +129,22 @@ export default async function Home() {
         <DistrictTable zones={data.zones} />
       </section>
 
+      {/* Tasador CTA */}
+      <section className="mb-6">
+        <Link
+          href="/tasar"
+          className="block rounded-xl bg-gradient-to-r from-cyan-600/20 to-cyan-500/10 border border-cyan-500/30 px-6 py-5 hover:from-cyan-600/30 hover:to-cyan-500/20 transition-all group"
+        >
+          <p className="text-white font-semibold text-base group-hover:text-cyan-300 transition-colors">
+            Tasador de viviendas con IA
+          </p>
+          <p className="text-slate-400 text-sm mt-1">
+            Introduce las características de tu piso y obtén una valoración
+            instantánea basada en datos reales del mercado →
+          </p>
+        </Link>
+      </section>
+
       {/* Blog + FAQ links */}
       <section className="mb-8 flex flex-wrap items-center justify-center gap-3">
         <Link
