@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllSlugs } from "@/lib/districts";
 import { getAllBarrioSlugs } from "@/lib/barrios";
+import { getAllBlogSlugsSync } from "@/lib/blog/registry";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const districtEntries: MetadataRoute.Sitemap = getAllSlugs().map((slug) => ({
@@ -17,12 +18,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  const blogSlugs = getAllBlogSlugsSync();
+  const blogEntries: MetadataRoute.Sitemap = blogSlugs.map((slug) => ({
+    url: `https://madridhome.tech/blog/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: "daily" as const,
+    priority: 0.7,
+  }));
+
   return [
     {
       url: "https://madridhome.tech",
       lastModified: new Date(),
       changeFrequency: "daily",
       priority: 1,
+    },
+    {
+      url: "https://madridhome.tech/blog",
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.8,
     },
     {
       url: "https://madridhome.tech/preguntas-frecuentes",
@@ -32,5 +47,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     ...districtEntries,
     ...barrioEntries,
+    ...blogEntries,
   ];
 }

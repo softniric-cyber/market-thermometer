@@ -129,8 +129,15 @@ export default async function Home() {
         <DistrictTable zones={data.zones} />
       </section>
 
-      {/* FAQ link */}
-      <section className="mb-8 text-center">
+      {/* Blog + FAQ links */}
+      <section className="mb-8 flex flex-wrap items-center justify-center gap-3">
+        <Link
+          href="/blog"
+          className="inline-block px-5 py-2.5 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-slate-200 text-sm hover:bg-cyan-500/20 hover:text-white transition-colors"
+        >
+          📊 Informes y rankings del{" "}
+          <span className="text-cyan-400">blog →</span>
+        </Link>
         <Link
           href="/preguntas-frecuentes"
           className="inline-block px-5 py-2.5 rounded-lg bg-slate-800/60 border border-slate-700/50 text-slate-300 text-sm hover:bg-slate-700/50 hover:text-white transition-colors"
