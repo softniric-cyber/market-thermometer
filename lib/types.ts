@@ -96,6 +96,25 @@ export interface BarrioTrend {
   listing_count: number | null;
 }
 
+export interface BarrioBaseline {
+  distrito: string;
+  median_sqm: number;
+  std_sqm: number;
+  count: number;
+  avg_size: number;
+  avg_rooms: number | null;
+  avg_floor: number | null;
+}
+
+export interface ValuationModel {
+  barrio_baselines: Record<string, BarrioBaseline>;
+  district_baselines: Record<string, { median_sqm: number; count: number }>;
+  adjustments: Record<string, number>;
+  madrid_median_sqm: number;
+  training_samples: number;
+  training_date: string;
+}
+
 export interface MetricsData {
   metadata: Metadata;
   market_score: MarketScore;
@@ -113,4 +132,5 @@ export interface MetricsData {
   price_drop_stats: Record<string, unknown>;
   db_stats: Record<string, unknown>;
   alerts: Alert[];
+  valuation_model?: ValuationModel;
 }

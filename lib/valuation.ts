@@ -1,8 +1,5 @@
 /* ── Valuation API client & types ──────────────────────────── */
 
-const API_URL =
-  process.env.NEXT_PUBLIC_API_URL ?? "https://api.madridhome.tech";
-
 /* ── Input ─────────────────────────────────────────────────── */
 export interface PropertyInput {
   distrito: string;
@@ -42,11 +39,11 @@ export interface ValuationResponse {
   };
 }
 
-/* ── Fetch ─────────────────────────────────────────────────── */
+/* ── Fetch (calls internal Next.js API route) ─────────────── */
 export async function fetchValuation(
   input: PropertyInput
 ): Promise<ValuationResponse> {
-  const res = await fetch(`${API_URL}/api/valorar`, {
+  const res = await fetch("/api/valorar", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(input),
