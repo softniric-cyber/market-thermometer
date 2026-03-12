@@ -104,16 +104,10 @@ function valuate(input: PropertyInput, model: ValuationModel) {
     });
   }
 
-  // Elevator
-  if (input.has_elevator && floorLevel > 0) {
-    const liftPct = adj.elevator_premium ?? 0.05;
-    totalMultiplier += liftPct;
-    adjustments.push({
-      label: "Ascensor",
-      pct: Math.round(liftPct * 10000) / 100,
-      eur: 0,
-    });
-  } else if (!input.has_elevator && floorLevel >= 3) {
+  // Elevator — the barrio baseline already includes a mix of lift/no-lift,
+  // so we only apply a PENALTY for no elevator on upper floors (where it
+  // matters most) rather than a bonus for having one (which is the norm).
+  if (!input.has_elevator && floorLevel >= 2) {
     const penaltyPct = -(adj.elevator_premium ?? 0.05);
     totalMultiplier += penaltyPct;
     adjustments.push({
