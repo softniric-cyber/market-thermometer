@@ -41,6 +41,7 @@ export interface MacroIndicator {
   current: number | null;
   previous?: number | null;
   change?: number | null;
+  change_pct?: number | null;
   trend?: "up" | "down" | "stable" | null;
   unit?: string;
 }

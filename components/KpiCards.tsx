@@ -134,6 +134,24 @@ const KPI_DEFS: KpiDef[] = [
     invertGood: true,
   },
   {
+    key: "afiliados_ss",
+    label: "Ocupados Madrid (EPA)",
+    icon: "👷",
+    getValue: (_ind, macro) => {
+      const a = macro.afiliados_ss?.current;
+      return a != null
+        ? `${a.toLocaleString("es-ES", { minimumFractionDigits: 1, maximumFractionDigits: 1 })}M`
+        : "—";
+    },
+    getTrend: (_ind, macro) => macro.afiliados_ss?.trend,
+    subtitle: (_ind, macro) => {
+      const pct = macro.afiliados_ss?.change_pct;
+      return pct != null
+        ? `${pct > 0 ? "+" : ""}${pct.toFixed(1)}% vs trim. ant.`
+        : "";
+    },
+  },
+  {
     key: "notarial",
     label: "Gap oferta vs real",
     icon: "📋",

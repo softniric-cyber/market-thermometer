@@ -51,6 +51,7 @@ export function generateMarketReport(data: MetricsData): BlogPostFull {
   const eu = data.macro.euribor;
   const paro = data.macro.paro;
   const hip = data.macro.hipotecas;
+  const afSS = data.macro.afiliados_ss;
   const zones = data.zones.filter((z) => z.price_per_sqm != null);
   const avgSqm = zones.length
     ? Math.round(zones.reduce((a, z) => a + (z.price_per_sqm ?? 0), 0) / zones.length)
@@ -82,6 +83,7 @@ export function generateMarketReport(data: MetricsData): BlogPostFull {
     <tr><td>Euríbor 12M</td><td>${pct(eu?.current)}</td><td>${eu?.trend === "down" ? "↓ Bajando" : eu?.trend === "up" ? "↑ Subiendo" : "→ Estable"}</td></tr>
     <tr><td>Paro Madrid</td><td>${pct(paro?.current)}</td><td>${paro?.trend === "down" ? "↓ Bajando" : "→"}</td></tr>
     <tr><td>Hipotecas/mes</td><td>${esc(hip?.current)}</td><td>${hip?.trend === "down" ? "↓" : hip?.trend === "up" ? "↑" : "→"}</td></tr>
+    <tr><td>Ocupados Madrid (EPA)</td><td>${afSS?.current != null ? `${afSS.current.toLocaleString("es-ES", { minimumFractionDigits: 1, maximumFractionDigits: 1 })}M` : "—"}</td><td>${afSS?.trend === "up" ? "↑ Subiendo" : afSS?.trend === "down" ? "↓ Bajando" : "→ Estable"}</td></tr>
   </tbody>
 </table>
 
