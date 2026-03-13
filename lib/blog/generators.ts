@@ -10,11 +10,11 @@ function esc(n: number | null | undefined): string {
 }
 
 function eurSqm(n: number | null | undefined): string {
-  return n != null ? `${esc(n)}&nbsp;€/m²` : "—";
+  return n != null ? `${esc(n)}\u00a0€/m²` : "—";
 }
 
 function eur(n: number | null | undefined): string {
-  return n != null ? `${esc(n)}&nbsp;€` : "—";
+  return n != null ? `${esc(n)}\u00a0€` : "—";
 }
 
 function pct(n: number | null | undefined, d = 1): string {
@@ -190,7 +190,7 @@ export function generateRentalRanking(data: MetricsData): BlogPostFull {
   const rows = top
     .map(
       (y, i) =>
-        `<tr><td>${i + 1}</td><td>${barrioLink(y.barrio)}</td><td>${y.distrito}</td><td><strong>${pct(y.gross_yield)}</strong></td><td>${y.rent_median ? `${esc(y.rent_median)}&nbsp;€/mes` : "—"}</td></tr>`
+        `<tr><td>${i + 1}</td><td>${barrioLink(y.barrio)}</td><td>${y.distrito}</td><td><strong>${pct(y.gross_yield)}</strong></td><td>${y.rent_median ? `${esc(y.rent_median)}\u00a0€/mes` : "—"}</td></tr>`
     )
     .join("");
 
