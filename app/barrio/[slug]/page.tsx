@@ -16,8 +16,10 @@ import { fmtEurSqm, fmtNum } from "@/lib/utils";
 
 import Breadcrumb from "@/components/Breadcrumb";
 import BarrioKpiCards from "@/components/BarrioKpiCards";
+import OpenDataProfile from "@/components/OpenDataProfile";
 import PriceTrendChart from "@/components/PriceTrendChart";
 import Footer from "@/components/Footer";
+import { getBarrioOpenData, getOpenDataYear } from "@/lib/opendata";
 
 export const revalidate = 3600;
 
@@ -103,6 +105,8 @@ export default async function BarrioPage({
   const metrics = getBarrioMetrics(barrio, distrito, data);
   const hasData = metrics.data?.active_count != null && metrics.data.active_count > 0;
   const hasTrend = metrics.trends.length >= 3;
+  const openData = await getBarrioOpenData(barrio);
+  const openDataYear = await getOpenDataYear();
 
   // Barrios siblings for the district mini-grid
   const siblingBarrios = getBarriosForDistrict(distrito).filter(
@@ -150,6 +154,17 @@ export default async function BarrioPage({
       <section className="mb-8">
         <BarrioKpiCards metrics={metrics} />
       </section>
+
+      {/* Perfil socioeconómico (datos abiertos) */}
+      {openData && (
+        <section className="mb-8">
+          <OpenDataProfile
+            data={openData}
+            year={openDataYear}
+            scope={barrio}
+          />
+        </section>
+      )}
 
       {/* Price trend chart */}
       {hasTrend ? (

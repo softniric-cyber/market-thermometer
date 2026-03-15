@@ -16,10 +16,12 @@ import { fmtEur, fmtEurSqm, fmtNum } from "@/lib/utils";
 
 import Breadcrumb from "@/components/Breadcrumb";
 import DistrictKpiCards from "@/components/DistrictKpiCards";
+import OpenDataProfile from "@/components/OpenDataProfile";
 import PriceTrendChart from "@/components/PriceTrendChart";
 import RentalYields from "@/components/RentalYields";
 import DistrictNav from "@/components/DistrictNav";
 import Footer from "@/components/Footer";
+import { getDistrictOpenData, getOpenDataYear } from "@/lib/opendata";
 
 export const revalidate = 3600;
 
@@ -91,6 +93,8 @@ export default async function DistrictPage({
   if (!data) notFound();
 
   const metrics = getDistrictMetrics(distrito, data);
+  const openData = await getDistrictOpenData(distrito);
+  const openDataYear = await getOpenDataYear();
 
   return (
     <main className="min-h-screen px-4 py-8 max-w-5xl mx-auto">
@@ -133,6 +137,17 @@ export default async function DistrictPage({
         <DistrictKpiCards metrics={metrics} />
       </section>
 
+      {/* Perfil socioeconómico (datos abiertos) */}
+      {openData && (
+        <section className="mb-8">
+          <OpenDataProfile
+            data={openData}
+            year={openDataYear}
+            scope={distrito}
+          />
+        </section>
+      )}
+
       {/* Price Trend Chart */}
       {metrics.trends.length > 0 && (
         <section className="mb-8">
@@ -159,7 +174,14 @@ export default async function DistrictPage({
           Mercado inmobiliario en {distrito}
         </h2>
         <p className="text-slate-400 text-sm leading-relaxed">
-          {distrito} es uno de los 21 distritos de Madrid.
+          {distrito} es uno de los 21 distritos de Madrid
+          {openData?.poblacion
+            ? ` y cuenta con ${openData.poblacion.toLocaleString("es-ES")} habitantes`
+            : ""}
+          {openData?.edad_media
+            ? ` (edad media: ${openData.edad_media.toLocaleString("es-ES", { maximumFractionDigits: 1 })} años)`
+            : ""}
+          .
           {metrics.zone?.median_price && (
             <>
               {" "}

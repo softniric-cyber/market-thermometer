@@ -1,0 +1,1511 @@
+{
+  "metadata": {
+    "source": "datos.madrid.es — Panel de Indicadores de Distritos y Barrios",
+    "url": "https://datos.madrid.es/dataset/300087-0-indicadores-distritos",
+    "year": 2025,
+    "generated_at": "2026-03-15T12:57:05.878751"
+  },
+  "distritos": {
+    "Centro": {
+      "densidad_hab_ha": 279.9223442,
+      "poblacion": 146349.0,
+      "edad_media": 43.82925295,
+      "tamano_medio_hogar": 1.943529632,
+      "pct_estudios_superiores": 58657.0,
+      "tasa_natalidad": 5.626135574,
+      "renta_media_hogar": 41059.0
+    },
+    "Arganzuela": {
+      "densidad_hab_ha": 245.6748476,
+      "poblacion": 158760.0,
+      "edad_media": 45.49749615,
+      "tamano_medio_hogar": 2.271901438,
+      "pct_estudios_superiores": 55580.0,
+      "tasa_natalidad": 6.602918064,
+      "renta_media_hogar": 49236.0
+    },
+    "Retiro": {
+      "densidad_hab_ha": 220.3486883,
+      "poblacion": 120447.0,
+      "edad_media": 47.56975793,
+      "tamano_medio_hogar": 2.351634757,
+      "pct_estudios_superiores": 47888.0,
+      "tasa_natalidad": 5.98,
+      "renta_media_hogar": 60762.0
+    },
+    "Salamanca": {
+      "densidad_hab_ha": 279.6454269,
+      "poblacion": 150796.0,
+      "edad_media": 45.99335683,
+      "tamano_medio_hogar": 2.217290896,
+      "pct_estudios_superiores": 66846.0,
+      "tasa_natalidad": 6.9,
+      "renta_media_hogar": 64925.0
+    },
+    "Chamartín": {
+      "densidad_hab_ha": 163.1017383,
+      "poblacion": 149654.0,
+      "edad_media": 45.58309984,
+      "tamano_medio_hogar": 2.405453689,
+      "pct_estudios_superiores": 65050.0,
+      "tasa_natalidad": 8.48,
+      "renta_media_hogar": 74842.0
+    },
+    "Tetuán": {
+      "densidad_hab_ha": 315.3273671,
+      "poblacion": 169479.0,
+      "edad_media": 43.86745462,
+      "tamano_medio_hogar": 2.318112718,
+      "pct_estudios_superiores": 49139.0,
+      "tasa_natalidad": 7.63,
+      "renta_media_hogar": 42465.0
+    },
+    "Chamberí": {
+      "densidad_hab_ha": 307.33245,
+      "poblacion": 143807.0,
+      "edad_media": 46.06997972,
+      "tamano_medio_hogar": 2.155649349,
+      "pct_estudios_superiores": 65371.0,
+      "tasa_natalidad": 7.29510186,
+      "renta_media_hogar": 60032.0
+    },
+    "Fuencarral-El Pardo": {
+      "densidad_hab_ha": 10.82646873,
+      "poblacion": 257495.0,
+      "edad_media": 43.84364193,
+      "tamano_medio_hogar": 2.64609388,
+      "pct_estudios_superiores": 77414.0,
+      "tasa_natalidad": 8.440481665,
+      "renta_media_hogar": 58214.0
+    },
+    "Moncloa-Aravaca": {
+      "densidad_hab_ha": 27.28884552,
+      "poblacion": 126978.0,
+      "edad_media": 44.76330626,
+      "tamano_medio_hogar": 2.545131197,
+      "pct_estudios_superiores": 46819.0,
+      "tasa_natalidad": 7.854887035,
+      "renta_media_hogar": 68238.0
+    },
+    "Latina": {
+      "densidad_hab_ha": 99.95634596,
+      "poblacion": 254161.0,
+      "edad_media": 46.28603492,
+      "tamano_medio_hogar": 2.48914956,
+      "pct_estudios_superiores": 40031.0,
+      "tasa_natalidad": 6.49910175,
+      "renta_media_hogar": 35669.0
+    },
+    "Carabanchel": {
+      "densidad_hab_ha": 199.7999758,
+      "poblacion": 280685.0,
+      "edad_media": 43.37896402,
+      "tamano_medio_hogar": 2.675904707,
+      "pct_estudios_superiores": 36885.0,
+      "tasa_natalidad": 7.295829491,
+      "renta_media_hogar": 33786.0
+    },
+    "Usera": {
+      "densidad_hab_ha": 197.9762655,
+      "poblacion": 153980.0,
+      "edad_media": 42.47376486,
+      "tamano_medio_hogar": 2.818185254,
+      "pct_estudios_superiores": 15323.0,
+      "tasa_natalidad": 7.352865596,
+      "renta_media_hogar": 31996.0
+    },
+    "Puente de Vallecas": {
+      "densidad_hab_ha": 173.8158545,
+      "poblacion": 260178.0,
+      "edad_media": 43.01978676,
+      "tamano_medio_hogar": 2.675802853,
+      "pct_estudios_superiores": 24559.0,
+      "tasa_natalidad": 7.892433251,
+      "renta_media_hogar": 30339.0
+    },
+    "Moratalaz": {
+      "densidad_hab_ha": 157.4174204,
+      "poblacion": 96075.0,
+      "edad_media": 48.07281625,
+      "tamano_medio_hogar": 2.468483197,
+      "pct_estudios_superiores": 18756.0,
+      "tasa_natalidad": 6.033936904,
+      "renta_media_hogar": 40325.0
+    },
+    "Ciudad Lineal": {
+      "densidad_hab_ha": 204.8670979,
+      "poblacion": 234075.0,
+      "edad_media": 45.75327015,
+      "tamano_medio_hogar": 2.457218851,
+      "pct_estudios_superiores": 57226.0,
+      "tasa_natalidad": 6.789821928,
+      "renta_media_hogar": 43738.0
+    },
+    "Hortaleza": {
+      "densidad_hab_ha": 75.84892547,
+      "poblacion": 209541.0,
+      "edad_media": 42.87545691,
+      "tamano_medio_hogar": 2.634828503,
+      "pct_estudios_superiores": 59534.0,
+      "tasa_natalidad": 8.707222733,
+      "renta_media_hogar": 57506.0
+    },
+    "Villaverde": {
+      "densidad_hab_ha": 85.78681963,
+      "poblacion": 173183.0,
+      "edad_media": 41.94252525,
+      "tamano_medio_hogar": 2.851380259,
+      "pct_estudios_superiores": 15757.0,
+      "tasa_natalidad": 8.244900456,
+      "renta_media_hogar": 32527.0
+    },
+    "Villa de Vallecas": {
+      "densidad_hab_ha": 24.58245251,
+      "poblacion": 126519.0,
+      "edad_media": 40.19154058,
+      "tamano_medio_hogar": 2.593094239,
+      "pct_estudios_superiores": 18863.0,
+      "tasa_natalidad": 8.589130997,
+      "renta_media_hogar": 36998.0
+    },
+    "Vicálvaro": {
+      "densidad_hab_ha": 27.00366068,
+      "poblacion": 95233.0,
+      "edad_media": 40.8099296,
+      "tamano_medio_hogar": 2.68481024,
+      "pct_estudios_superiores": 15150.0,
+      "tasa_natalidad": 10.10508365,
+      "renta_media_hogar": 39505.0
+    },
+    "San Blas-Canillejas": {
+      "densidad_hab_ha": 76.2546877,
+      "poblacion": 169990.0,
+      "edad_media": 43.76532119,
+      "tamano_medio_hogar": 2.622941269,
+      "pct_estudios_superiores": 30224.0,
+      "tasa_natalidad": 6.747975912,
+      "renta_media_hogar": 41474.0
+    },
+    "Barajas": {
+      "densidad_hab_ha": 12.11487061,
+      "poblacion": 50539.0,
+      "edad_media": 43.61561719,
+      "tamano_medio_hogar": 2.591923097,
+      "pct_estudios_superiores": 13095.0,
+      "tasa_natalidad": 6.370982515,
+      "renta_media_hogar": 54343.0
+    }
+  },
+  "barrios": {
+    "Palacio": {
+      "densidad_hab_ha": 163.2832165,
+      "distrito": "Centro",
+      "poblacion": 24001.0,
+      "edad_media": 45.85985533,
+      "tamano_medio_hogar": 1.959887233,
+      "pct_estudios_superiores": 10011.0,
+      "tasa_natalidad": 5.39376581,
+      "renta_media_hogar": 43946.52
+    },
+    "Lavapiés-Embajadores": {
+      "densidad_hab_ha": 479.1815807,
+      "distrito": "Centro",
+      "poblacion": 49533.0,
+      "edad_media": 42.68872196,
+      "tamano_medio_hogar": 1.998354925,
+      "pct_estudios_superiores": 17096.0,
+      "tasa_natalidad": 6.0130388,
+      "renta_media_hogar": 34442.22
+    },
+    "Huertas-Cortes": {
+      "densidad_hab_ha": 188.308836,
+      "distrito": "Centro",
+      "poblacion": 11146.0,
+      "edad_media": 44.71797511,
+      "tamano_medio_hogar": 1.871816354,
+      "pct_estudios_superiores": 5112.0,
+      "tasa_natalidad": 5.366807659,
+      "renta_media_hogar": 43506.2
+    },
+    "Chueca-Justicia": {
+      "densidad_hab_ha": 255.5720855,
+      "distrito": "Centro",
+      "poblacion": 18897.0,
+      "edad_media": 44.04351886,
+      "tamano_medio_hogar": 1.924514738,
+      "pct_estudios_superiores": 8708.0,
+      "tasa_natalidad": 6.169164998,
+      "renta_media_hogar": 52835.71
+    },
+    "Malasaña-Universidad": {
+      "densidad_hab_ha": 360.6962025,
+      "distrito": "Centro",
+      "poblacion": 34194.0,
+      "edad_media": 43.75568632,
+      "tamano_medio_hogar": 1.88352681,
+      "pct_estudios_superiores": 14369.0,
+      "tasa_natalidad": 5.235132224,
+      "renta_media_hogar": 41421.77
+    },
+    "Sol": {
+      "densidad_hab_ha": 192.6341792,
+      "distrito": "Centro",
+      "poblacion": 8578.0,
+      "edad_media": 43.19127675,
+      "tamano_medio_hogar": 1.981365013,
+      "pct_estudios_superiores": 3361.0,
+      "tasa_natalidad": 4.799040192,
+      "renta_media_hogar": 39077.06
+    },
+    "Imperial": {
+      "densidad_hab_ha": 244.1355792,
+      "distrito": "Arganzuela",
+      "poblacion": 23625.0,
+      "edad_media": 47.10525851,
+      "tamano_medio_hogar": 2.26430926,
+      "pct_estudios_superiores": 8107.0,
+      "tasa_natalidad": 5.13,
+      "renta_media_hogar": 51032.43
+    },
+    "Acacias": {
+      "densidad_hab_ha": 340.4695361,
+      "distrito": "Arganzuela",
+      "poblacion": 36546.0,
+      "edad_media": 47.95211789,
+      "tamano_medio_hogar": 2.269051322,
+      "pct_estudios_superiores": 13551.0,
+      "tasa_natalidad": 6.05,
+      "renta_media_hogar": 52933.24
+    },
+    "Chopera": {
+      "densidad_hab_ha": 363.4026066,
+      "distrito": "Arganzuela",
+      "poblacion": 20634.0,
+      "edad_media": 46.19752172,
+      "tamano_medio_hogar": 2.234281932,
+      "pct_estudios_superiores": 5967.0,
+      "tasa_natalidad": 7.75,
+      "renta_media_hogar": 39804.54
+    },
+    "Legazpi": {
+      "densidad_hab_ha": 141.3290916,
+      "distrito": "Arganzuela",
+      "poblacion": 19991.0,
+      "edad_media": 41.08324101,
+      "tamano_medio_hogar": 2.458586109,
+      "pct_estudios_superiores": 7652.0,
+      "tasa_natalidad": 8.48,
+      "renta_media_hogar": 59962.62
+    },
+    "Delicias": {
+      "densidad_hab_ha": 281.3975538,
+      "distrito": "Arganzuela",
+      "poblacion": 29679.0,
+      "edad_media": 43.65190904,
+      "tamano_medio_hogar": 2.332014246,
+      "pct_estudios_superiores": 10339.0,
+      "tasa_natalidad": 7.46,
+      "renta_media_hogar": 48099.46
+    },
+    "Palos de la Frontera": {
+      "densidad_hab_ha": 402.159161,
+      "distrito": "Arganzuela",
+      "poblacion": 26076.0,
+      "edad_media": 46.10604886,
+      "tamano_medio_hogar": 2.1046189,
+      "pct_estudios_superiores": 9322.0,
+      "tasa_natalidad": 6.1,
+      "renta_media_hogar": 42253.71
+    },
+    "Atocha": {
+      "densidad_hab_ha": 30.02582574,
+      "distrito": "Arganzuela",
+      "poblacion": 2209.0,
+      "edad_media": 38.74963361,
+      "tamano_medio_hogar": 2.581336696,
+      "pct_estudios_superiores": 642.0,
+      "tasa_natalidad": 11.21,
+      "renta_media_hogar": 52252.0
+    },
+    "Pacífico": {
+      "densidad_hab_ha": 449.7164711,
+      "distrito": "Retiro",
+      "poblacion": 34102.0,
+      "edad_media": 48.04194944,
+      "tamano_medio_hogar": 2.198241042,
+      "pct_estudios_superiores": 12679.0,
+      "tasa_natalidad": 6.11,
+      "renta_media_hogar": 49420.1
+    },
+    "Adelfas": {
+      "densidad_hab_ha": 298.7203496,
+      "distrito": "Retiro",
+      "poblacion": 19142.0,
+      "edad_media": 45.79960578,
+      "tamano_medio_hogar": 2.332924586,
+      "pct_estudios_superiores": 6787.0,
+      "tasa_natalidad": 6.76,
+      "renta_media_hogar": 53793.35
+    },
+    "Estrella": {
+      "densidad_hab_ha": 223.3837153,
+      "distrito": "Retiro",
+      "poblacion": 22908.0,
+      "edad_media": 49.29432686,
+      "tamano_medio_hogar": 2.558014153,
+      "pct_estudios_superiores": 9168.0,
+      "tasa_natalidad": 4.31,
+      "renta_media_hogar": 66902.05
+    },
+    "Ibiza": {
+      "densidad_hab_ha": 447.9878049,
+      "distrito": "Retiro",
+      "poblacion": 22041.0,
+      "edad_media": 46.85097683,
+      "tamano_medio_hogar": 2.249591169,
+      "pct_estudios_superiores": 9279.0,
+      "tasa_natalidad": 6.81,
+      "renta_media_hogar": 58130.76
+    },
+    "Los Jerónimos": {
+      "densidad_hab_ha": 36.46663869,
+      "distrito": "Retiro",
+      "poblacion": 6952.0,
+      "edad_media": 47.82102682,
+      "tamano_medio_hogar": 2.423628102,
+      "pct_estudios_superiores": 3066.0,
+      "tasa_natalidad": 6.11,
+      "renta_media_hogar": 78648.93
+    },
+    "Niño Jesús": {
+      "densidad_hab_ha": 237.867247,
+      "distrito": "Retiro",
+      "poblacion": 15302.0,
+      "edad_media": 47.08169079,
+      "tamano_medio_hogar": 2.600647139,
+      "pct_estudios_superiores": 6909.0,
+      "tasa_natalidad": 5.96,
+      "renta_media_hogar": 77820.21
+    },
+    "Recoletos": {
+      "densidad_hab_ha": 179.0172947,
+      "distrito": "Salamanca",
+      "poblacion": 15630.0,
+      "edad_media": 46.45519091,
+      "tamano_medio_hogar": 2.214844842,
+      "pct_estudios_superiores": 8014.0,
+      "tasa_natalidad": 7.4,
+      "renta_media_hogar": 90257.5
+    },
+    "Goya": {
+      "densidad_hab_ha": 396.8453849,
+      "distrito": "Salamanca",
+      "poblacion": 30569.0,
+      "edad_media": 45.958609,
+      "tamano_medio_hogar": 2.154680851,
+      "pct_estudios_superiores": 14137.0,
+      "tasa_natalidad": 7.43,
+      "renta_media_hogar": 60585.03
+    },
+    "Fuente del Berro": {
+      "densidad_hab_ha": 254.3748534,
+      "distrito": "Salamanca",
+      "poblacion": 21688.0,
+      "edad_media": 46.66476293,
+      "tamano_medio_hogar": 2.211009174,
+      "pct_estudios_superiores": 8312.0,
+      "tasa_natalidad": 6.8,
+      "renta_media_hogar": 49855.23
+    },
+    "Guindalera": {
+      "densidad_hab_ha": 271.3688545,
+      "distrito": "Salamanca",
+      "poblacion": 43495.0,
+      "edad_media": 46.22909917,
+      "tamano_medio_hogar": 2.269265351,
+      "pct_estudios_superiores": 18184.0,
+      "tasa_natalidad": 6.52,
+      "renta_media_hogar": 55816.11
+    },
+    "Lista": {
+      "densidad_hab_ha": 416.68589,
+      "distrito": "Salamanca",
+      "poblacion": 21676.0,
+      "edad_media": 45.69724728,
+      "tamano_medio_hogar": 2.173860305,
+      "pct_estudios_superiores": 9861.0,
+      "tasa_natalidad": 7.09,
+      "renta_media_hogar": 61005.95
+    },
+    "Castellana": {
+      "densidad_hab_ha": 229.350918,
+      "distrito": "Salamanca",
+      "poblacion": 17738.0,
+      "edad_media": 44.61366719,
+      "tamano_medio_hogar": 2.269660038,
+      "pct_estudios_superiores": 8338.0,
+      "tasa_natalidad": 6.31,
+      "renta_media_hogar": 82799.56
+    },
+    "El Viso": {
+      "densidad_hab_ha": 102.8375848,
+      "distrito": "Chamartín",
+      "poblacion": 17577.0,
+      "edad_media": 44.67013394,
+      "tamano_medio_hogar": 2.700477143,
+      "pct_estudios_superiores": 8292.0,
+      "tasa_natalidad": 9.69,
+      "renta_media_hogar": 90192.9
+    },
+    "Prosperidad": {
+      "densidad_hab_ha": 358.8981829,
+      "distrito": "Chamartín",
+      "poblacion": 37329.0,
+      "edad_media": 47.204337,
+      "tamano_medio_hogar": 2.187688665,
+      "pct_estudios_superiores": 15035.0,
+      "tasa_natalidad": 6.95,
+      "renta_media_hogar": 51858.03
+    },
+    "Ciudad Jardín": {
+      "densidad_hab_ha": 251.6069789,
+      "distrito": "Chamartín",
+      "poblacion": 19180.0,
+      "edad_media": 45.96661031,
+      "tamano_medio_hogar": 2.225776105,
+      "pct_estudios_superiores": 7691.0,
+      "tasa_natalidad": 8.02,
+      "renta_media_hogar": 53042.34
+    },
+    "Bernabéu-Hispanoamérica": {
+      "densidad_hab_ha": 189.2671533,
+      "distrito": "Chamartín",
+      "poblacion": 32412.0,
+      "edad_media": 46.10536015,
+      "tamano_medio_hogar": 2.471550992,
+      "pct_estudios_superiores": 14429.0,
+      "tasa_natalidad": 9.25,
+      "renta_media_hogar": 75681.65
+    },
+    "Nueva España": {
+      "densidad_hab_ha": 141.3887492,
+      "distrito": "Chamartín",
+      "poblacion": 25310.0,
+      "edad_media": 43.63616579,
+      "tamano_medio_hogar": 2.587888809,
+      "pct_estudios_superiores": 11797.0,
+      "tasa_natalidad": 9.71,
+      "renta_media_hogar": 85985.25
+    },
+    "Castilla": {
+      "densidad_hab_ha": 82.57067506,
+      "distrito": "Chamartín",
+      "poblacion": 17846.0,
+      "edad_media": 44.49761635,
+      "tamano_medio_hogar": 2.500354761,
+      "pct_estudios_superiores": 7806.0,
+      "tasa_natalidad": 7.82,
+      "renta_media_hogar": 67552.8
+    },
+    "Bellas Vistas": {
+      "densidad_hab_ha": 434.9412752,
+      "distrito": "Tetuán",
+      "poblacion": 31107.0,
+      "edad_media": 43.45601192,
+      "tamano_medio_hogar": 2.386166471,
+      "pct_estudios_superiores": 8182.0,
+      "tasa_natalidad": 8.349196807,
+      "renta_media_hogar": 37831.49
+    },
+    "Cuatro Caminos": {
+      "densidad_hab_ha": 305.257384,
+      "distrito": "Tetuán",
+      "poblacion": 36173.0,
+      "edad_media": 45.32143157,
+      "tamano_medio_hogar": 2.234922422,
+      "pct_estudios_superiores": 14378.0,
+      "tasa_natalidad": 8.854077984,
+      "renta_media_hogar": 52970.1
+    },
+    "Castillejos": {
+      "densidad_hab_ha": 305.732936,
+      "distrito": "Tetuán",
+      "poblacion": 21545.0,
+      "edad_media": 46.18578284,
+      "tamano_medio_hogar": 2.124113121,
+      "pct_estudios_superiores": 8843.0,
+      "tasa_natalidad": 8.224549323,
+      "renta_media_hogar": 54433.63
+    },
+    "Almenara": {
+      "densidad_hab_ha": 246.2977787,
+      "distrito": "Tetuán",
+      "poblacion": 24615.0,
+      "edad_media": 43.54146949,
+      "tamano_medio_hogar": 2.422079228,
+      "pct_estudios_superiores": 5456.0,
+      "tasa_natalidad": 8.059897767,
+      "renta_media_hogar": 36303.6
+    },
+    "Valdeacederas": {
+      "densidad_hab_ha": 246.0976448,
+      "distrito": "Tetuán",
+      "poblacion": 28631.0,
+      "edad_media": 42.10612274,
+      "tamano_medio_hogar": 2.373057879,
+      "pct_estudios_superiores": 6085.0,
+      "tasa_natalidad": 8.129333652,
+      "renta_media_hogar": 34513.63
+    },
+    "Berruguete": {
+      "densidad_hab_ha": 451.45775,
+      "distrito": "Tetuán",
+      "poblacion": 27408.0,
+      "edad_media": 42.67987543,
+      "tamano_medio_hogar": 2.382318969,
+      "pct_estudios_superiores": 6195.0,
+      "tasa_natalidad": 6.322966462,
+      "renta_media_hogar": 35528.86
+    },
+    "Gaztambide": {
+      "densidad_hab_ha": 472.6357354,
+      "distrito": "Chamberí",
+      "poblacion": 23939.0,
+      "edad_media": 46.47752093,
+      "tamano_medio_hogar": 2.114755572,
+      "pct_estudios_superiores": 10723.0,
+      "tasa_natalidad": 5.979523359,
+      "renta_media_hogar": 53100.37
+    },
+    "Arapiles": {
+      "densidad_hab_ha": 437.737807,
+      "distrito": "Chamberí",
+      "poblacion": 25310.0,
+      "edad_media": 45.93187197,
+      "tamano_medio_hogar": 2.093458729,
+      "pct_estudios_superiores": 10988.0,
+      "tasa_natalidad": 7.247409458,
+      "renta_media_hogar": 52027.5
+    },
+    "Trafalgar": {
+      "densidad_hab_ha": 418.1238765,
+      "distrito": "Chamberí",
+      "poblacion": 25585.0,
+      "edad_media": 44.88806854,
+      "tamano_medio_hogar": 2.013834778,
+      "pct_estudios_superiores": 11748.0,
+      "tasa_natalidad": 7.287433182,
+      "renta_media_hogar": 51692.81
+    },
+    "Almagro": {
+      "densidad_hab_ha": 213.7754558,
+      "distrito": "Chamberí",
+      "poblacion": 20050.0,
+      "edad_media": 46.35689276,
+      "tamano_medio_hogar": 2.328984157,
+      "pct_estudios_superiores": 9368.0,
+      "tasa_natalidad": 8.069018016,
+      "renta_media_hogar": 78233.57
+    },
+    "Nuevos Ministerios-Ríos Rosas": {
+      "densidad_hab_ha": 291.0088169,
+      "distrito": "Chamberí",
+      "poblacion": 28385.0,
+      "edad_media": 45.67763393,
+      "tamano_medio_hogar": 2.172480771,
+      "pct_estudios_superiores": 13004.0,
+      "tasa_natalidad": 7.764172336,
+      "renta_media_hogar": 61141.27
+    },
+    "Vallehermoso": {
+      "densidad_hab_ha": 192.0875421,
+      "distrito": "Chamberí",
+      "poblacion": 20538.0,
+      "edad_media": 47.50405178,
+      "tamano_medio_hogar": 2.300557008,
+      "pct_estudios_superiores": 9540.0,
+      "tasa_natalidad": 7.482976229,
+      "renta_media_hogar": 67456.19
+    },
+    "El Pardo": {
+      "densidad_hab_ha": 0.184931076,
+      "distrito": "Fuencarral-El Pardo",
+      "poblacion": 3469.0,
+      "edad_media": 47.25346821,
+      "tamano_medio_hogar": 2.527392257,
+      "pct_estudios_superiores": 606.0,
+      "tasa_natalidad": 4.650486848,
+      "renta_media_hogar": 40565.41
+    },
+    "Fuentelarreina": {
+      "densidad_hab_ha": 25.58223637,
+      "distrito": "Fuencarral-El Pardo",
+      "poblacion": 3537.0,
+      "edad_media": 45.04545455,
+      "tamano_medio_hogar": 2.912572856,
+      "pct_estudios_superiores": 1569.0,
+      "tasa_natalidad": 6.079907354,
+      "renta_media_hogar": 96509.39
+    },
+    "Peñagrande": {
+      "densidad_hab_ha": 157.1537423,
+      "distrito": "Fuencarral-El Pardo",
+      "poblacion": 45375.0,
+      "edad_media": 47.45899117,
+      "tamano_medio_hogar": 2.523721087,
+      "pct_estudios_superiores": 12624.0,
+      "tasa_natalidad": 6.996692269,
+      "renta_media_hogar": 54004.5
+    },
+    "Pilar": {
+      "densidad_hab_ha": 345.7966549,
+      "distrito": "Fuencarral-El Pardo",
+      "poblacion": 47139.0,
+      "edad_media": 48.53843757,
+      "tamano_medio_hogar": 2.30057832,
+      "pct_estudios_superiores": 10728.0,
+      "tasa_natalidad": 6.315583866,
+      "renta_media_hogar": 39382.79
+    },
+    "La Paz": {
+      "densidad_hab_ha": 150.0788936,
+      "distrito": "Fuencarral-El Pardo",
+      "poblacion": 32339.0,
+      "edad_media": 50.85361593,
+      "tamano_medio_hogar": 2.53491653,
+      "pct_estudios_superiores": 11712.0,
+      "tasa_natalidad": 6.07422329,
+      "renta_media_hogar": 64759.64
+    },
+    "Tres Olivos-Valverde": {
+      "densidad_hab_ha": 75.9642364,
+      "distrito": "Fuencarral-El Pardo",
+      "poblacion": 68225.0,
+      "edad_media": 39.00602662,
+      "tamano_medio_hogar": 2.729833442,
+      "pct_estudios_superiores": 18817.0,
+      "tasa_natalidad": 9.192642847,
+      "renta_media_hogar": 50482.19
+    },
+    "Mirasierra": {
+      "densidad_hab_ha": 53.70666972,
+      "distrito": "Fuencarral-El Pardo",
+      "poblacion": 37556.0,
+      "edad_media": 39.82533203,
+      "tamano_medio_hogar": 3.085138539,
+      "pct_estudios_superiores": 14342.0,
+      "tasa_natalidad": 11.98563933,
+      "renta_media_hogar": 79166.71
+    },
+    "El Goloso": {
+      "densidad_hab_ha": 7.494404203,
+      "distrito": "Fuencarral-El Pardo",
+      "poblacion": 19855.0,
+      "edad_media": 36.07562768,
+      "tamano_medio_hogar": 3.152002574,
+      "pct_estudios_superiores": 7016.0,
+      "tasa_natalidad": 12.68378546,
+      "renta_media_hogar": 76202.22
+    },
+    "Casa de Campo": {
+      "densidad_hab_ha": 7.657239728,
+      "distrito": "Moncloa-Aravaca",
+      "poblacion": 13370.0,
+      "edad_media": 48.58968021,
+      "tamano_medio_hogar": 2.25069541,
+      "pct_estudios_superiores": 4779.0,
+      "tasa_natalidad": 6.378096683,
+      "renta_media_hogar": 48874.87
+    },
+    "Argüelles": {
+      "densidad_hab_ha": 334.0462046,
+      "distrito": "Moncloa-Aravaca",
+      "poblacion": 25304.0,
+      "edad_media": 46.41611638,
+      "tamano_medio_hogar": 2.234773276,
+      "pct_estudios_superiores": 11359.0,
+      "tasa_natalidad": 6.426319618,
+      "renta_media_hogar": 61804.85
+    },
+    "Ciudad Universitaria": {
+      "densidad_hab_ha": 12.0167849,
+      "distrito": "Moncloa-Aravaca",
+      "poblacion": 17125.0,
+      "edad_media": 45.8974283,
+      "tamano_medio_hogar": 2.595109949,
+      "pct_estudios_superiores": 7553.0,
+      "tasa_natalidad": 7.70156438,
+      "renta_media_hogar": 71512.44
+    },
+    "Valdezarza": {
+      "densidad_hab_ha": 228.3935599,
+      "distrito": "Moncloa-Aravaca",
+      "poblacion": 31918.0,
+      "edad_media": 46.14420826,
+      "tamano_medio_hogar": 2.392100484,
+      "pct_estudios_superiores": 7888.0,
+      "tasa_natalidad": 8.728139393,
+      "renta_media_hogar": 41810.16
+    },
+    "Valdemarín": {
+      "densidad_hab_ha": 23.15518547,
+      "distrito": "Moncloa-Aravaca",
+      "poblacion": 7647.0,
+      "edad_media": 37.82814387,
+      "tamano_medio_hogar": 3.359332732,
+      "pct_estudios_superiores": 3122.0,
+      "tasa_natalidad": 9.721366468,
+      "renta_media_hogar": 98186.25
+    },
+    "El Plantío": {
+      "densidad_hab_ha": 8.894053625,
+      "distrito": "Moncloa-Aravaca",
+      "poblacion": 3138.0,
+      "edad_media": 42.12262357,
+      "tamano_medio_hogar": 3.152847153,
+      "pct_estudios_superiores": 1259.0,
+      "tasa_natalidad": 10.32258065,
+      "renta_media_hogar": 98157.8
+    },
+    "Aravaca": {
+      "densidad_hab_ha": 48.81042167,
+      "distrito": "Moncloa-Aravaca",
+      "poblacion": 28476.0,
+      "edad_media": 41.44253893,
+      "tamano_medio_hogar": 3.021757771,
+      "pct_estudios_superiores": 10859.0,
+      "tasa_natalidad": 8.159890722,
+      "renta_media_hogar": 76207.06
+    },
+    "Los Cármenes": {
+      "densidad_hab_ha": 145.123839,
+      "distrito": "Latina",
+      "poblacion": 18750.0,
+      "edad_media": 43.52534875,
+      "tamano_medio_hogar": 2.625106868,
+      "pct_estudios_superiores": 2844.0,
+      "tasa_natalidad": 7.267521885,
+      "renta_media_hogar": 35315.69
+    },
+    "Puerta del Ángel": {
+      "densidad_hab_ha": 335.7958264,
+      "distrito": "Latina",
+      "poblacion": 46182.0,
+      "edad_media": 44.39244831,
+      "tamano_medio_hogar": 2.36357499,
+      "pct_estudios_superiores": 9501.0,
+      "tasa_natalidad": 6.260908733,
+      "renta_media_hogar": 34380.24
+    },
+    "Lucero": {
+      "densidad_hab_ha": 231.0541989,
+      "distrito": "Latina",
+      "poblacion": 38794.0,
+      "edad_media": 45.30523744,
+      "tamano_medio_hogar": 2.556883815,
+      "pct_estudios_superiores": 6205.0,
+      "tasa_natalidad": 6.415311209,
+      "renta_media_hogar": 35919.56
+    },
+    "Aluche": {
+      "densidad_hab_ha": 244.778581,
+      "distrito": "Latina",
+      "poblacion": 69757.0,
+      "edad_media": 48.2023328,
+      "tamano_medio_hogar": 2.484170719,
+      "pct_estudios_superiores": 10221.0,
+      "tasa_natalidad": 6.344007495,
+      "renta_media_hogar": 35834.82
+    },
+    "Campamento": {
+      "densidad_hab_ha": 22.97038536,
+      "distrito": "Latina",
+      "poblacion": 21113.0,
+      "edad_media": 45.30548966,
+      "tamano_medio_hogar": 2.660955816,
+      "pct_estudios_superiores": 3206.0,
+      "tasa_natalidad": 8.216398149,
+      "renta_media_hogar": 36950.38
+    },
+    "Cuatro Vientos": {
+      "densidad_hab_ha": 12.27233384,
+      "distrito": "Latina",
+      "poblacion": 6664.0,
+      "edad_media": 38.39449899,
+      "tamano_medio_hogar": 2.621323529,
+      "pct_estudios_superiores": 1238.0,
+      "tasa_natalidad": 7.018103517,
+      "renta_media_hogar": 41288.68
+    },
+    "Águilas": {
+      "densidad_hab_ha": 146.5564051,
+      "distrito": "Latina",
+      "poblacion": 52901.0,
+      "edad_media": 48.44698229,
+      "tamano_medio_hogar": 2.439571196,
+      "pct_estudios_superiores": 6816.0,
+      "tasa_natalidad": 5.964732793,
+      "renta_media_hogar": 35324.39
+    },
+    "Comillas": {
+      "densidad_hab_ha": 354.4662964,
+      "distrito": "Carabanchel",
+      "poblacion": 23611.0,
+      "edad_media": 46.02484446,
+      "tamano_medio_hogar": 2.336087606,
+      "pct_estudios_superiores": 4609.0,
+      "tasa_natalidad": 7.707796566,
+      "renta_media_hogar": 33931.45
+    },
+    "Opañel": {
+      "densidad_hab_ha": 327.7883139,
+      "distrito": "Carabanchel",
+      "poblacion": 36296.0,
+      "edad_media": 44.47828964,
+      "tamano_medio_hogar": 2.533747146,
+      "pct_estudios_superiores": 5651.0,
+      "tasa_natalidad": 6.916825177,
+      "renta_media_hogar": 34029.96
+    },
+    "San Isidro": {
+      "densidad_hab_ha": 227.2890012,
+      "distrito": "Carabanchel",
+      "poblacion": 43169.0,
+      "edad_media": 43.60463683,
+      "tamano_medio_hogar": 2.600258892,
+      "pct_estudios_superiores": 6155.0,
+      "tasa_natalidad": 7.510417676,
+      "renta_media_hogar": 32214.34
+    },
+    "Vista Alegre": {
+      "densidad_hab_ha": 322.0173672,
+      "distrito": "Carabanchel",
+      "poblacion": 51175.0,
+      "edad_media": 44.93064223,
+      "tamano_medio_hogar": 2.715670349,
+      "pct_estudios_superiores": 5897.0,
+      "tasa_natalidad": 6.947282387,
+      "renta_media_hogar": 32688.27
+    },
+    "Puerta Bonita": {
+      "densidad_hab_ha": 247.5879647,
+      "distrito": "Carabanchel",
+      "poblacion": 39827.0,
+      "edad_media": 42.25722648,
+      "tamano_medio_hogar": 2.88013368,
+      "pct_estudios_superiores": 3969.0,
+      "tasa_natalidad": 8.785509202,
+      "renta_media_hogar": 31202.28
+    },
+    "Buena Vista": {
+      "densidad_hab_ha": 93.57941994,
+      "distrito": "Carabanchel",
+      "poblacion": 52528.0,
+      "edad_media": 41.09402429,
+      "tamano_medio_hogar": 2.732772929,
+      "pct_estudios_superiores": 7046.0,
+      "tasa_natalidad": 6.527532413,
+      "renta_media_hogar": 37776.55
+    },
+    "Abrantes": {
+      "densidad_hab_ha": 217.8128595,
+      "distrito": "Carabanchel",
+      "poblacion": 34079.0,
+      "edad_media": 42.52699209,
+      "tamano_medio_hogar": 2.854972968,
+      "pct_estudios_superiores": 3558.0,
+      "tasa_natalidad": 7.112068966,
+      "renta_media_hogar": 33622.23
+    },
+    "Orcasitas": {
+      "densidad_hab_ha": 174.9631377,
+      "distrito": "Usera",
+      "poblacion": 23732.0,
+      "edad_media": 44.12528745,
+      "tamano_medio_hogar": 2.717195094,
+      "pct_estudios_superiores": 1989.0,
+      "tasa_natalidad": 6.399381536,
+      "renta_media_hogar": 34151.31
+    },
+    "Orcasur": {
+      "densidad_hab_ha": 109.4428026,
+      "distrito": "Usera",
+      "poblacion": 15183.0,
+      "edad_media": 41.41091509,
+      "tamano_medio_hogar": 2.966640032,
+      "pct_estudios_superiores": 1467.0,
+      "tasa_natalidad": 6.360931569,
+      "renta_media_hogar": 31815.53
+    },
+    "San Fermín": {
+      "densidad_hab_ha": 168.9575708,
+      "distrito": "Usera",
+      "poblacion": 24928.0,
+      "edad_media": 41.59318645,
+      "tamano_medio_hogar": 2.844047343,
+      "pct_estudios_superiores": 2333.0,
+      "tasa_natalidad": 7.982040409,
+      "renta_media_hogar": 31794.59
+    },
+    "Almendrales": {
+      "densidad_hab_ha": 320.40764,
+      "distrito": "Usera",
+      "poblacion": 24995.0,
+      "edad_media": 41.66801103,
+      "tamano_medio_hogar": 2.819917501,
+      "pct_estudios_superiores": 3036.0,
+      "tasa_natalidad": 7.99811809,
+      "renta_media_hogar": 33822.43
+    },
+    "Moscardó": {
+      "densidad_hab_ha": 320.9507042,
+      "distrito": "Usera",
+      "poblacion": 29168.0,
+      "edad_media": 43.55912532,
+      "tamano_medio_hogar": 2.676750216,
+      "pct_estudios_superiores": 3707.0,
+      "tasa_natalidad": 7.456108132,
+      "renta_media_hogar": 31848.38
+    },
+    "Zofío": {
+      "densidad_hab_ha": 202.0930233,
+      "distrito": "Usera",
+      "poblacion": 15642.0,
+      "edad_media": 42.62759838,
+      "tamano_medio_hogar": 2.869630463,
+      "pct_estudios_superiores": 1410.0,
+      "tasa_natalidad": 7.008086253,
+      "renta_media_hogar": 31036.59
+    },
+    "Pradolongo": {
+      "densidad_hab_ha": 185.5617414,
+      "distrito": "Usera",
+      "poblacion": 20332.0,
+      "edad_media": 41.70493428,
+      "tamano_medio_hogar": 2.988154613,
+      "pct_estudios_superiores": 1381.0,
+      "tasa_natalidad": 7.827260459,
+      "renta_media_hogar": 27993.55
+    },
+    "Entrevías": {
+      "densidad_hab_ha": 63.68994792,
+      "distrito": "Puente de Vallecas",
+      "poblacion": 38035.0,
+      "edad_media": 42.8941277,
+      "tamano_medio_hogar": 2.800866459,
+      "pct_estudios_superiores": 2067.0,
+      "tasa_natalidad": 8.885813149,
+      "renta_media_hogar": 28215.71
+    },
+    "San Diego": {
+      "densidad_hab_ha": 479.2036639,
+      "distrito": "Puente de Vallecas",
+      "poblacion": 51270.0,
+      "edad_media": 39.77157016,
+      "tamano_medio_hogar": 2.742884145,
+      "pct_estudios_superiores": 4788.0,
+      "tasa_natalidad": 9.677795072,
+      "renta_media_hogar": 26395.32
+    },
+    "Palomeras Bajas": {
+      "densidad_hab_ha": 247.7985962,
+      "distrito": "Puente de Vallecas",
+      "poblacion": 42718.0,
+      "edad_media": 44.3309424,
+      "tamano_medio_hogar": 2.649597056,
+      "pct_estudios_superiores": 5068.0,
+      "tasa_natalidad": 6.493822356,
+      "renta_media_hogar": 34675.8
+    },
+    "Palomeras Sureste": {
+      "densidad_hab_ha": 145.9724635,
+      "distrito": "Puente de Vallecas",
+      "poblacion": 45377.0,
+      "edad_media": 44.2623885,
+      "tamano_medio_hogar": 2.625739295,
+      "pct_estudios_superiores": 4406.0,
+      "tasa_natalidad": 7.446492611,
+      "renta_media_hogar": 33185.81
+    },
+    "Portazgo": {
+      "densidad_hab_ha": 245.5713483,
+      "distrito": "Puente de Vallecas",
+      "poblacion": 30581.0,
+      "edad_media": 44.46349089,
+      "tamano_medio_hogar": 2.641037024,
+      "pct_estudios_superiores": 2525.0,
+      "tasa_natalidad": 7.352061142,
+      "renta_media_hogar": 29088.94
+    },
+    "Numancia": {
+      "densidad_hab_ha": 282.2832729,
+      "distrito": "Puente de Vallecas",
+      "poblacion": 52197.0,
+      "edad_media": 43.25597025,
+      "tamano_medio_hogar": 2.614188981,
+      "pct_estudios_superiores": 5705.0,
+      "tasa_natalidad": 7.343425527,
+      "renta_media_hogar": 29857.21
+    },
+    "Pavones": {
+      "densidad_hab_ha": 92.39378033,
+      "distrito": "Moratalaz",
+      "poblacion": 9329.0,
+      "edad_media": 47.83373154,
+      "tamano_medio_hogar": 2.74047619,
+      "pct_estudios_superiores": 1429.0,
+      "tasa_natalidad": 5.548773721,
+      "renta_media_hogar": 39517.41
+    },
+    "Horcajo": {
+      "densidad_hab_ha": 86.83469634,
+      "distrito": "Moratalaz",
+      "poblacion": 6477.0,
+      "edad_media": 42.17684161,
+      "tamano_medio_hogar": 2.874216652,
+      "pct_estudios_superiores": 1597.0,
+      "tasa_natalidad": 6.5830721,
+      "renta_media_hogar": 51641.61
+    },
+    "Marroquina": {
+      "densidad_hab_ha": 148.5168426,
+      "distrito": "Moratalaz",
+      "poblacion": 26586.0,
+      "edad_media": 50.18052923,
+      "tamano_medio_hogar": 2.395604396,
+      "pct_estudios_superiores": 6305.0,
+      "tasa_natalidad": 5.104956379,
+      "renta_media_hogar": 45829.48
+    },
+    "Media Legua": {
+      "densidad_hab_ha": 178.7187187,
+      "distrito": "Moratalaz",
+      "poblacion": 17854.0,
+      "edad_media": 48.446028,
+      "tamano_medio_hogar": 2.428590934,
+      "pct_estudios_superiores": 3736.0,
+      "tasa_natalidad": 6.493876388,
+      "renta_media_hogar": 40948.0
+    },
+    "Fontarrón": {
+      "densidad_hab_ha": 190.3172299,
+      "distrito": "Moratalaz",
+      "poblacion": 18358.0,
+      "edad_media": 46.24727778,
+      "tamano_medio_hogar": 2.504173623,
+      "pct_estudios_superiores": 2610.0,
+      "tasa_natalidad": 6.622703988,
+      "renta_media_hogar": 33442.78
+    },
+    "Vinateros": {
+      "densidad_hab_ha": 294.1245791,
+      "distrito": "Moratalaz",
+      "poblacion": 17471.0,
+      "edad_media": 48.6893358,
+      "tamano_medio_hogar": 2.336074414,
+      "pct_estudios_superiores": 3079.0,
+      "tasa_natalidad": 6.430116327,
+      "renta_media_hogar": 34723.27
+    },
+    "Ventas": {
+      "densidad_hab_ha": 166.2851782,
+      "distrito": "Ciudad Lineal",
+      "poblacion": 53178.0,
+      "edad_media": 45.94398062,
+      "tamano_medio_hogar": 2.415048095,
+      "pct_estudios_superiores": 9906.0,
+      "tasa_natalidad": 6.540350055,
+      "renta_media_hogar": 34789.93
+    },
+    "Pueblo Nuevo": {
+      "densidad_hab_ha": 289.2117972,
+      "distrito": "Ciudad Lineal",
+      "poblacion": 67074.0,
+      "edad_media": 45.23762031,
+      "tamano_medio_hogar": 2.583294118,
+      "pct_estudios_superiores": 10726.0,
+      "tasa_natalidad": 6.619326569,
+      "renta_media_hogar": 35840.86
+    },
+    "Quintana": {
+      "densidad_hab_ha": 377.8453879,
+      "distrito": "Ciudad Lineal",
+      "poblacion": 27322.0,
+      "edad_media": 45.26145281,
+      "tamano_medio_hogar": 2.382232508,
+      "pct_estudios_superiores": 6135.0,
+      "tasa_natalidad": 6.892458502,
+      "renta_media_hogar": 36716.41
+    },
+    "La Concepción": {
+      "densidad_hab_ha": 256.383339,
+      "distrito": "Ciudad Lineal",
+      "poblacion": 22713.0,
+      "edad_media": 46.65649712,
+      "tamano_medio_hogar": 2.259951259,
+      "pct_estudios_superiores": 6217.0,
+      "tasa_natalidad": 7.083825266,
+      "renta_media_hogar": 40656.32
+    },
+    "San Pascual": {
+      "densidad_hab_ha": 183.5280707,
+      "distrito": "Ciudad Lineal",
+      "poblacion": 19320.0,
+      "edad_media": 47.6880225,
+      "tamano_medio_hogar": 2.311497326,
+      "pct_estudios_superiores": 5783.0,
+      "tasa_natalidad": 6.479944305,
+      "renta_media_hogar": 49155.32
+    },
+    "San Juan Bautista": {
+      "densidad_hab_ha": 132.1626435,
+      "distrito": "Ciudad Lineal",
+      "poblacion": 13359.0,
+      "edad_media": 44.93871951,
+      "tamano_medio_hogar": 2.47453791,
+      "pct_estudios_superiores": 5505.0,
+      "tasa_natalidad": 7.66673186,
+      "renta_media_hogar": 66727.9
+    },
+    "Colina": {
+      "densidad_hab_ha": 124.0307307,
+      "distrito": "Ciudad Lineal",
+      "poblacion": 6942.0,
+      "edad_media": 45.23906021,
+      "tamano_medio_hogar": 2.368695652,
+      "pct_estudios_superiores": 2782.0,
+      "tasa_natalidad": 6.876448165,
+      "renta_media_hogar": 63554.24
+    },
+    "Atalaya": {
+      "densidad_hab_ha": 68.13981519,
+      "distrito": "Ciudad Lineal",
+      "poblacion": 1696.0,
+      "edad_media": 44.94019139,
+      "tamano_medio_hogar": 2.641390205,
+      "pct_estudios_superiores": 732.0,
+      "tasa_natalidad": 7.285974499,
+      "renta_media_hogar": 77929.4
+    },
+    "Costillares": {
+      "densidad_hab_ha": 157.4481502,
+      "distrito": "Ciudad Lineal",
+      "poblacion": 22471.0,
+      "edad_media": 45.5657877,
+      "tamano_medio_hogar": 2.663521261,
+      "pct_estudios_superiores": 9440.0,
+      "tasa_natalidad": 7.147219144,
+      "renta_media_hogar": 74745.66
+    },
+    "Palomas": {
+      "densidad_hab_ha": 66.7383982,
+      "distrito": "Hortaleza",
+      "poblacion": 7133.0,
+      "edad_media": 42.05371901,
+      "tamano_medio_hogar": 2.948739496,
+      "pct_estudios_superiores": 2830.0,
+      "tasa_natalidad": 3.299856528,
+      "renta_media_hogar": 91071.03
+    },
+    "Conde Orgaz-Piovera": {
+      "densidad_hab_ha": 49.77704166,
+      "distrito": "Hortaleza",
+      "poblacion": 15628.0,
+      "edad_media": 42.1016823,
+      "tamano_medio_hogar": 2.931525038,
+      "pct_estudios_superiores": 6526.0,
+      "tasa_natalidad": 6.623819517,
+      "renta_media_hogar": 92188.39
+    },
+    "Canillas": {
+      "densidad_hab_ha": 161.7443013,
+      "distrito": "Hortaleza",
+      "poblacion": 40800.0,
+      "edad_media": 48.34287834,
+      "tamano_medio_hogar": 2.439671815,
+      "pct_estudios_superiores": 9632.0,
+      "tasa_natalidad": 5.983097749,
+      "renta_media_hogar": 46691.19
+    },
+    "Pinar del Rey": {
+      "densidad_hab_ha": 203.1146803,
+      "distrito": "Hortaleza",
+      "poblacion": 54126.0,
+      "edad_media": 47.50626489,
+      "tamano_medio_hogar": 2.40864733,
+      "pct_estudios_superiores": 10345.0,
+      "tasa_natalidad": 7.138517618,
+      "renta_media_hogar": 38396.37
+    },
+    "Apóstol Santiago": {
+      "densidad_hab_ha": 132.9765165,
+      "distrito": "Hortaleza",
+      "poblacion": 16025.0,
+      "edad_media": 45.92160081,
+      "tamano_medio_hogar": 2.617214604,
+      "pct_estudios_superiores": 3583.0,
+      "tasa_natalidad": 6.778143684,
+      "renta_media_hogar": 44215.68
+    },
+    "Valdebebas-Valdefuentes": {
+      "densidad_hab_ha": 44.53900959,
+      "distrito": "Hortaleza",
+      "poblacion": 75829.0,
+      "edad_media": 36.05711628,
+      "tamano_medio_hogar": 2.87194595,
+      "pct_estudios_superiores": 26618.0,
+      "tasa_natalidad": 12.8048352,
+      "renta_media_hogar": 65773.82
+    },
+    "Villaverde Alto - Casco Histórico de Villaverde": {
+      "densidad_hab_ha": 56.23324976,
+      "distrito": "Villaverde",
+      "poblacion": 52036.0,
+      "edad_media": 41.94753909,
+      "tamano_medio_hogar": 2.863833181,
+      "pct_estudios_superiores": 3923.0,
+      "tasa_natalidad": 8.360266305,
+      "renta_media_hogar": 30690.88
+    },
+    "San Cristóbal": {
+      "densidad_hab_ha": 184.0,
+      "distrito": "Villaverde",
+      "poblacion": 19918.0,
+      "edad_media": 37.57127716,
+      "tamano_medio_hogar": 3.400612723,
+      "pct_estudios_superiores": 954.0,
+      "tasa_natalidad": 12.50691754,
+      "renta_media_hogar": 25584.1
+    },
+    "Butarque": {
+      "densidad_hab_ha": 36.45517999,
+      "distrito": "Villaverde",
+      "poblacion": 23242.0,
+      "edad_media": 37.69664804,
+      "tamano_medio_hogar": 2.841269841,
+      "pct_estudios_superiores": 2661.0,
+      "tasa_natalidad": 7.919251104,
+      "renta_media_hogar": 36568.94
+    },
+    "Los Rosales": {
+      "densidad_hab_ha": 260.8230025,
+      "distrito": "Villaverde",
+      "poblacion": 40185.0,
+      "edad_media": 43.31015436,
+      "tamano_medio_hogar": 2.860399683,
+      "pct_estudios_superiores": 3786.0,
+      "tasa_natalidad": 6.016318942,
+      "renta_media_hogar": 34021.71
+    },
+    "Ángeles": {
+      "densidad_hab_ha": 195.3288896,
+      "distrito": "Villaverde",
+      "poblacion": 37802.0,
+      "edad_media": 45.28585601,
+      "tamano_medio_hogar": 2.615926058,
+      "pct_estudios_superiores": 4433.0,
+      "tasa_natalidad": 8.545099134,
+      "renta_media_hogar": 33643.11
+    },
+    "Casco Histórico de Vallecas": {
+      "densidad_hab_ha": 10.14126781,
+      "distrito": "Villa de Vallecas",
+      "poblacion": 43654.0,
+      "edad_media": 42.06778773,
+      "tamano_medio_hogar": 2.678917815,
+      "pct_estudios_superiores": 3226.0,
+      "tasa_natalidad": 7.378551231,
+      "renta_media_hogar": 30031.93
+    },
+    "Santa Eugenia": {
+      "densidad_hab_ha": 116.2628593,
+      "distrito": "Villa de Vallecas",
+      "poblacion": 24185.0,
+      "edad_media": 47.38062728,
+      "tamano_medio_hogar": 2.605995256,
+      "pct_estudios_superiores": 3712.0,
+      "tasa_natalidad": 5.2035634,
+      "renta_media_hogar": 42325.14
+    },
+    "Ensanche de Vallecas": {
+      "densidad_hab_ha": 92.53914936,
+      "distrito": "Villa de Vallecas",
+      "poblacion": 58680.0,
+      "edad_media": 35.69713447,
+      "tamano_medio_hogar": 2.527213026,
+      "pct_estudios_superiores": 11925.0,
+      "tasa_natalidad": 10.98790599,
+      "renta_media_hogar": 39594.48
+    },
+    "Casco Histórico de Vicálvaro": {
+      "densidad_hab_ha": 17.70896335,
+      "distrito": "Vicálvaro",
+      "poblacion": 38064.0,
+      "edad_media": 43.88000432,
+      "tamano_medio_hogar": 2.629492826,
+      "pct_estudios_superiores": 3352.0,
+      "tasa_natalidad": 7.499620883,
+      "renta_media_hogar": 30223.98
+    },
+    "Valdebernardo": {
+      "densidad_hab_ha": 69.25364956,
+      "distrito": "Vicálvaro",
+      "poblacion": 17695.0,
+      "edad_media": 44.14935285,
+      "tamano_medio_hogar": 2.834962346,
+      "pct_estudios_superiores": 3389.0,
+      "tasa_natalidad": 4.606984416,
+      "renta_media_hogar": 45297.2
+    },
+    "Valderrivas": {
+      "densidad_hab_ha": 279.5708955,
+      "distrito": "Vicálvaro",
+      "poblacion": 17982.0,
+      "edad_media": 38.79925006,
+      "tamano_medio_hogar": 2.7862155,
+      "pct_estudios_superiores": 3536.0,
+      "tasa_natalidad": 5.05220613,
+      "renta_media_hogar": 47528.05
+    },
+    "El Cañaveral": {
+      "densidad_hab_ha": 20.32474963,
+      "distrito": "Vicálvaro",
+      "poblacion": 21492.0,
+      "edad_media": 32.85287617,
+      "tamano_medio_hogar": 2.564205817,
+      "pct_estudios_superiores": 4873.0,
+      "tasa_natalidad": 28.69706087,
+      "renta_media_hogar": 46640.53
+    },
+    "Simancas": {
+      "densidad_hab_ha": 135.7905373,
+      "distrito": "San Blas-Canillejas",
+      "poblacion": 30910.0,
+      "edad_media": 42.69782479,
+      "tamano_medio_hogar": 2.56904336,
+      "pct_estudios_superiores": 5527.0,
+      "tasa_natalidad": 7.195831848,
+      "renta_media_hogar": 37484.9
+    },
+    "Hellín": {
+      "densidad_hab_ha": 186.9415183,
+      "distrito": "San Blas-Canillejas",
+      "poblacion": 10293.0,
+      "edad_media": 44.28193678,
+      "tamano_medio_hogar": 2.611373166,
+      "pct_estudios_superiores": 997.0,
+      "tasa_natalidad": 8.299180328,
+      "renta_media_hogar": 29615.85
+    },
+    "Amposta": {
+      "densidad_hab_ha": 282.0097245,
+      "distrito": "San Blas-Canillejas",
+      "poblacion": 10440.0,
+      "edad_media": 42.34008616,
+      "tamano_medio_hogar": 2.68493528,
+      "pct_estudios_superiores": 704.0,
+      "tasa_natalidad": 8.900662252,
+      "renta_media_hogar": 27218.54
+    },
+    "Arcos": {
+      "densidad_hab_ha": 204.4207784,
+      "distrito": "San Blas-Canillejas",
+      "poblacion": 26681.0,
+      "edad_media": 43.197793,
+      "tamano_medio_hogar": 2.72812208,
+      "pct_estudios_superiores": 3426.0,
+      "tasa_natalidad": 7.514428477,
+      "renta_media_hogar": 37149.46
+    },
+    "Rosas": {
+      "densidad_hab_ha": 33.14473189,
+      "distrito": "San Blas-Canillejas",
+      "poblacion": 30813.0,
+      "edad_media": 44.53006032,
+      "tamano_medio_hogar": 2.729992918,
+      "pct_estudios_superiores": 6598.0,
+      "tasa_natalidad": 4.416373054,
+      "renta_media_hogar": 51183.11
+    },
+    "Rejas": {
+      "densidad_hab_ha": 37.22910062,
+      "distrito": "San Blas-Canillejas",
+      "poblacion": 18673.0,
+      "edad_media": 40.20702352,
+      "tamano_medio_hogar": 2.471610975,
+      "pct_estudios_superiores": 4808.0,
+      "tasa_natalidad": 8.315774687,
+      "renta_media_hogar": 44800.99
+    },
+    "Canillejas": {
+      "densidad_hab_ha": 192.0322964,
+      "distrito": "San Blas-Canillejas",
+      "poblacion": 30681.0,
+      "edad_media": 45.67102495,
+      "tamano_medio_hogar": 2.593365668,
+      "pct_estudios_superiores": 4400.0,
+      "tasa_natalidad": 6.134553466,
+      "renta_media_hogar": 37262.42
+    },
+    "El Salvador": {
+      "densidad_hab_ha": 61.16164034,
+      "distrito": "San Blas-Canillejas",
+      "poblacion": 11499.0,
+      "edad_media": 47.25371049,
+      "tamano_medio_hogar": 2.552707823,
+      "pct_estudios_superiores": 3764.0,
+      "tasa_natalidad": 6.179378531,
+      "renta_media_hogar": 62547.03
+    },
+    "Alameda de Osuna": {
+      "densidad_hab_ha": 98.75941515,
+      "distrito": "Barajas",
+      "poblacion": 20061.0,
+      "edad_media": 46.59438994,
+      "tamano_medio_hogar": 2.601780338,
+      "pct_estudios_superiores": 6276.0,
+      "tasa_natalidad": 5.510616785,
+      "renta_media_hogar": 60255.0
+    },
+    "Aeropuerto": {
+      "densidad_hab_ha": 0.661050602,
+      "distrito": "Barajas",
+      "poblacion": 1961.0,
+      "edad_media": 42.31375064,
+      "tamano_medio_hogar": 2.71448468,
+      "pct_estudios_superiores": 176.0,
+      "tasa_natalidad": 7.790184368,
+      "renta_media_hogar": 30541.0
+    },
+    "Casco Histórico de Barajas": {
+      "densidad_hab_ha": 150.2184201,
+      "distrito": "Barajas",
+      "poblacion": 8253.0,
+      "edad_media": 45.13593443,
+      "tamano_medio_hogar": 2.287042591,
+      "pct_estudios_superiores": 1093.0,
+      "tasa_natalidad": 6.795922447,
+      "renta_media_hogar": 35398.46
+    },
+    "Timón": {
+      "densidad_hab_ha": 26.07535845,
+      "distrito": "Barajas",
+      "poblacion": 12512.0,
+      "edad_media": 40.42096774,
+      "tamano_medio_hogar": 2.639982968,
+      "pct_estudios_superiores": 2776.0,
+      "tasa_natalidad": 7.934884862,
+      "renta_media_hogar": 47815.93
+    },
+    "Corralejos": {
+      "densidad_hab_ha": 16.59069021,
+      "distrito": "Barajas",
+      "poblacion": 7752.0,
+      "edad_media": 39.92573747,
+      "tamano_medio_hogar": 2.81983291,
+      "pct_estudios_superiores": 2774.0,
+      "tasa_natalidad": 5.328481383,
+      "renta_media_hogar": 76730.99
+    }
+  }
+}
