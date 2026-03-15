@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "generated_at": "2026-03-15T08:25:51.887128Z",
+    "generated_at": "2026-03-15T09:19:17.842460Z",
     "version": "1.0",
     "source": "Termómetro Inmobiliario Madrid"
   },
   "market_score": {
-    "score": 33.4,
+    "score": 36.4,
     "label": "BAJISTA",
     "emoji": "🔴",
     "description": "El mercado muestra señales de debilitamiento.",
@@ -135,8 +135,8 @@
           "week": "2026-08",
           "week_start": "2026-02-23",
           "median_days": 42.0,
-          "avg_days": 36.2,
-          "sold_count": 693
+          "avg_days": 33.5,
+          "sold_count": 893
         }
       ],
       "current": 42.0,
@@ -200,15 +200,15 @@
           "week": "2026-10",
           "week_start": "2026-03-09",
           "new_count": 1691,
-          "sold_count": 693,
-          "ratio": 2.44,
+          "sold_count": 893,
+          "ratio": 1.89,
           "capped": false
         }
       ],
-      "current": 2.44,
+      "current": 1.89,
       "previous": 2.52,
-      "change": -0.08,
-      "trend": "up"
+      "change": -0.63,
+      "trend": "stable"
     },
     "inventory": {
       "name": "Inventario Activo",
@@ -236,21 +236,21 @@
         },
         {
           "date": "2026-03-02",
-          "count": 20523
+          "count": 20323
         },
         {
           "date": "2026-03-09",
-          "count": 22515
+          "count": 22315
         },
         {
           "date": "2026-03-15",
-          "count": 24116
+          "count": 23916
         }
       ],
-      "current": 24116,
-      "previous": 22515,
+      "current": 23916,
+      "previous": 22315,
       "change": 1601,
-      "change_pct": 7.1,
+      "change_pct": 7.2,
       "trend": "up"
     },
     "rotation": {
@@ -267,34 +267,34 @@
         {
           "week_start": "2026-02-22",
           "week_end": "2026-03-01",
-          "sold": 693,
-          "active": 20491,
-          "rate": 3.4
+          "sold": 893,
+          "active": 20291,
+          "rate": 4.4
         },
         {
           "week_start": "2026-03-01",
           "week_end": "2026-03-08",
           "sold": 0,
-          "active": 22425,
+          "active": 22225,
           "rate": 0.0
         },
         {
           "week_start": "2026-03-08",
           "week_end": "2026-03-15",
           "sold": 0,
-          "active": 24116,
+          "active": 23916,
           "rate": 0.0
         }
       ],
-      "current": 6.7,
-      "previous": 7.2,
+      "current": 7.7,
+      "previous": 8.2,
       "change": -0.5,
       "trend": "stable"
     },
     "dispersion": {
       "name": "Dispersión de Precios",
       "unit": "%",
-      "current": 79.3,
+      "current": 78.9,
       "trend": "up"
     },
     "affordability": {
@@ -312,11 +312,11 @@
       "current": null,
       "trend": "stable",
       "change": 0.0,
-      "total_active": 24117
+      "total_active": 23917
     },
     "rental_yield": {
       "name": "Rentabilidad Bruta Alquiler",
-      "current": 3.73,
+      "current": 3.74,
       "unit": "%",
       "trend": "stable",
       "change": 0,
@@ -326,20 +326,20 @@
           "distrito": "Usera",
           "barrio": "12 de Octubre-Orcasur",
           "median_rent": 2150.0,
-          "median_sale_price": 309817.0,
-          "yield_pct": 8.33,
+          "median_sale_price": 312552.0,
+          "yield_pct": 8.25,
           "rental_listing_count": 3,
-          "sale_listing_count": 101,
+          "sale_listing_count": 98,
           "date_recorded": "2026-03-15"
         },
         {
           "distrito": "San Blas-Canillejas",
           "barrio": "Amposta",
           "median_rent": 1265.0,
-          "median_sale_price": 198222.0,
-          "yield_pct": 7.66,
+          "median_sale_price": 198781.0,
+          "yield_pct": 7.64,
           "rental_listing_count": 3,
-          "sale_listing_count": 91,
+          "sale_listing_count": 90,
           "date_recorded": "2026-03-15"
         },
         {
@@ -363,20 +363,20 @@
           "date_recorded": "2026-03-15"
         },
         {
-          "distrito": "Puente de Vallecas",
-          "barrio": "Numancia",
-          "median_rent": 1250.0,
-          "median_sale_price": 228051.0,
-          "yield_pct": 6.58,
-          "rental_listing_count": 30,
-          "sale_listing_count": 221,
+          "distrito": "Vicálvaro",
+          "barrio": "Casco Histórico de Vicálvaro",
+          "median_rent": 1375.0,
+          "median_sale_price": 252823.0,
+          "yield_pct": 6.53,
+          "rental_listing_count": 8,
+          "sale_listing_count": 66,
           "date_recorded": "2026-03-15"
         }
       ]
     },
     "notarial_gap": {
       "name": "Sobreprecio vs Notarial",
-      "current": 25.4,
+      "current": 25.3,
       "unit": "%"
     }
   },
@@ -449,72 +449,72 @@
     {
       "name": "Salamanca",
       "median_price": 1450000,
-      "price_per_sqm": 11250,
-      "active_count": 2939,
+      "price_per_sqm": 11269,
+      "active_count": 2930,
       "days_to_sell": 6.0
     },
     {
       "name": "Chamberí",
-      "median_price": 1120000,
+      "median_price": 1100000,
       "price_per_sqm": 9239,
-      "active_count": 1539,
+      "active_count": 1531,
       "days_to_sell": 6.0
     },
     {
       "name": "Chamartín",
       "median_price": 995000,
-      "price_per_sqm": 8350,
-      "active_count": 1015,
+      "price_per_sqm": 8333,
+      "active_count": 1009,
       "days_to_sell": 6.0
     },
     {
       "name": "Moncloa-Aravaca",
       "median_price": 995000,
       "price_per_sqm": 6429,
-      "active_count": 888,
+      "active_count": 884,
       "days_to_sell": 6.0
     },
     {
       "name": "Retiro",
-      "median_price": 849999,
-      "price_per_sqm": 7927,
-      "active_count": 1295,
+      "median_price": 825000,
+      "price_per_sqm": 7898,
+      "active_count": 1246,
       "days_to_sell": 43.0
     },
     {
       "name": "Centro",
       "median_price": 650000,
-      "price_per_sqm": 7791,
-      "active_count": 2720,
+      "price_per_sqm": 7781,
+      "active_count": 2709,
       "days_to_sell": 6.0
     },
     {
       "name": "Fuencarral-El Pardo",
       "median_price": 630000,
-      "price_per_sqm": 5600,
-      "active_count": 868,
+      "price_per_sqm": 5606,
+      "active_count": 863,
       "days_to_sell": 6.0
     },
     {
       "name": "Hortaleza",
       "median_price": 550000,
-      "price_per_sqm": 5513,
-      "active_count": 865,
+      "price_per_sqm": 5512,
+      "active_count": 862,
       "days_to_sell": 6.0
     },
     {
       "name": "Arganzuela",
       "median_price": 525000,
       "price_per_sqm": 6412,
-      "active_count": 855,
+      "active_count": 849,
       "days_to_sell": 9.0
     },
     {
       "name": "Tetuán",
-      "median_price": 457000,
-      "price_per_sqm": 6073,
-      "active_count": 1593,
-      "days_to_sell": 7.0
+      "median_price": 457500,
+      "price_per_sqm": 6074,
+      "active_count": 1574,
+      "days_to_sell": 8.5
     },
     {
       "name": "Barajas",
@@ -526,86 +526,86 @@
     {
       "name": "Ciudad Lineal",
       "median_price": 389000,
-      "price_per_sqm": 5122,
-      "active_count": 1251,
+      "price_per_sqm": 5128,
+      "active_count": 1243,
       "days_to_sell": 6.0
     },
     {
       "name": "Vicálvaro",
       "median_price": 360000,
-      "price_per_sqm": 3923,
-      "active_count": 699,
-      "days_to_sell": 3.0
+      "price_per_sqm": 3924,
+      "active_count": 689,
+      "days_to_sell": 23.0
     },
     {
       "name": "Moratalaz",
-      "median_price": 339500,
+      "median_price": 339000,
       "price_per_sqm": 4473,
-      "active_count": 275,
+      "active_count": 273,
       "days_to_sell": 6.0
     },
     {
       "name": "San Blas-Canillejas",
       "median_price": 330000,
-      "price_per_sqm": 4029,
-      "active_count": 1129,
-      "days_to_sell": 3.0
+      "price_per_sqm": 4032,
+      "active_count": 1118,
+      "days_to_sell": 3.5
     },
     {
       "name": "Villa de Vallecas",
       "median_price": 280000,
-      "price_per_sqm": 3710,
-      "active_count": 723,
-      "days_to_sell": 3.0
+      "price_per_sqm": 3708,
+      "active_count": 715,
+      "days_to_sell": 7.0
     },
     {
       "name": "Latina",
       "median_price": 275000,
-      "price_per_sqm": 3890,
-      "active_count": 908,
+      "price_per_sqm": 3888,
+      "active_count": 902,
       "days_to_sell": 6.0
     },
     {
       "name": "Usera",
-      "median_price": 272000,
-      "price_per_sqm": 3607,
-      "active_count": 917,
-      "days_to_sell": 32.0
+      "median_price": 274000,
+      "price_per_sqm": 3606,
+      "active_count": 905,
+      "days_to_sell": 38.0
     },
     {
       "name": "Carabanchel",
       "median_price": 265000,
-      "price_per_sqm": 3696,
-      "active_count": 1306,
+      "price_per_sqm": 3700,
+      "active_count": 1298,
       "days_to_sell": 6.0
     },
     {
       "name": "Puente de Vallecas",
-      "median_price": 221000,
+      "median_price": 222000,
       "price_per_sqm": 3325,
-      "active_count": 1197,
+      "active_count": 1191,
       "days_to_sell": 6.0
     },
     {
       "name": "Villaverde",
-      "median_price": 215500,
-      "price_per_sqm": 2993,
-      "active_count": 964,
-      "days_to_sell": 3.0
+      "median_price": 215000,
+      "price_per_sqm": 2989,
+      "active_count": 955,
+      "days_to_sell": 5.0
     }
   ],
   "rental_yields": [
     {
       "barrio": "12 de Octubre-Orcasur",
       "distrito": "Usera",
-      "gross_yield": 8.33,
+      "gross_yield": 8.25,
       "rent_median": 2150.0,
       "sale_price_sqm": null
     },
     {
       "barrio": "Amposta",
       "distrito": "San Blas-Canillejas",
-      "gross_yield": 7.66,
+      "gross_yield": 7.64,
       "rent_median": 1265.0,
       "sale_price_sqm": null
     },
@@ -624,13 +624,6 @@
       "sale_price_sqm": null
     },
     {
-      "barrio": "Numancia",
-      "distrito": "Puente de Vallecas",
-      "gross_yield": 6.58,
-      "rent_median": 1250.0,
-      "sale_price_sqm": null
-    },
-    {
       "barrio": "Casco Histórico de Vicálvaro",
       "distrito": "Vicálvaro",
       "gross_yield": 6.53,
@@ -640,7 +633,7 @@
     {
       "barrio": "Pradolongo",
       "distrito": "Usera",
-      "gross_yield": 6.49,
+      "gross_yield": 6.51,
       "rent_median": 1375.0,
       "sale_price_sqm": null
     },
@@ -659,6 +652,13 @@
       "sale_price_sqm": null
     },
     {
+      "barrio": "Numancia",
+      "distrito": "Puente de Vallecas",
+      "gross_yield": 6.45,
+      "rent_median": 1225.0,
+      "sale_price_sqm": null
+    },
+    {
       "barrio": "Aeropuerto",
       "distrito": "Barajas",
       "gross_yield": 6.28,
@@ -673,23 +673,23 @@
       "sale_price_sqm": null
     },
     {
-      "barrio": "Villaverde Alto",
-      "distrito": "Villaverde",
-      "gross_yield": 5.95,
-      "rent_median": 1150.0,
+      "barrio": "Abrantes",
+      "distrito": "Carabanchel",
+      "gross_yield": 6.0,
+      "rent_median": 1315.0,
       "sale_price_sqm": null
     },
     {
-      "barrio": "Abrantes",
-      "distrito": "Carabanchel",
-      "gross_yield": 5.85,
-      "rent_median": 1282.0,
+      "barrio": "Villaverde Alto",
+      "distrito": "Villaverde",
+      "gross_yield": 5.94,
+      "rent_median": 1150.0,
       "sale_price_sqm": null
     },
     {
       "barrio": "Arcos",
       "distrito": "San Blas-Canillejas",
-      "gross_yield": 5.85,
+      "gross_yield": 5.86,
       "rent_median": 1500.0,
       "sale_price_sqm": null
     },
@@ -2095,13 +2095,6 @@
   },
   "notarial_gap": [
     {
-      "distrito": "Retiro",
-      "notarial_year": 2025,
-      "notarial_price": 5664,
-      "idealista_price": 8637,
-      "gap_pct": 52.5
-    },
-    {
       "distrito": "Centro",
       "notarial_year": 2025,
       "notarial_price": 5349,
@@ -2109,18 +2102,25 @@
       "gap_pct": 52.0
     },
     {
+      "distrito": "Retiro",
+      "notarial_year": 2025,
+      "notarial_price": 5664,
+      "idealista_price": 8509,
+      "gap_pct": 50.2
+    },
+    {
       "distrito": "Ciudad Lineal",
       "notarial_year": 2025,
       "notarial_price": 3608,
-      "idealista_price": 5395,
-      "gap_pct": 49.5
+      "idealista_price": 5401,
+      "gap_pct": 49.7
     },
     {
       "distrito": "Carabanchel",
       "notarial_year": 2025,
       "notarial_price": 2741,
-      "idealista_price": 3809,
-      "gap_pct": 39.0
+      "idealista_price": 3812,
+      "gap_pct": 39.1
     },
     {
       "distrito": "Puente de Vallecas",
@@ -2137,81 +2137,81 @@
       "gap_pct": 33.0
     },
     {
-      "distrito": "Villaverde",
-      "notarial_year": 2025,
-      "notarial_price": 2307,
-      "idealista_price": 3025,
-      "gap_pct": 31.1
-    },
-    {
       "distrito": "San Blas-Canillejas",
       "notarial_year": 2025,
       "notarial_price": 3188,
-      "idealista_price": 4173,
-      "gap_pct": 30.9
+      "idealista_price": 4176,
+      "gap_pct": 31.0
+    },
+    {
+      "distrito": "Villaverde",
+      "notarial_year": 2025,
+      "notarial_price": 2307,
+      "idealista_price": 3021,
+      "gap_pct": 31.0
     },
     {
       "distrito": "Moratalaz",
       "notarial_year": 2025,
       "notarial_price": 3499,
-      "idealista_price": 4515,
+      "idealista_price": 4514,
       "gap_pct": 29.0
     },
     {
       "distrito": "Chamartín",
       "notarial_year": 2025,
       "notarial_price": 6840,
-      "idealista_price": 8712,
-      "gap_pct": 27.4
+      "idealista_price": 8706,
+      "gap_pct": 27.3
     },
     {
       "distrito": "Fuencarral-El Pardo",
       "notarial_year": 2025,
       "notarial_price": 4502,
-      "idealista_price": 5693,
+      "idealista_price": 5697,
       "gap_pct": 26.5
     },
     {
       "distrito": "Hortaleza",
       "notarial_year": 2025,
       "notarial_price": 4484,
-      "idealista_price": 5624,
-      "gap_pct": 25.4
+      "idealista_price": 5625,
+      "gap_pct": 25.5
     },
     {
       "distrito": "Moncloa-Aravaca",
       "notarial_year": 2025,
       "notarial_price": 5314,
-      "idealista_price": 6638,
+      "idealista_price": 6635,
       "gap_pct": 24.9
     },
     {
       "distrito": "Arganzuela",
       "notarial_year": 2025,
       "notarial_price": 5228,
-      "idealista_price": 6486,
+      "idealista_price": 6487,
       "gap_pct": 24.1
     },
     {
       "distrito": "Usera",
       "notarial_year": 2025,
       "notarial_price": 3015,
-      "idealista_price": 3705,
-      "gap_pct": 22.9
+      "idealista_price": 3709,
+      "gap_pct": 23.0
     },
     {
       "distrito": "Vicálvaro",
       "notarial_year": 2025,
       "notarial_price": 3232,
-      "idealista_price": 3907,
-      "gap_pct": 20.9
+      "idealista_price": 3904,
+      "gap_pct": 20.8
     },
     {
       "distrito": "Tetuán",
       "notarial_year": 2025,
       "notarial_price": 5592,
-      "idealista_price": 6370,
-      "gap_pct": 13.9
+      "idealista_price": 6374,
+      "gap_pct": 14.0
     },
     {
       "distrito": "Barajas",
@@ -2224,31 +2224,31 @@
       "distrito": "Chamberí",
       "notarial_year": 2025,
       "notarial_price": 8793,
-      "idealista_price": 9615,
+      "idealista_price": 9613,
       "gap_pct": 9.3
     },
     {
       "distrito": "Salamanca",
       "notarial_year": 2025,
       "notarial_price": 11891,
-      "idealista_price": 11597,
-      "gap_pct": -2.5
+      "idealista_price": 11609,
+      "gap_pct": -2.4
     },
     {
       "distrito": "Latina",
       "notarial_year": 2025,
       "notarial_price": 5552,
-      "idealista_price": 4035,
-      "gap_pct": -27.3
+      "idealista_price": 4033,
+      "gap_pct": -27.4
     }
   ],
   "barrios": [
     {
       "barrio": "Acacias",
       "distrito": "Arganzuela",
-      "active_count": 133,
-      "median_price": 510784,
-      "price_per_sqm": 6550,
+      "active_count": 130,
+      "median_price": 510818,
+      "price_per_sqm": 6552,
       "avg_size_sqm": 79.5,
       "avg_rooms": 2.3,
       "avg_days_market": 34,
@@ -2270,14 +2270,14 @@
     {
       "barrio": "Delicias",
       "distrito": "Arganzuela",
-      "active_count": 126,
-      "median_price": 545941,
-      "price_per_sqm": 6377,
-      "avg_size_sqm": 89.5,
+      "active_count": 125,
+      "median_price": 547268,
+      "price_per_sqm": 6380,
+      "avg_size_sqm": 89.7,
       "avg_rooms": 2.5,
       "avg_days_market": 27,
-      "gross_yield": 3.4,
-      "rent_median": 1548.0
+      "gross_yield": 3.45,
+      "rent_median": 1575.0
     },
     {
       "barrio": "Imperial",
@@ -2378,37 +2378,37 @@
     {
       "barrio": "Abrantes",
       "distrito": "Carabanchel",
-      "active_count": 134,
-      "median_price": 263194,
-      "price_per_sqm": 3401,
-      "avg_size_sqm": 78.8,
+      "active_count": 133,
+      "median_price": 262992,
+      "price_per_sqm": 3404,
+      "avg_size_sqm": 78.7,
       "avg_rooms": 2.8,
       "avg_days_market": 30,
-      "gross_yield": 5.85,
-      "rent_median": 1282.0
+      "gross_yield": 6.0,
+      "rent_median": 1315.0
     },
     {
       "barrio": "Buena Vista",
       "distrito": "Carabanchel",
-      "active_count": 160,
-      "median_price": 269088,
-      "price_per_sqm": 3545,
-      "avg_size_sqm": 78.2,
+      "active_count": 159,
+      "median_price": 268516,
+      "price_per_sqm": 3548,
+      "avg_size_sqm": 78.0,
       "avg_rooms": 2.4,
       "avg_days_market": 31,
-      "gross_yield": 5.13,
+      "gross_yield": 5.14,
       "rent_median": 1150.0
     },
     {
       "barrio": "Comillas",
       "distrito": "Carabanchel",
-      "active_count": 88,
-      "median_price": 340649,
-      "price_per_sqm": 4835,
-      "avg_size_sqm": 73.6,
+      "active_count": 87,
+      "median_price": 341357,
+      "price_per_sqm": 4830,
+      "avg_size_sqm": 73.8,
       "avg_rooms": 2.4,
       "avg_days_market": 28,
-      "gross_yield": 4.58,
+      "gross_yield": 4.57,
       "rent_median": 1300.0
     },
     {
@@ -2438,10 +2438,10 @@
     {
       "barrio": "Puerta Bonita",
       "distrito": "Carabanchel",
-      "active_count": 218,
-      "median_price": 271819,
-      "price_per_sqm": 3470,
-      "avg_size_sqm": 78.8,
+      "active_count": 217,
+      "median_price": 271896,
+      "price_per_sqm": 3475,
+      "avg_size_sqm": 78.7,
       "avg_rooms": 2.6,
       "avg_days_market": 28,
       "gross_yield": 5.03,
@@ -2450,24 +2450,24 @@
     {
       "barrio": "San Isidro",
       "distrito": "Carabanchel",
-      "active_count": 182,
-      "median_price": 308859,
-      "price_per_sqm": 3874,
+      "active_count": 181,
+      "median_price": 309322,
+      "price_per_sqm": 3879,
       "avg_size_sqm": 81.2,
       "avg_rooms": 2.5,
       "avg_days_market": 33,
-      "gross_yield": 5.05,
+      "gross_yield": 5.04,
       "rent_median": 1300.0
     },
     {
       "barrio": "Vista Alegre",
       "distrito": "Carabanchel",
-      "active_count": 184,
-      "median_price": 294049,
-      "price_per_sqm": 3723,
+      "active_count": 183,
+      "median_price": 293524,
+      "price_per_sqm": 3715,
       "avg_size_sqm": 80.8,
       "avg_rooms": 2.7,
-      "avg_days_market": 32,
+      "avg_days_market": 33,
       "gross_yield": 5.31,
       "rent_median": 1300.0
     },
@@ -2480,20 +2480,20 @@
       "avg_size_sqm": 129.6,
       "avg_rooms": 2.5,
       "avg_days_market": 38,
-      "gross_yield": 2.04,
-      "rent_median": 2360.0
+      "gross_yield": 2.08,
+      "rent_median": 2410.0
     },
     {
       "barrio": "Huertas-Cortes",
       "distrito": "Centro",
-      "active_count": 295,
-      "median_price": 1176170,
-      "price_per_sqm": 8966,
-      "avg_size_sqm": 130.3,
+      "active_count": 293,
+      "median_price": 1175329,
+      "price_per_sqm": 8970,
+      "avg_size_sqm": 130.1,
       "avg_rooms": 2.5,
       "avg_days_market": 34,
-      "gross_yield": 2.3,
-      "rent_median": 2250.0
+      "gross_yield": 2.27,
+      "rent_median": 2225.0
     },
     {
       "barrio": "Lavapiés-Embajadores",
@@ -2522,34 +2522,34 @@
     {
       "barrio": "Palacio",
       "distrito": "Centro",
-      "active_count": 388,
-      "median_price": 849880,
-      "price_per_sqm": 7854,
-      "avg_size_sqm": 107.9,
+      "active_count": 387,
+      "median_price": 851056,
+      "price_per_sqm": 7850,
+      "avg_size_sqm": 108.0,
       "avg_rooms": 2.3,
       "avg_days_market": 35,
-      "gross_yield": 2.22,
-      "rent_median": 1575.0
+      "gross_yield": 2.18,
+      "rent_median": 1545.0
     },
     {
       "barrio": "Sol",
       "distrito": "Centro",
-      "active_count": 232,
-      "median_price": 1110860,
-      "price_per_sqm": 15877,
-      "avg_size_sqm": 129.8,
+      "active_count": 224,
+      "median_price": 1128855,
+      "price_per_sqm": 16165,
+      "avg_size_sqm": 131.7,
       "avg_rooms": 2.9,
-      "avg_days_market": 43,
-      "gross_yield": 2.14,
+      "avg_days_market": 44,
+      "gross_yield": 2.1,
       "rent_median": 1980.0
     },
     {
       "barrio": "Bernabéu-Hispanoamérica",
       "distrito": "Chamartín",
-      "active_count": 197,
-      "median_price": 1284288,
-      "price_per_sqm": 8637,
-      "avg_size_sqm": 150.5,
+      "active_count": 196,
+      "median_price": 1287702,
+      "price_per_sqm": 8654,
+      "avg_size_sqm": 150.6,
       "avg_rooms": 3.1,
       "avg_days_market": 33,
       "gross_yield": 2.17,
@@ -2564,8 +2564,8 @@
       "avg_size_sqm": 129.6,
       "avg_rooms": 2.8,
       "avg_days_market": 34,
-      "gross_yield": 2.42,
-      "rent_median": 1940.0
+      "gross_yield": 2.46,
+      "rent_median": 1972.0
     },
     {
       "barrio": "Ciudad Jardín",
@@ -2582,13 +2582,13 @@
     {
       "barrio": "El Viso",
       "distrito": "Chamartín",
-      "active_count": 207,
-      "median_price": 3045452,
-      "price_per_sqm": 202605,
-      "avg_size_sqm": 250.2,
+      "active_count": 202,
+      "median_price": 3037469,
+      "price_per_sqm": 207359,
+      "avg_size_sqm": 248.6,
       "avg_rooms": 3.9,
-      "avg_days_market": 37,
-      "gross_yield": 1.04,
+      "avg_days_market": 38,
+      "gross_yield": 1.05,
       "rent_median": 2650.0
     },
     {
@@ -2612,19 +2612,19 @@
       "avg_size_sqm": 102.5,
       "avg_rooms": 2.4,
       "avg_days_market": 34,
-      "gross_yield": 2.81,
-      "rent_median": 1770.0
+      "gross_yield": 2.74,
+      "rent_median": 1725.0
     },
     {
       "barrio": "Almagro",
       "distrito": "Chamberí",
-      "active_count": 365,
-      "median_price": 2429383,
-      "price_per_sqm": 11450,
-      "avg_size_sqm": 209.8,
+      "active_count": 361,
+      "median_price": 2440487,
+      "price_per_sqm": 11469,
+      "avg_size_sqm": 210.6,
       "avg_rooms": 3.2,
-      "avg_days_market": 36,
-      "gross_yield": 1.21,
+      "avg_days_market": 37,
+      "gross_yield": 1.2,
       "rent_median": 2450.0
     },
     {
@@ -2636,8 +2636,8 @@
       "avg_size_sqm": 105.5,
       "avg_rooms": 2.7,
       "avg_days_market": 36,
-      "gross_yield": 1.95,
-      "rent_median": 1525.0
+      "gross_yield": 2.03,
+      "rent_median": 1588.0
     },
     {
       "barrio": "Gaztambide",
@@ -2648,8 +2648,8 @@
       "avg_size_sqm": 121.8,
       "avg_rooms": 3.0,
       "avg_days_market": 32,
-      "gross_yield": 2.59,
-      "rent_median": 2150.0
+      "gross_yield": 2.78,
+      "rent_median": 2315.0
     },
     {
       "barrio": "Nuevos Ministerios-Ríos Rosas",
@@ -2678,13 +2678,13 @@
     {
       "barrio": "Vallehermoso",
       "distrito": "Chamberí",
-      "active_count": 137,
-      "median_price": 1180295,
-      "price_per_sqm": 8614,
-      "avg_size_sqm": 142.6,
+      "active_count": 134,
+      "median_price": 1174107,
+      "price_per_sqm": 8604,
+      "avg_size_sqm": 141.9,
       "avg_rooms": 3.4,
       "avg_days_market": 30,
-      "gross_yield": 2.24,
+      "gross_yield": 2.25,
       "rent_median": 2200.0
     },
     {
@@ -2738,49 +2738,49 @@
     {
       "barrio": "Pueblo Nuevo",
       "distrito": "Ciudad Lineal",
-      "active_count": 281,
-      "median_price": 330753,
-      "price_per_sqm": 4393,
-      "avg_size_sqm": 76.7,
+      "active_count": 277,
+      "median_price": 332170,
+      "price_per_sqm": 4399,
+      "avg_size_sqm": 77.0,
       "avg_rooms": 2.4,
-      "avg_days_market": 25,
-      "gross_yield": 4.35,
+      "avg_days_market": 26,
+      "gross_yield": 4.34,
       "rent_median": 1200.0
     },
     {
       "barrio": "Quintana",
       "distrito": "Ciudad Lineal",
-      "active_count": 125,
-      "median_price": 386669,
-      "price_per_sqm": 5266,
-      "avg_size_sqm": 74.7,
+      "active_count": 124,
+      "median_price": 386682,
+      "price_per_sqm": 5288,
+      "avg_size_sqm": 74.1,
       "avg_rooms": 2.4,
-      "avg_days_market": 28,
+      "avg_days_market": 29,
       "gross_yield": 4.27,
       "rent_median": 1375.0
     },
     {
       "barrio": "San Juan Bautista",
       "distrito": "Ciudad Lineal",
-      "active_count": 71,
-      "median_price": 931689,
-      "price_per_sqm": 6832,
-      "avg_size_sqm": 140.0,
+      "active_count": 70,
+      "median_price": 937670,
+      "price_per_sqm": 6853,
+      "avg_size_sqm": 140.6,
       "avg_rooms": 2.9,
       "avg_days_market": 36,
-      "gross_yield": 2.41,
+      "gross_yield": 2.4,
       "rent_median": 1875.0
     },
     {
       "barrio": "San Pascual",
       "distrito": "Ciudad Lineal",
-      "active_count": 79,
-      "median_price": 648508,
-      "price_per_sqm": 6351,
-      "avg_size_sqm": 103.9,
+      "active_count": 78,
+      "median_price": 645924,
+      "price_per_sqm": 6340,
+      "avg_size_sqm": 103.8,
       "avg_rooms": 2.7,
       "avg_days_market": 32,
-      "gross_yield": 2.59,
+      "gross_yield": 2.6,
       "rent_median": 1400.0
     },
     {
@@ -2792,8 +2792,8 @@
       "avg_size_sqm": 73.8,
       "avg_rooms": 2.4,
       "avg_days_market": 31,
-      "gross_yield": 4.47,
-      "rent_median": 1298.0
+      "gross_yield": 4.48,
+      "rent_median": 1300.0
     },
     {
       "barrio": "Arroyo del Fresno",
@@ -2822,13 +2822,13 @@
     {
       "barrio": "Fuentelarreina",
       "distrito": "Fuencarral-El Pardo",
-      "active_count": 32,
-      "median_price": 2076812,
-      "price_per_sqm": 5268,
-      "avg_size_sqm": 400.8,
-      "avg_rooms": 4.4,
+      "active_count": 31,
+      "median_price": 2063161,
+      "price_per_sqm": 5286,
+      "avg_size_sqm": 396.6,
+      "avg_rooms": 4.3,
       "avg_days_market": 44,
-      "gross_yield": 1.3,
+      "gross_yield": 1.31,
       "rent_median": 2250.0
     },
     {
@@ -2870,21 +2870,21 @@
     {
       "barrio": "Montecarmelo",
       "distrito": "Fuencarral-El Pardo",
-      "active_count": 58,
-      "median_price": 815966,
-      "price_per_sqm": 7164,
-      "avg_size_sqm": 120.5,
+      "active_count": 57,
+      "median_price": 814579,
+      "price_per_sqm": 7203,
+      "avg_size_sqm": 119.5,
       "avg_rooms": 2.6,
-      "avg_days_market": 30,
+      "avg_days_market": 31,
       "gross_yield": 2.65,
       "rent_median": 1800.0
     },
     {
       "barrio": "Peñagrande",
       "distrito": "Fuencarral-El Pardo",
-      "active_count": 176,
-      "median_price": 773171,
-      "price_per_sqm": 5630,
+      "active_count": 175,
+      "median_price": 773304,
+      "price_per_sqm": 5633,
       "avg_size_sqm": 149.7,
       "avg_rooms": 3.4,
       "avg_days_market": 35,
@@ -2894,13 +2894,13 @@
     {
       "barrio": "Pilar",
       "distrito": "Fuencarral-El Pardo",
-      "active_count": 157,
-      "median_price": 411580,
-      "price_per_sqm": 5453,
-      "avg_size_sqm": 76.2,
+      "active_count": 155,
+      "median_price": 413472,
+      "price_per_sqm": 5456,
+      "avg_size_sqm": 76.6,
       "avg_rooms": 2.4,
       "avg_days_market": 27,
-      "gross_yield": 3.57,
+      "gross_yield": 3.56,
       "rent_median": 1225.0
     },
     {
@@ -2930,13 +2930,13 @@
     {
       "barrio": "Canillas",
       "distrito": "Hortaleza",
-      "active_count": 154,
-      "median_price": 522065,
-      "price_per_sqm": 5086,
-      "avg_size_sqm": 105.2,
+      "active_count": 151,
+      "median_price": 523530,
+      "price_per_sqm": 5083,
+      "avg_size_sqm": 105.6,
       "avg_rooms": 2.8,
-      "avg_days_market": 25,
-      "gross_yield": 5.4,
+      "avg_days_market": 26,
+      "gross_yield": 5.39,
       "rent_median": 2350.0
     },
     {
@@ -2996,8 +2996,8 @@
       "avg_size_sqm": 179.9,
       "avg_rooms": 3.3,
       "avg_days_market": 36,
-      "gross_yield": 1.8,
-      "rent_median": 1532.0
+      "gross_yield": 1.79,
+      "rent_median": 1522.0
     },
     {
       "barrio": "Virgen del Cortijo-Manoteras",
@@ -3014,10 +3014,10 @@
     {
       "barrio": "Águilas",
       "distrito": "Latina",
-      "active_count": 139,
-      "median_price": 270757,
-      "price_per_sqm": 3714,
-      "avg_size_sqm": 74.0,
+      "active_count": 138,
+      "median_price": 270582,
+      "price_per_sqm": 3715,
+      "avg_size_sqm": 73.9,
       "avg_rooms": 2.6,
       "avg_days_market": 23,
       "gross_yield": 5.32,
@@ -3026,13 +3026,13 @@
     {
       "barrio": "Aluche",
       "distrito": "Latina",
-      "active_count": 165,
-      "median_price": 281290,
-      "price_per_sqm": 3702,
-      "avg_size_sqm": 76.7,
+      "active_count": 163,
+      "median_price": 281828,
+      "price_per_sqm": 3704,
+      "avg_size_sqm": 76.8,
       "avg_rooms": 2.7,
       "avg_days_market": 26,
-      "gross_yield": 5.12,
+      "gross_yield": 5.11,
       "rent_median": 1200.0
     },
     {
@@ -3086,25 +3086,25 @@
     {
       "barrio": "Puerta del Ángel",
       "distrito": "Latina",
-      "active_count": 229,
-      "median_price": 329079,
-      "price_per_sqm": 4568,
-      "avg_size_sqm": 72.8,
+      "active_count": 226,
+      "median_price": 329868,
+      "price_per_sqm": 4562,
+      "avg_size_sqm": 73.1,
       "avg_rooms": 2.5,
       "avg_days_market": 28,
-      "gross_yield": 4.74,
+      "gross_yield": 4.73,
       "rent_median": 1300.0
     },
     {
       "barrio": "Aravaca",
       "distrito": "Moncloa-Aravaca",
-      "active_count": 172,
-      "median_price": 1674586,
-      "price_per_sqm": 142314,
-      "avg_size_sqm": 276.0,
+      "active_count": 169,
+      "median_price": 1683928,
+      "price_per_sqm": 144717,
+      "avg_size_sqm": 277.9,
       "avg_rooms": 4.2,
       "avg_days_market": 38,
-      "gross_yield": 2.47,
+      "gross_yield": 2.46,
       "rent_median": 3450.0
     },
     {
@@ -3182,13 +3182,13 @@
     {
       "barrio": "Fontarrón",
       "distrito": "Moratalaz",
-      "active_count": 63,
-      "median_price": 339142,
-      "price_per_sqm": 4117,
-      "avg_size_sqm": 82.5,
+      "active_count": 62,
+      "median_price": 334935,
+      "price_per_sqm": 4115,
+      "avg_size_sqm": 81.5,
       "avg_rooms": 3.0,
       "avg_days_market": 28,
-      "gross_yield": 4.95,
+      "gross_yield": 5.02,
       "rent_median": 1400.0
     },
     {
@@ -3206,13 +3206,13 @@
     {
       "barrio": "Marroquina",
       "distrito": "Moratalaz",
-      "active_count": 53,
-      "median_price": 397768,
+      "active_count": 52,
+      "median_price": 396475,
       "price_per_sqm": 4977,
-      "avg_size_sqm": 81.8,
+      "avg_size_sqm": 81.6,
       "avg_rooms": 2.7,
-      "avg_days_market": 26,
-      "gross_yield": 4.37,
+      "avg_days_market": 25,
+      "gross_yield": 4.39,
       "rent_median": 1450.0
     },
     {
@@ -3254,10 +3254,10 @@
     {
       "barrio": "Entrevías",
       "distrito": "Puente de Vallecas",
-      "active_count": 125,
-      "median_price": 222056,
-      "price_per_sqm": 2781,
-      "avg_size_sqm": 81.8,
+      "active_count": 124,
+      "median_price": 222250,
+      "price_per_sqm": 2780,
+      "avg_size_sqm": 82.0,
       "avg_rooms": 2.8,
       "avg_days_market": 30,
       "gross_yield": 6.48,
@@ -3272,8 +3272,8 @@
       "avg_size_sqm": 69.0,
       "avg_rooms": 2.2,
       "avg_days_market": 30,
-      "gross_yield": 6.58,
-      "rent_median": 1250.0
+      "gross_yield": 6.45,
+      "rent_median": 1225.0
     },
     {
       "barrio": "Palomeras Bajas",
@@ -3314,10 +3314,10 @@
     {
       "barrio": "San Diego",
       "distrito": "Puente de Vallecas",
-      "active_count": 384,
-      "median_price": 212949,
-      "price_per_sqm": 3491,
-      "avg_size_sqm": 65.6,
+      "active_count": 382,
+      "median_price": 212938,
+      "price_per_sqm": 3489,
+      "avg_size_sqm": 65.7,
       "avg_rooms": 2.2,
       "avg_days_market": 26,
       "gross_yield": 6.2,
@@ -3344,8 +3344,8 @@
       "avg_size_sqm": 120.8,
       "avg_rooms": 3.2,
       "avg_days_market": 25,
-      "gross_yield": 2.7,
-      "rent_median": 1825.0
+      "gross_yield": 2.77,
+      "rent_median": 1870.0
     },
     {
       "barrio": "Ibiza",
@@ -3356,19 +3356,19 @@
       "avg_size_sqm": 113.3,
       "avg_rooms": 2.8,
       "avg_days_market": 27,
-      "gross_yield": 2.19,
-      "rent_median": 2090.0
+      "gross_yield": 2.99,
+      "rent_median": 2850.0
     },
     {
       "barrio": "Jerónimos",
       "distrito": "Retiro",
-      "active_count": 149,
-      "median_price": 2409219,
-      "price_per_sqm": 11538,
-      "avg_size_sqm": 190.2,
+      "active_count": 107,
+      "median_price": 2132024,
+      "price_per_sqm": 11124,
+      "avg_size_sqm": 175.3,
       "avg_rooms": 3.3,
-      "avg_days_market": 25,
-      "gross_yield": 2.02,
+      "avg_days_market": 21,
+      "gross_yield": 2.28,
       "rent_median": 4055.0
     },
     {
@@ -3386,10 +3386,10 @@
     {
       "barrio": "Pacífico",
       "distrito": "Retiro",
-      "active_count": 278,
-      "median_price": 619676,
-      "price_per_sqm": 6844,
-      "avg_size_sqm": 93.1,
+      "active_count": 272,
+      "median_price": 620367,
+      "price_per_sqm": 6833,
+      "avg_size_sqm": 93.2,
       "avg_rooms": 2.5,
       "avg_days_market": 23,
       "gross_yield": 3.33,
@@ -3410,12 +3410,12 @@
     {
       "barrio": "Fuente del Berro",
       "distrito": "Salamanca",
-      "active_count": 209,
-      "median_price": 892500,
-      "price_per_sqm": 8497,
-      "avg_size_sqm": 106.1,
+      "active_count": 201,
+      "median_price": 889620,
+      "price_per_sqm": 8524,
+      "avg_size_sqm": 105.1,
       "avg_rooms": 2.7,
-      "avg_days_market": 34,
+      "avg_days_market": 35,
       "gross_yield": 2.29,
       "rent_median": 1700.0
     },
@@ -3428,8 +3428,8 @@
       "avg_size_sqm": 133.2,
       "avg_rooms": 2.6,
       "avg_days_market": 35,
-      "gross_yield": 2.05,
-      "rent_median": 2525.0
+      "gross_yield": 2.09,
+      "rent_median": 2575.0
     },
     {
       "barrio": "Guindalera",
@@ -3440,8 +3440,8 @@
       "avg_size_sqm": 113.8,
       "avg_rooms": 2.7,
       "avg_days_market": 36,
-      "gross_yield": 2.46,
-      "rent_median": 1720.0
+      "gross_yield": 2.54,
+      "rent_median": 1775.0
     },
     {
       "barrio": "Lista",
@@ -3470,37 +3470,37 @@
     {
       "barrio": "Amposta",
       "distrito": "San Blas-Canillejas",
-      "active_count": 91,
-      "median_price": 198222,
-      "price_per_sqm": 3325,
-      "avg_size_sqm": 59.3,
+      "active_count": 90,
+      "median_price": 198781,
+      "price_per_sqm": 3332,
+      "avg_size_sqm": 59.4,
       "avg_rooms": 2.5,
       "avg_days_market": 28,
-      "gross_yield": 7.66,
+      "gross_yield": 7.64,
       "rent_median": 1265.0
     },
     {
       "barrio": "Arcos",
       "distrito": "San Blas-Canillejas",
-      "active_count": 123,
-      "median_price": 307658,
-      "price_per_sqm": 3525,
+      "active_count": 121,
+      "median_price": 307215,
+      "price_per_sqm": 3521,
       "avg_size_sqm": 84.3,
       "avg_rooms": 2.8,
       "avg_days_market": 24,
-      "gross_yield": 5.85,
+      "gross_yield": 5.86,
       "rent_median": 1500.0
     },
     {
       "barrio": "Canillejas",
       "distrito": "San Blas-Canillejas",
-      "active_count": 137,
-      "median_price": 392790,
-      "price_per_sqm": 3895,
-      "avg_size_sqm": 105.9,
+      "active_count": 134,
+      "median_price": 393576,
+      "price_per_sqm": 3899,
+      "avg_size_sqm": 106.1,
       "avg_rooms": 2.9,
-      "avg_days_market": 27,
-      "gross_yield": 3.36,
+      "avg_days_market": 28,
+      "gross_yield": 3.35,
       "rent_median": 1100.0
     },
     {
@@ -3554,61 +3554,61 @@
     {
       "barrio": "Simancas",
       "distrito": "San Blas-Canillejas",
-      "active_count": 284,
-      "median_price": 364278,
-      "price_per_sqm": 7583,
-      "avg_size_sqm": 88.5,
+      "active_count": 279,
+      "median_price": 365484,
+      "price_per_sqm": 7644,
+      "avg_size_sqm": 88.7,
       "avg_rooms": 2.5,
       "avg_days_market": 28,
-      "gross_yield": 4.2,
+      "gross_yield": 4.19,
       "rent_median": 1275.0
     },
     {
       "barrio": "Bellas Vistas",
       "distrito": "Tetuán",
-      "active_count": 242,
-      "median_price": 414507,
-      "price_per_sqm": 5747,
-      "avg_size_sqm": 74.1,
+      "active_count": 238,
+      "median_price": 415129,
+      "price_per_sqm": 5740,
+      "avg_size_sqm": 74.4,
       "avg_rooms": 2.2,
       "avg_days_market": 26,
-      "gross_yield": 4.46,
+      "gross_yield": 4.45,
       "rent_median": 1539.0
     },
     {
       "barrio": "Berruguete",
       "distrito": "Tetuán",
-      "active_count": 187,
-      "median_price": 403659,
-      "price_per_sqm": 5571,
-      "avg_size_sqm": 75.7,
+      "active_count": 183,
+      "median_price": 405417,
+      "price_per_sqm": 5593,
+      "avg_size_sqm": 75.8,
       "avg_rooms": 2.2,
       "avg_days_market": 27,
-      "gross_yield": 3.57,
+      "gross_yield": 3.55,
       "rent_median": 1200.0
     },
     {
       "barrio": "Cuatro Caminos",
       "distrito": "Tetuán",
-      "active_count": 377,
-      "median_price": 1112378,
-      "price_per_sqm": 166782,
+      "active_count": 375,
+      "median_price": 1113900,
+      "price_per_sqm": 167636,
       "avg_size_sqm": 121.9,
       "avg_rooms": 2.8,
       "avg_days_market": 28,
-      "gross_yield": 1.78,
-      "rent_median": 1650.0
+      "gross_yield": 1.83,
+      "rent_median": 1700.0
     },
     {
       "barrio": "Cuzco-Castillejos",
       "distrito": "Tetuán",
-      "active_count": 231,
-      "median_price": 919050,
-      "price_per_sqm": 7220,
-      "avg_size_sqm": 128.8,
+      "active_count": 224,
+      "median_price": 930356,
+      "price_per_sqm": 7239,
+      "avg_size_sqm": 130.2,
       "avg_rooms": 2.8,
-      "avg_days_market": 24,
-      "gross_yield": 2.32,
+      "avg_days_market": 25,
+      "gross_yield": 2.29,
       "rent_median": 1775.0
     },
     {
@@ -3626,25 +3626,25 @@
     {
       "barrio": "Ventilla-Almenara",
       "distrito": "Tetuán",
-      "active_count": 140,
-      "median_price": 542762,
-      "price_per_sqm": 5562,
-      "avg_size_sqm": 95.0,
-      "avg_rooms": 2.6,
+      "active_count": 139,
+      "median_price": 544153,
+      "price_per_sqm": 5561,
+      "avg_size_sqm": 95.2,
+      "avg_rooms": 2.7,
       "avg_days_market": 30,
-      "gross_yield": 3.76,
+      "gross_yield": 3.75,
       "rent_median": 1700.0
     },
     {
       "barrio": "12 de Octubre-Orcasur",
       "distrito": "Usera",
-      "active_count": 101,
-      "median_price": 309817,
-      "price_per_sqm": 3391,
-      "avg_size_sqm": 96.3,
+      "active_count": 98,
+      "median_price": 312552,
+      "price_per_sqm": 3416,
+      "avg_size_sqm": 96.6,
       "avg_rooms": 2.8,
-      "avg_days_market": 35,
-      "gross_yield": 8.33,
+      "avg_days_market": 34,
+      "gross_yield": 8.25,
       "rent_median": 2150.0
     },
     {
@@ -3662,10 +3662,10 @@
     {
       "barrio": "Moscardó",
       "distrito": "Usera",
-      "active_count": 212,
-      "median_price": 324710,
-      "price_per_sqm": 4056,
-      "avg_size_sqm": 80.9,
+      "active_count": 205,
+      "median_price": 324929,
+      "price_per_sqm": 4060,
+      "avg_size_sqm": 81.0,
       "avg_rooms": 2.6,
       "avg_days_market": 25,
       "gross_yield": 4.8,
@@ -3686,25 +3686,25 @@
     {
       "barrio": "Pradolongo",
       "distrito": "Usera",
-      "active_count": 116,
-      "median_price": 254357,
-      "price_per_sqm": 3511,
-      "avg_size_sqm": 76.3,
+      "active_count": 115,
+      "median_price": 253308,
+      "price_per_sqm": 3505,
+      "avg_size_sqm": 76.1,
       "avg_rooms": 2.5,
       "avg_days_market": 25,
-      "gross_yield": 6.49,
+      "gross_yield": 6.51,
       "rent_median": 1375.0
     },
     {
       "barrio": "San Fermín",
       "distrito": "Usera",
-      "active_count": 131,
-      "median_price": 283126,
-      "price_per_sqm": 3493,
-      "avg_size_sqm": 82.8,
+      "active_count": 130,
+      "median_price": 284127,
+      "price_per_sqm": 3511,
+      "avg_size_sqm": 82.4,
       "avg_rooms": 2.6,
       "avg_days_market": 22,
-      "gross_yield": 5.51,
+      "gross_yield": 5.49,
       "rent_median": 1300.0
     },
     {
@@ -3722,13 +3722,13 @@
     {
       "barrio": "Ambroz",
       "distrito": "Vicálvaro",
-      "active_count": 87,
-      "median_price": 277676,
-      "price_per_sqm": 3522,
-      "avg_size_sqm": 80.9,
+      "active_count": 86,
+      "median_price": 276720,
+      "price_per_sqm": 3527,
+      "avg_size_sqm": 80.5,
       "avg_rooms": 2.6,
       "avg_days_market": 23,
-      "gross_yield": 4.97,
+      "gross_yield": 4.99,
       "rent_median": 1150.0
     },
     {
@@ -3746,13 +3746,13 @@
     {
       "barrio": "El Cañaveral",
       "distrito": "Vicálvaro",
-      "active_count": 113,
-      "median_price": 507803,
-      "price_per_sqm": 4587,
-      "avg_size_sqm": 116.4,
+      "active_count": 110,
+      "median_price": 506307,
+      "price_per_sqm": 4575,
+      "avg_size_sqm": 116.6,
       "avg_rooms": 2.9,
-      "avg_days_market": 29,
-      "gross_yield": 3.49,
+      "avg_days_market": 28,
+      "gross_yield": 3.5,
       "rent_median": 1475.0
     },
     {
@@ -3770,13 +3770,13 @@
     {
       "barrio": "Los Berrocales",
       "distrito": "Vicálvaro",
-      "active_count": 183,
-      "median_price": 404969,
-      "price_per_sqm": 4187,
-      "avg_size_sqm": 100.2,
+      "active_count": 177,
+      "median_price": 408395,
+      "price_per_sqm": 4198,
+      "avg_size_sqm": 101.0,
       "avg_rooms": 2.4,
       "avg_days_market": 28,
-      "gross_yield": 2.84,
+      "gross_yield": 2.82,
       "rent_median": 960.0
     },
     {
@@ -3806,21 +3806,21 @@
     {
       "barrio": "Casco Histórico de Vallecas",
       "distrito": "Villa de Vallecas",
-      "active_count": 270,
-      "median_price": 235428,
-      "price_per_sqm": 3262,
-      "avg_size_sqm": 73.8,
+      "active_count": 265,
+      "median_price": 234647,
+      "price_per_sqm": 3261,
+      "avg_size_sqm": 73.5,
       "avg_rooms": 2.3,
-      "avg_days_market": 23,
-      "gross_yield": 5.1,
+      "avg_days_market": 22,
+      "gross_yield": 5.11,
       "rent_median": 1000.0
     },
     {
       "barrio": "Ensanche de Vallecas-La Gavia",
       "distrito": "Villa de Vallecas",
-      "active_count": 226,
-      "median_price": 368890,
-      "price_per_sqm": 4392,
+      "active_count": 225,
+      "median_price": 368885,
+      "price_per_sqm": 4395,
       "avg_size_sqm": 89.3,
       "avg_rooms": 1.9,
       "avg_days_market": 25,
@@ -3830,10 +3830,10 @@
     {
       "barrio": "Santa Eugenia",
       "distrito": "Villa de Vallecas",
-      "active_count": 115,
-      "median_price": 335653,
-      "price_per_sqm": 3892,
-      "avg_size_sqm": 87.9,
+      "active_count": 113,
+      "median_price": 331691,
+      "price_per_sqm": 3873,
+      "avg_size_sqm": 87.5,
       "avg_rooms": 2.8,
       "avg_days_market": 23,
       "gross_yield": null,
@@ -3854,22 +3854,22 @@
     {
       "barrio": "Butarque",
       "distrito": "Villaverde",
-      "active_count": 129,
-      "median_price": 289776,
-      "price_per_sqm": 3559,
-      "avg_size_sqm": 83.8,
+      "active_count": 127,
+      "median_price": 288572,
+      "price_per_sqm": 3553,
+      "avg_size_sqm": 83.7,
       "avg_rooms": 2.4,
       "avg_days_market": 27,
-      "gross_yield": 5.18,
+      "gross_yield": 5.2,
       "rent_median": 1250.0
     },
     {
       "barrio": "Los Ángeles",
       "distrito": "Villaverde",
-      "active_count": 166,
-      "median_price": 255062,
-      "price_per_sqm": 3166,
-      "avg_size_sqm": 80.6,
+      "active_count": 162,
+      "median_price": 254853,
+      "price_per_sqm": 3167,
+      "avg_size_sqm": 80.5,
       "avg_rooms": 2.9,
       "avg_days_market": 22,
       "gross_yield": 6.45,
@@ -3902,13 +3902,13 @@
     {
       "barrio": "Villaverde Alto",
       "distrito": "Villaverde",
-      "active_count": 339,
-      "median_price": 232034,
-      "price_per_sqm": 2938,
-      "avg_size_sqm": 82.4,
+      "active_count": 337,
+      "median_price": 232150,
+      "price_per_sqm": 2935,
+      "avg_size_sqm": 82.5,
       "avg_rooms": 2.5,
       "avg_days_market": 25,
-      "gross_yield": 5.95,
+      "gross_yield": 5.94,
       "rent_median": 1150.0
     }
   ],
@@ -12036,12 +12036,12 @@
   ],
   "price_drop_stats": {
     "overview": {
-      "total_active": 24117,
-      "with_drops": 2269,
+      "total_active": 23917,
+      "with_drops": 2256,
       "drop_pct_of_total": 9.4,
-      "avg_drop_pct": -3.97,
+      "avg_drop_pct": -3.96,
       "max_drop_pct": -38.2,
-      "n_drop_events": 2787,
+      "n_drop_events": 2768,
       "avg_days_to_drop": 22.8,
       "recent_7d": 707,
       "recent_30d": 2225
@@ -12093,6 +12093,15 @@
         "drop_rate_pct": 21.9
       },
       {
+        "barrio": "Acacias",
+        "distrito": "Arganzuela",
+        "total": 130,
+        "with_drops": 27,
+        "avg_drop_pct": -4.69,
+        "max_drop_pct": -11.65,
+        "drop_rate_pct": 20.8
+      },
+      {
         "barrio": "Legazpi",
         "distrito": "Arganzuela",
         "total": 78,
@@ -12100,15 +12109,6 @@
         "avg_drop_pct": -3.53,
         "max_drop_pct": -6.47,
         "drop_rate_pct": 20.5
-      },
-      {
-        "barrio": "Acacias",
-        "distrito": "Arganzuela",
-        "total": 133,
-        "with_drops": 27,
-        "avg_drop_pct": -4.69,
-        "max_drop_pct": -11.65,
-        "drop_rate_pct": 20.3
       },
       {
         "barrio": "Usera (General)",
@@ -12122,20 +12122,29 @@
       {
         "barrio": "Retiro (General)",
         "distrito": "Retiro",
-        "total": 84,
+        "total": 83,
         "with_drops": 16,
         "avg_drop_pct": -3.3,
         "max_drop_pct": -7.45,
-        "drop_rate_pct": 19.0
+        "drop_rate_pct": 19.3
       },
       {
         "barrio": "Marroquina",
         "distrito": "Moratalaz",
-        "total": 53,
+        "total": 52,
         "with_drops": 10,
         "avg_drop_pct": -4.72,
         "max_drop_pct": -9.09,
-        "drop_rate_pct": 18.9
+        "drop_rate_pct": 19.2
+      },
+      {
+        "barrio": "Chamberí (General)",
+        "distrito": "Chamberí",
+        "total": 112,
+        "with_drops": 21,
+        "avg_drop_pct": -3.76,
+        "max_drop_pct": -14.94,
+        "drop_rate_pct": 18.8
       },
       {
         "barrio": "Centro (General)",
@@ -12145,15 +12154,6 @@
         "avg_drop_pct": -4.29,
         "max_drop_pct": -11.76,
         "drop_rate_pct": 18.7
-      },
-      {
-        "barrio": "Chamberí (General)",
-        "distrito": "Chamberí",
-        "total": 113,
-        "with_drops": 21,
-        "avg_drop_pct": -3.76,
-        "max_drop_pct": -14.94,
-        "drop_rate_pct": 18.6
       },
       {
         "barrio": "Palos de la Frontera",
@@ -12167,19 +12167,28 @@
       {
         "barrio": "Fontarrón",
         "distrito": "Moratalaz",
-        "total": 63,
+        "total": 62,
         "with_drops": 11,
         "avg_drop_pct": -3.76,
         "max_drop_pct": -7.63,
-        "drop_rate_pct": 17.5
+        "drop_rate_pct": 17.7
       },
       {
         "barrio": "Palacio",
         "distrito": "Centro",
-        "total": 388,
+        "total": 387,
         "with_drops": 67,
         "avg_drop_pct": -2.8,
         "max_drop_pct": -10.84,
+        "drop_rate_pct": 17.3
+      },
+      {
+        "barrio": "Puente de Vallecas (General)",
+        "distrito": "Puente de Vallecas",
+        "total": 98,
+        "with_drops": 17,
+        "avg_drop_pct": -4.02,
+        "max_drop_pct": -6.67,
         "drop_rate_pct": 17.3
       },
       {
@@ -12201,24 +12210,6 @@
         "drop_rate_pct": 17.2
       },
       {
-        "barrio": "Moncloa-Aravaca (General)",
-        "distrito": "Moncloa-Aravaca",
-        "total": 64,
-        "with_drops": 11,
-        "avg_drop_pct": -4.68,
-        "max_drop_pct": -11.02,
-        "drop_rate_pct": 17.2
-      },
-      {
-        "barrio": "Puente de Vallecas (General)",
-        "distrito": "Puente de Vallecas",
-        "total": 101,
-        "with_drops": 17,
-        "avg_drop_pct": -4.02,
-        "max_drop_pct": -6.67,
-        "drop_rate_pct": 16.8
-      },
-      {
         "barrio": "Opañel",
         "distrito": "Carabanchel",
         "total": 157,
@@ -12230,20 +12221,20 @@
       {
         "barrio": "Arganzuela (General)",
         "distrito": "Arganzuela",
-        "total": 99,
+        "total": 97,
         "with_drops": 16,
         "avg_drop_pct": -4.67,
         "max_drop_pct": -13.64,
-        "drop_rate_pct": 16.2
+        "drop_rate_pct": 16.5
       },
       {
         "barrio": "Comillas",
         "distrito": "Carabanchel",
-        "total": 88,
+        "total": 87,
         "with_drops": 14,
         "avg_drop_pct": -2.96,
         "max_drop_pct": -6.88,
-        "drop_rate_pct": 15.9
+        "drop_rate_pct": 16.1
       },
       {
         "barrio": "Lucero",
@@ -12255,12 +12246,30 @@
         "drop_rate_pct": 15.9
       },
       {
+        "barrio": "Moncloa-Aravaca (General)",
+        "distrito": "Moncloa-Aravaca",
+        "total": 63,
+        "with_drops": 10,
+        "avg_drop_pct": -4.84,
+        "max_drop_pct": -11.02,
+        "drop_rate_pct": 15.9
+      },
+      {
         "barrio": "Apóstol Santiago",
         "distrito": "Hortaleza",
         "total": 57,
         "with_drops": 9,
         "avg_drop_pct": -4.94,
         "max_drop_pct": -11.86,
+        "drop_rate_pct": 15.8
+      },
+      {
+        "barrio": "Salamanca (General)",
+        "distrito": "Salamanca",
+        "total": 165,
+        "with_drops": 26,
+        "avg_drop_pct": -4.34,
+        "max_drop_pct": -16.89,
         "drop_rate_pct": 15.8
       },
       {
@@ -12282,15 +12291,6 @@
         "drop_rate_pct": 15.7
       },
       {
-        "barrio": "Salamanca (General)",
-        "distrito": "Salamanca",
-        "total": 166,
-        "with_drops": 26,
-        "avg_drop_pct": -4.34,
-        "max_drop_pct": -16.89,
-        "drop_rate_pct": 15.7
-      },
-      {
         "barrio": "Fuencarral-El Pardo (General)",
         "distrito": "Fuencarral-El Pardo",
         "total": 96,
@@ -12302,29 +12302,29 @@
       {
         "barrio": "Aluche",
         "distrito": "Latina",
-        "total": 165,
+        "total": 163,
         "with_drops": 25,
         "avg_drop_pct": -2.71,
         "max_drop_pct": -6.38,
-        "drop_rate_pct": 15.2
+        "drop_rate_pct": 15.3
       },
       {
         "barrio": "Delicias",
         "distrito": "Arganzuela",
-        "total": 126,
+        "total": 125,
         "with_drops": 19,
         "avg_drop_pct": -3.49,
         "max_drop_pct": -8.0,
-        "drop_rate_pct": 15.1
+        "drop_rate_pct": 15.2
       },
       {
         "barrio": "Carabanchel (General)",
         "distrito": "Carabanchel",
-        "total": 135,
+        "total": 133,
         "with_drops": 20,
         "avg_drop_pct": -4.0,
         "max_drop_pct": -8.19,
-        "drop_rate_pct": 14.8
+        "drop_rate_pct": 15.0
       },
       {
         "barrio": "Pavones",
@@ -12338,20 +12338,20 @@
       {
         "barrio": "Tetuán (General)",
         "distrito": "Tetuán",
-        "total": 109,
+        "total": 108,
         "with_drops": 16,
         "avg_drop_pct": -4.29,
         "max_drop_pct": -9.45,
-        "drop_rate_pct": 14.7
+        "drop_rate_pct": 14.8
       },
       {
         "barrio": "Quintana",
         "distrito": "Ciudad Lineal",
-        "total": 125,
+        "total": 124,
         "with_drops": 18,
         "avg_drop_pct": -3.33,
         "max_drop_pct": -10.81,
-        "drop_rate_pct": 14.4
+        "drop_rate_pct": 14.5
       },
       {
         "barrio": "Timón",
@@ -12381,6 +12381,15 @@
         "drop_rate_pct": 13.6
       },
       {
+        "barrio": "Villaverde (General)",
+        "distrito": "Villaverde",
+        "total": 67,
+        "with_drops": 9,
+        "avg_drop_pct": -5.58,
+        "max_drop_pct": -9.09,
+        "drop_rate_pct": 13.4
+      },
+      {
         "barrio": "Aeropuerto",
         "distrito": "Barajas",
         "total": 15,
@@ -12408,15 +12417,6 @@
         "drop_rate_pct": 13.2
       },
       {
-        "barrio": "Villaverde (General)",
-        "distrito": "Villaverde",
-        "total": 68,
-        "with_drops": 9,
-        "avg_drop_pct": -5.58,
-        "max_drop_pct": -9.09,
-        "drop_rate_pct": 13.2
-      },
-      {
         "barrio": "Arapiles",
         "distrito": "Chamberí",
         "total": 163,
@@ -12435,6 +12435,15 @@
         "drop_rate_pct": 12.9
       },
       {
+        "barrio": "Fuente del Berro",
+        "distrito": "Salamanca",
+        "total": 201,
+        "with_drops": 26,
+        "avg_drop_pct": -4.21,
+        "max_drop_pct": -29.41,
+        "drop_rate_pct": 12.9
+      },
+      {
         "barrio": "Las Tablas",
         "distrito": "Fuencarral-El Pardo",
         "total": 85,
@@ -12446,10 +12455,19 @@
       {
         "barrio": "Puerta Bonita",
         "distrito": "Carabanchel",
-        "total": 218,
+        "total": 217,
         "with_drops": 28,
         "avg_drop_pct": -4.63,
         "max_drop_pct": -10.21,
+        "drop_rate_pct": 12.9
+      },
+      {
+        "barrio": "San Pascual",
+        "distrito": "Ciudad Lineal",
+        "total": 78,
+        "with_drops": 10,
+        "avg_drop_pct": -7.14,
+        "max_drop_pct": -14.29,
         "drop_rate_pct": 12.8
       },
       {
@@ -12462,30 +12480,12 @@
         "drop_rate_pct": 12.8
       },
       {
-        "barrio": "San Pascual",
-        "distrito": "Ciudad Lineal",
-        "total": 79,
-        "with_drops": 10,
-        "avg_drop_pct": -7.14,
-        "max_drop_pct": -14.29,
-        "drop_rate_pct": 12.7
-      },
-      {
         "barrio": "Almendrales",
         "distrito": "Usera",
         "total": 137,
         "with_drops": 17,
         "avg_drop_pct": -4.2,
         "max_drop_pct": -12.06,
-        "drop_rate_pct": 12.4
-      },
-      {
-        "barrio": "Fuente del Berro",
-        "distrito": "Salamanca",
-        "total": 209,
-        "with_drops": 26,
-        "avg_drop_pct": -4.21,
-        "max_drop_pct": -29.41,
         "drop_rate_pct": 12.4
       },
       {
@@ -12498,22 +12498,22 @@
         "drop_rate_pct": 12.3
       },
       {
-        "barrio": "Águilas",
-        "distrito": "Latina",
-        "total": 139,
-        "with_drops": 17,
-        "avg_drop_pct": -3.03,
-        "max_drop_pct": -5.36,
-        "drop_rate_pct": 12.2
-      },
-      {
         "barrio": "Pueblo Nuevo",
         "distrito": "Ciudad Lineal",
-        "total": 281,
+        "total": 277,
         "with_drops": 34,
         "avg_drop_pct": -3.95,
         "max_drop_pct": -20.89,
-        "drop_rate_pct": 12.1
+        "drop_rate_pct": 12.3
+      },
+      {
+        "barrio": "Águilas",
+        "distrito": "Latina",
+        "total": 138,
+        "with_drops": 17,
+        "avg_drop_pct": -3.03,
+        "max_drop_pct": -5.36,
+        "drop_rate_pct": 12.3
       },
       {
         "barrio": "Ventas",
@@ -12527,7 +12527,7 @@
       {
         "barrio": "Vista Alegre",
         "distrito": "Carabanchel",
-        "total": 184,
+        "total": 183,
         "with_drops": 22,
         "avg_drop_pct": -3.3,
         "max_drop_pct": -9.59,
@@ -12536,7 +12536,7 @@
       {
         "barrio": "San Fermín",
         "distrito": "Usera",
-        "total": 131,
+        "total": 130,
         "with_drops": 15,
         "avg_drop_pct": -5.3,
         "max_drop_pct": -31.46,
@@ -12554,11 +12554,20 @@
       {
         "barrio": "Abrantes",
         "distrito": "Carabanchel",
-        "total": 134,
+        "total": 133,
         "with_drops": 15,
         "avg_drop_pct": -5.22,
         "max_drop_pct": -19.49,
-        "drop_rate_pct": 11.2
+        "drop_rate_pct": 11.3
+      },
+      {
+        "barrio": "Amposta",
+        "distrito": "San Blas-Canillejas",
+        "total": 90,
+        "with_drops": 10,
+        "avg_drop_pct": -3.66,
+        "max_drop_pct": -8.97,
+        "drop_rate_pct": 11.1
       },
       {
         "barrio": "Palomeras Bajas",
@@ -12570,21 +12579,21 @@
         "drop_rate_pct": 11.1
       },
       {
-        "barrio": "Amposta",
-        "distrito": "San Blas-Canillejas",
-        "total": 91,
-        "with_drops": 10,
-        "avg_drop_pct": -3.66,
-        "max_drop_pct": -8.97,
+        "barrio": "Ciudad Lineal (General)",
+        "distrito": "Ciudad Lineal",
+        "total": 118,
+        "with_drops": 13,
+        "avg_drop_pct": -4.32,
+        "max_drop_pct": -7.14,
         "drop_rate_pct": 11.0
       },
       {
-        "barrio": "Canillas",
-        "distrito": "Hortaleza",
-        "total": 154,
+        "barrio": "Pilar",
+        "distrito": "Fuencarral-El Pardo",
+        "total": 155,
         "with_drops": 17,
-        "avg_drop_pct": -3.32,
-        "max_drop_pct": -8.37,
+        "avg_drop_pct": -3.35,
+        "max_drop_pct": -7.96,
         "drop_rate_pct": 11.0
       },
       {
@@ -12597,15 +12606,6 @@
         "drop_rate_pct": 10.9
       },
       {
-        "barrio": "Ciudad Lineal (General)",
-        "distrito": "Ciudad Lineal",
-        "total": 119,
-        "with_drops": 13,
-        "avg_drop_pct": -4.32,
-        "max_drop_pct": -7.14,
-        "drop_rate_pct": 10.9
-      },
-      {
         "barrio": "Numancia",
         "distrito": "Puente de Vallecas",
         "total": 221,
@@ -12615,39 +12615,39 @@
         "drop_rate_pct": 10.9
       },
       {
-        "barrio": "Pilar",
-        "distrito": "Fuencarral-El Pardo",
-        "total": 157,
-        "with_drops": 17,
-        "avg_drop_pct": -3.35,
-        "max_drop_pct": -7.96,
-        "drop_rate_pct": 10.8
-      },
-      {
         "barrio": "Ventilla-Almenara",
         "distrito": "Tetuán",
-        "total": 140,
+        "total": 139,
         "with_drops": 15,
         "avg_drop_pct": -3.08,
         "max_drop_pct": -13.33,
-        "drop_rate_pct": 10.7
+        "drop_rate_pct": 10.8
       },
       {
         "barrio": "Arcos",
         "distrito": "San Blas-Canillejas",
-        "total": 123,
+        "total": 121,
         "with_drops": 13,
         "avg_drop_pct": -4.86,
         "max_drop_pct": -9.09,
-        "drop_rate_pct": 10.6
+        "drop_rate_pct": 10.7
       },
       {
         "barrio": "Buena Vista",
         "distrito": "Carabanchel",
-        "total": 160,
+        "total": 159,
         "with_drops": 17,
         "avg_drop_pct": -3.68,
         "max_drop_pct": -10.79,
+        "drop_rate_pct": 10.7
+      },
+      {
+        "barrio": "Canillas",
+        "distrito": "Hortaleza",
+        "total": 151,
+        "with_drops": 16,
+        "avg_drop_pct": -3.21,
+        "max_drop_pct": -8.37,
         "drop_rate_pct": 10.6
       },
       {
@@ -12669,6 +12669,15 @@
         "drop_rate_pct": 10.6
       },
       {
+        "barrio": "Entrevías",
+        "distrito": "Puente de Vallecas",
+        "total": 124,
+        "with_drops": 13,
+        "avg_drop_pct": -4.14,
+        "max_drop_pct": -12.73,
+        "drop_rate_pct": 10.5
+      },
+      {
         "barrio": "Argüelles",
         "distrito": "Moncloa-Aravaca",
         "total": 268,
@@ -12678,31 +12687,22 @@
         "drop_rate_pct": 10.4
       },
       {
-        "barrio": "Entrevías",
-        "distrito": "Puente de Vallecas",
-        "total": 125,
-        "with_drops": 13,
-        "avg_drop_pct": -4.14,
-        "max_drop_pct": -12.73,
-        "drop_rate_pct": 10.4
-      },
-      {
         "barrio": "Berruguete",
         "distrito": "Tetuán",
-        "total": 187,
+        "total": 183,
         "with_drops": 19,
         "avg_drop_pct": -5.65,
         "max_drop_pct": -17.31,
-        "drop_rate_pct": 10.2
+        "drop_rate_pct": 10.4
       },
       {
         "barrio": "Bellas Vistas",
         "distrito": "Tetuán",
-        "total": 242,
+        "total": 238,
         "with_drops": 24,
         "avg_drop_pct": -3.58,
         "max_drop_pct": -13.89,
-        "drop_rate_pct": 9.9
+        "drop_rate_pct": 10.1
       },
       {
         "barrio": "Lavapiés-Embajadores",
@@ -12732,6 +12732,15 @@
         "drop_rate_pct": 9.6
       },
       {
+        "barrio": "Pradolongo",
+        "distrito": "Usera",
+        "total": 115,
+        "with_drops": 11,
+        "avg_drop_pct": -3.66,
+        "max_drop_pct": -10.64,
+        "drop_rate_pct": 9.6
+      },
+      {
         "barrio": "Pinar del Rey",
         "distrito": "Hortaleza",
         "total": 169,
@@ -12741,49 +12750,22 @@
         "drop_rate_pct": 9.5
       },
       {
-        "barrio": "Pradolongo",
-        "distrito": "Usera",
-        "total": 116,
-        "with_drops": 11,
-        "avg_drop_pct": -3.66,
-        "max_drop_pct": -10.64,
+        "barrio": "Villaverde Alto",
+        "distrito": "Villaverde",
+        "total": 337,
+        "with_drops": 32,
+        "avg_drop_pct": -3.99,
+        "max_drop_pct": -13.42,
         "drop_rate_pct": 9.5
       },
       {
         "barrio": "Sol",
         "distrito": "Centro",
-        "total": 232,
-        "with_drops": 22,
-        "avg_drop_pct": -3.82,
+        "total": 224,
+        "with_drops": 21,
+        "avg_drop_pct": -3.88,
         "max_drop_pct": -7.3,
-        "drop_rate_pct": 9.5
-      },
-      {
-        "barrio": "Villaverde Alto",
-        "distrito": "Villaverde",
-        "total": 339,
-        "with_drops": 32,
-        "avg_drop_pct": -3.99,
-        "max_drop_pct": -13.42,
         "drop_rate_pct": 9.4
-      },
-      {
-        "barrio": "Almagro",
-        "distrito": "Chamberí",
-        "total": 365,
-        "with_drops": 34,
-        "avg_drop_pct": -4.37,
-        "max_drop_pct": -15.22,
-        "drop_rate_pct": 9.3
-      },
-      {
-        "barrio": "Butarque",
-        "distrito": "Villaverde",
-        "total": 129,
-        "with_drops": 12,
-        "avg_drop_pct": -3.27,
-        "max_drop_pct": -5.41,
-        "drop_rate_pct": 9.3
       },
       {
         "barrio": "Ibiza",
@@ -12797,20 +12779,29 @@
       {
         "barrio": "Puerta del Ángel",
         "distrito": "Latina",
-        "total": 229,
+        "total": 226,
         "with_drops": 21,
         "avg_drop_pct": -4.6,
         "max_drop_pct": -20.69,
-        "drop_rate_pct": 9.2
+        "drop_rate_pct": 9.3
       },
       {
-        "barrio": "Moscardó",
-        "distrito": "Usera",
-        "total": 212,
-        "with_drops": 19,
-        "avg_drop_pct": -4.01,
-        "max_drop_pct": -13.95,
-        "drop_rate_pct": 9.0
+        "barrio": "Almagro",
+        "distrito": "Chamberí",
+        "total": 361,
+        "with_drops": 33,
+        "avg_drop_pct": -4.44,
+        "max_drop_pct": -15.22,
+        "drop_rate_pct": 9.1
+      },
+      {
+        "barrio": "Cuzco-Castillejos",
+        "distrito": "Tetuán",
+        "total": 224,
+        "with_drops": 20,
+        "avg_drop_pct": -3.58,
+        "max_drop_pct": -12.5,
+        "drop_rate_pct": 8.9
       },
       {
         "barrio": "Goya",
@@ -12858,13 +12849,22 @@
         "drop_rate_pct": 8.8
       },
       {
-        "barrio": "Cuzco-Castillejos",
-        "distrito": "Tetuán",
-        "total": 231,
-        "with_drops": 20,
-        "avg_drop_pct": -3.58,
-        "max_drop_pct": -12.5,
+        "barrio": "Butarque",
+        "distrito": "Villaverde",
+        "total": 127,
+        "with_drops": 11,
+        "avg_drop_pct": -3.17,
+        "max_drop_pct": -5.41,
         "drop_rate_pct": 8.7
+      },
+      {
+        "barrio": "Peñagrande",
+        "distrito": "Fuencarral-El Pardo",
+        "total": 175,
+        "with_drops": 15,
+        "avg_drop_pct": -3.69,
+        "max_drop_pct": -7.33,
+        "drop_rate_pct": 8.6
       },
       {
         "barrio": "Portazgo",
@@ -12876,31 +12876,31 @@
         "drop_rate_pct": 8.6
       },
       {
-        "barrio": "Casco Histórico de Vallecas",
-        "distrito": "Villa de Vallecas",
-        "total": 270,
-        "with_drops": 23,
-        "avg_drop_pct": -4.41,
-        "max_drop_pct": -19.78,
-        "drop_rate_pct": 8.5
-      },
-      {
         "barrio": "Cuatro Caminos",
         "distrito": "Tetuán",
-        "total": 377,
+        "total": 375,
         "with_drops": 32,
         "avg_drop_pct": -3.75,
         "max_drop_pct": -12.98,
         "drop_rate_pct": 8.5
       },
       {
-        "barrio": "Peñagrande",
-        "distrito": "Fuencarral-El Pardo",
-        "total": 176,
-        "with_drops": 15,
-        "avg_drop_pct": -3.69,
-        "max_drop_pct": -7.33,
-        "drop_rate_pct": 8.5
+        "barrio": "Casco Histórico de Vallecas",
+        "distrito": "Villa de Vallecas",
+        "total": 265,
+        "with_drops": 22,
+        "avg_drop_pct": -4.61,
+        "max_drop_pct": -19.78,
+        "drop_rate_pct": 8.3
+      },
+      {
+        "barrio": "Moscardó",
+        "distrito": "Usera",
+        "total": 205,
+        "with_drops": 17,
+        "avg_drop_pct": -3.71,
+        "max_drop_pct": -13.95,
+        "drop_rate_pct": 8.3
       },
       {
         "barrio": "Nuevos Ministerios-Ríos Rosas",
@@ -12930,21 +12930,21 @@
         "drop_rate_pct": 8.1
       },
       {
-        "barrio": "San Diego",
-        "distrito": "Puente de Vallecas",
-        "total": 384,
-        "with_drops": 31,
-        "avg_drop_pct": -4.91,
-        "max_drop_pct": -14.22,
-        "drop_rate_pct": 8.1
+        "barrio": "Los Ángeles",
+        "distrito": "Villaverde",
+        "total": 162,
+        "with_drops": 13,
+        "avg_drop_pct": -3.39,
+        "max_drop_pct": -9.39,
+        "drop_rate_pct": 8.0
       },
       {
-        "barrio": "Pacífico",
-        "distrito": "Retiro",
-        "total": 278,
-        "with_drops": 22,
-        "avg_drop_pct": -3.02,
-        "max_drop_pct": -9.74,
+        "barrio": "San Diego",
+        "distrito": "Puente de Vallecas",
+        "total": 382,
+        "with_drops": 30,
+        "avg_drop_pct": -4.99,
+        "max_drop_pct": -14.22,
         "drop_rate_pct": 7.9
       },
       {
@@ -12957,36 +12957,27 @@
         "drop_rate_pct": 7.9
       },
       {
-        "barrio": "Los Ángeles",
-        "distrito": "Villaverde",
-        "total": 166,
-        "with_drops": 13,
-        "avg_drop_pct": -3.39,
-        "max_drop_pct": -9.39,
-        "drop_rate_pct": 7.8
-      },
-      {
         "barrio": "Aravaca",
         "distrito": "Moncloa-Aravaca",
-        "total": 172,
+        "total": 169,
         "with_drops": 13,
         "avg_drop_pct": -4.43,
         "max_drop_pct": -18.46,
-        "drop_rate_pct": 7.6
+        "drop_rate_pct": 7.7
       },
       {
-        "barrio": "Ensanche de Vallecas-La Gavia",
-        "distrito": "Villa de Vallecas",
-        "total": 226,
-        "with_drops": 17,
-        "avg_drop_pct": -4.2,
-        "max_drop_pct": -9.59,
-        "drop_rate_pct": 7.5
+        "barrio": "Pacífico",
+        "distrito": "Retiro",
+        "total": 272,
+        "with_drops": 21,
+        "avg_drop_pct": -2.81,
+        "max_drop_pct": -6.29,
+        "drop_rate_pct": 7.7
       },
       {
         "barrio": "Huertas-Cortes",
         "distrito": "Centro",
-        "total": 295,
+        "total": 293,
         "with_drops": 22,
         "avg_drop_pct": -3.14,
         "max_drop_pct": -6.98,
@@ -13011,22 +13002,22 @@
         "drop_rate_pct": 7.3
       },
       {
-        "barrio": "San Juan Bautista",
-        "distrito": "Ciudad Lineal",
-        "total": 71,
-        "with_drops": 5,
-        "avg_drop_pct": -4.37,
-        "max_drop_pct": -8.7,
-        "drop_rate_pct": 7.0
+        "barrio": "Ensanche de Vallecas-La Gavia",
+        "distrito": "Villa de Vallecas",
+        "total": 225,
+        "with_drops": 16,
+        "avg_drop_pct": -4.15,
+        "max_drop_pct": -9.59,
+        "drop_rate_pct": 7.1
       },
       {
         "barrio": "Ambroz",
         "distrito": "Vicálvaro",
-        "total": 87,
+        "total": 86,
         "with_drops": 6,
         "avg_drop_pct": -3.36,
         "max_drop_pct": -5.56,
-        "drop_rate_pct": 6.9
+        "drop_rate_pct": 7.0
       },
       {
         "barrio": "Palomeras Sureste",
@@ -13130,20 +13121,20 @@
       {
         "barrio": "Vallehermoso",
         "distrito": "Chamberí",
-        "total": 137,
+        "total": 134,
         "with_drops": 8,
         "avg_drop_pct": -3.46,
         "max_drop_pct": -12.5,
-        "drop_rate_pct": 5.8
+        "drop_rate_pct": 6.0
       },
       {
-        "barrio": "Bernabéu-Hispanoamérica",
-        "distrito": "Chamartín",
-        "total": 197,
-        "with_drops": 11,
-        "avg_drop_pct": -3.14,
-        "max_drop_pct": -5.27,
-        "drop_rate_pct": 5.6
+        "barrio": "San Juan Bautista",
+        "distrito": "Ciudad Lineal",
+        "total": 70,
+        "with_drops": 4,
+        "avg_drop_pct": -4.21,
+        "max_drop_pct": -8.7,
+        "drop_rate_pct": 5.7
       },
       {
         "barrio": "Chueca-Justicia",
@@ -13164,31 +13155,49 @@
         "drop_rate_pct": 5.6
       },
       {
+        "barrio": "El Cañaveral",
+        "distrito": "Vicálvaro",
+        "total": 110,
+        "with_drops": 6,
+        "avg_drop_pct": -3.65,
+        "max_drop_pct": -9.7,
+        "drop_rate_pct": 5.5
+      },
+      {
         "barrio": "San Isidro",
         "distrito": "Carabanchel",
-        "total": 182,
+        "total": 181,
         "with_drops": 10,
         "avg_drop_pct": -5.06,
         "max_drop_pct": -9.86,
         "drop_rate_pct": 5.5
       },
       {
-        "barrio": "El Cañaveral",
-        "distrito": "Vicálvaro",
-        "total": 113,
-        "with_drops": 6,
-        "avg_drop_pct": -3.65,
-        "max_drop_pct": -9.7,
-        "drop_rate_pct": 5.3
-      },
-      {
         "barrio": "Simancas",
         "distrito": "San Blas-Canillejas",
-        "total": 284,
+        "total": 279,
         "with_drops": 15,
         "avg_drop_pct": -2.74,
         "max_drop_pct": -9.09,
+        "drop_rate_pct": 5.4
+      },
+      {
+        "barrio": "Montecarmelo",
+        "distrito": "Fuencarral-El Pardo",
+        "total": 57,
+        "with_drops": 3,
+        "avg_drop_pct": -1.48,
+        "max_drop_pct": -1.89,
         "drop_rate_pct": 5.3
+      },
+      {
+        "barrio": "Canillejas",
+        "distrito": "San Blas-Canillejas",
+        "total": 134,
+        "with_drops": 7,
+        "avg_drop_pct": -5.54,
+        "max_drop_pct": -11.12,
+        "drop_rate_pct": 5.2
       },
       {
         "barrio": "Lista",
@@ -13200,21 +13209,12 @@
         "drop_rate_pct": 5.2
       },
       {
-        "barrio": "Montecarmelo",
-        "distrito": "Fuencarral-El Pardo",
-        "total": 58,
-        "with_drops": 3,
-        "avg_drop_pct": -1.48,
-        "max_drop_pct": -1.89,
-        "drop_rate_pct": 5.2
-      },
-      {
-        "barrio": "Canillejas",
-        "distrito": "San Blas-Canillejas",
-        "total": 137,
-        "with_drops": 7,
-        "avg_drop_pct": -5.54,
-        "max_drop_pct": -11.12,
+        "barrio": "Bernabéu-Hispanoamérica",
+        "distrito": "Chamartín",
+        "total": 196,
+        "with_drops": 10,
+        "avg_drop_pct": -2.96,
+        "max_drop_pct": -4.88,
         "drop_rate_pct": 5.1
       },
       {
@@ -13344,6 +13344,15 @@
         "drop_rate_pct": 3.5
       },
       {
+        "barrio": "Fuentelarreina",
+        "distrito": "Fuencarral-El Pardo",
+        "total": 31,
+        "with_drops": 1,
+        "avg_drop_pct": -3.69,
+        "max_drop_pct": -3.93,
+        "drop_rate_pct": 3.2
+      },
+      {
         "barrio": "Valdemarín",
         "distrito": "Moncloa-Aravaca",
         "total": 63,
@@ -13353,13 +13362,13 @@
         "drop_rate_pct": 3.2
       },
       {
-        "barrio": "Fuentelarreina",
-        "distrito": "Fuencarral-El Pardo",
-        "total": 32,
-        "with_drops": 1,
-        "avg_drop_pct": -3.69,
-        "max_drop_pct": -3.93,
-        "drop_rate_pct": 3.1
+        "barrio": "Jerónimos",
+        "distrito": "Retiro",
+        "total": 107,
+        "with_drops": 3,
+        "avg_drop_pct": -6.98,
+        "max_drop_pct": -13.91,
+        "drop_rate_pct": 2.8
       },
       {
         "barrio": "Rosas",
@@ -13373,7 +13382,7 @@
       {
         "barrio": "12 de Octubre-Orcasur",
         "distrito": "Usera",
-        "total": 101,
+        "total": 98,
         "with_drops": 2,
         "avg_drop_pct": -2.74,
         "max_drop_pct": -3.93,
@@ -13389,13 +13398,13 @@
         "drop_rate_pct": 2.0
       },
       {
-        "barrio": "Jerónimos",
-        "distrito": "Retiro",
-        "total": 149,
-        "with_drops": 3,
-        "avg_drop_pct": -6.98,
-        "max_drop_pct": -13.91,
-        "drop_rate_pct": 2.0
+        "barrio": "Santa Eugenia",
+        "distrito": "Villa de Vallecas",
+        "total": 113,
+        "with_drops": 2,
+        "avg_drop_pct": -4.99,
+        "max_drop_pct": -8.16,
+        "drop_rate_pct": 1.8
       },
       {
         "barrio": "San Cristóbal",
@@ -13407,22 +13416,13 @@
         "drop_rate_pct": 1.7
       },
       {
-        "barrio": "Santa Eugenia",
-        "distrito": "Villa de Vallecas",
-        "total": 115,
-        "with_drops": 2,
-        "avg_drop_pct": -4.99,
-        "max_drop_pct": -8.16,
-        "drop_rate_pct": 1.7
-      },
-      {
         "barrio": "El Viso",
         "distrito": "Chamartín",
-        "total": 207,
+        "total": 202,
         "with_drops": 3,
         "avg_drop_pct": -2.84,
         "max_drop_pct": -5.26,
-        "drop_rate_pct": 1.4
+        "drop_rate_pct": 1.5
       },
       {
         "barrio": "Atalaya",
@@ -13472,7 +13472,7 @@
       {
         "barrio": "Los Berrocales",
         "distrito": "Vicálvaro",
-        "total": 183,
+        "total": 177,
         "with_drops": 0,
         "avg_drop_pct": null,
         "max_drop_pct": null,
@@ -14158,10 +14158,10 @@
     }
   },
   "db_stats": {
-    "active_count": 24117,
-    "sold_count": 5963,
-    "avg_price": 869771.57,
-    "avg_price_per_sqm": 25660.06
+    "active_count": 23917,
+    "sold_count": 6163,
+    "avg_price": 867464.11,
+    "avg_price_per_sqm": 25815.96
   },
   "alerts": [
     {
@@ -14173,11 +14173,6 @@
       "level": "critical",
       "title": "Ratio precio/ingreso extremo",
       "message": "El precio mediano equivale a 16.2 años de ingreso bruto de referencia."
-    },
-    {
-      "level": "warning",
-      "title": "Vivienda poco asequible",
-      "message": "Cuota estimada: €1,885/mes — supera el 33% del ingreso bruto de referencia. Ratio precio/ingreso: 16.2× ingresos anuales."
     }
   ],
   "valuation_model": {
@@ -15737,6 +15732,6 @@
     },
     "madrid_median_sqm": 5943,
     "training_samples": 30010,
-    "training_date": "2026-03-15T08:25:51.883330Z"
+    "training_date": "2026-03-15T09:19:17.838304Z"
   }
 }
