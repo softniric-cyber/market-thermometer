@@ -11,6 +11,7 @@ import DistrictTable from "@/components/DistrictTable";
 import PriceTrendChart from "@/components/PriceTrendChart";
 import AlertsBanner from "@/components/AlertsBanner";
 import RentalYields from "@/components/RentalYields";
+import RentBurden from "@/components/RentBurden";
 import Footer from "@/components/Footer";
 
 // ISR: revalidar cada hora (3600s). Vercel sirve HTML cacheado
@@ -130,6 +131,13 @@ export default async function Home({
           </h2>
           <PriceTrendChart data={data.trends.market} />
         </section>
+
+        {/* Rent Burden */}
+        {data.indicators.rent_burden?.current && (
+          <section className="animate-fade-in animate-delay-4">
+            <RentBurden indicator={data.indicators.rent_burden} />
+          </section>
+        )}
 
         {/* Rental Yields */}
         <section className="animate-fade-in animate-delay-4">

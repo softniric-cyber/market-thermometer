@@ -34,6 +34,19 @@ export interface Indicator {
   drop_ratio?: number;
   total_active?: number;
   with_drops?: number;
+  // rent burden
+  monthly_income_ref?: number;
+  median_rent?: number;
+  severity?: string;
+  by_district?: RentBurdenDistrict[];
+}
+
+export interface RentBurdenDistrict {
+  distrito: string;
+  median_rent: number;
+  burden_pct: number;
+  severity: string;
+  barrios: number;
 }
 
 export interface MacroIndicator {

@@ -193,6 +193,18 @@
       "aged_stock": {
         "title": "Stock envejecido: {pct}% lleva +{min_days} días",
         "message": "{aged} de {total} pisos activos llevan más de {min_days} días en el mercado ({pct}%). La demanda real puede ser más débil de lo que sugiere el volumen de oferta."
+      },
+      "rent_burden_extreme": {
+        "title": "Esfuerzo de alquiler extremo",
+        "message": "La renta mediana ({rent} €/mes) supone el {pct}% del ingreso neto de referencia."
+      },
+      "rent_burden_high": {
+        "title": "Esfuerzo de alquiler muy alto",
+        "message": "La renta mediana ({rent} €/mes) supone el {pct}% del ingreso neto de referencia."
+      },
+      "rent_burden_moderate": {
+        "title": "Esfuerzo de alquiler moderado",
+        "message": "La renta mediana ({rent} €/mes) supone el {pct}% del ingreso neto de referencia."
       }
     }
   },
@@ -334,5 +346,18 @@
     "district_description": "Consulta el precio de la vivienda en {name}, Madrid. Mediana: {price}, {sqm}. {count} pisos en venta. Evolución semanal, rentabilidad alquiler y datos actualizados a diario.",
     "barrio_title": "Precio vivienda {barrio} — {distrito} · Madrid",
     "barrio_description": "Precio vivienda en {barrio} ({distrito}, Madrid). {sqm}. {count} pisos en venta. Evolución semanal y datos actualizados a diario."
+  },
+  "rent_burden": {
+    "title": "Tasa de esfuerzo de alquiler",
+    "of_income": "del ingreso neto",
+    "median_rent": "Renta mediana",
+    "ref_income": "Ingreso ref.",
+    "by_district": "Por distrito",
+    "severity": {
+      "affordable": "Asequible",
+      "strained": "Esfuerzo moderado",
+      "overburdened": "Sobrecarga",
+      "severely_overburdened": "Sobrecarga extrema"
+    }
   }
 }

@@ -193,6 +193,18 @@
       "aged_stock": {
         "title": "Aged stock: {pct}% listed over {min_days} days",
         "message": "{aged} of {total} active listings have been on the market for more than {min_days} days ({pct}%). Real demand may be weaker than supply volume suggests."
+      },
+      "rent_burden_extreme": {
+        "title": "Extreme rent burden",
+        "message": "Median rent (€{rent}/month) equals {pct}% of net reference income."
+      },
+      "rent_burden_high": {
+        "title": "Very high rent burden",
+        "message": "Median rent (€{rent}/month) equals {pct}% of net reference income."
+      },
+      "rent_burden_moderate": {
+        "title": "Moderate rent burden",
+        "message": "Median rent (€{rent}/month) equals {pct}% of net reference income."
       }
     }
   },
@@ -334,5 +346,18 @@
     "district_description": "Check property prices in {name}, Madrid. Median: {price}, {sqm}. {count} properties for sale. Weekly trends, rental yield and data updated daily.",
     "barrio_title": "Property prices in {barrio} — {distrito} · Madrid",
     "barrio_description": "Property prices in {barrio} ({distrito}, Madrid). {sqm}. {count} properties for sale. Weekly trends and data updated daily."
+  },
+  "rent_burden": {
+    "title": "Rent burden rate",
+    "of_income": "of net income",
+    "median_rent": "Median rent",
+    "ref_income": "Ref. income",
+    "by_district": "By district",
+    "severity": {
+      "affordable": "Affordable",
+      "strained": "Strained",
+      "overburdened": "Overburdened",
+      "severely_overburdened": "Severely overburdened"
+    }
   }
 }
