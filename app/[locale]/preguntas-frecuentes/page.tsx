@@ -1,7 +1,8 @@
 import { readFile } from "fs/promises";
 import { join } from "path";
-import Link from "next/link";
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import type { MetricsData } from "@/lib/types";
 import { toSlug } from "@/lib/districts";
 import { toBarrioSlug } from "@/lib/barrios";
@@ -13,18 +14,33 @@ import Footer from "@/components/Footer";
 export const revalidate = 3600;
 
 /* ── Metadata ──────────────────────────────────────────────── */
-export const metadata: Metadata = {
-  title: "Preguntas frecuentes — Precio vivienda Madrid",
-  description:
-    "Respuestas actualizadas sobre el precio de la vivienda en Madrid: cuánto cuesta un piso, rentabilidad alquiler, Euríbor, mejores distritos y más.",
-  alternates: { canonical: "/preguntas-frecuentes" },
-  openGraph: {
-    title: "Preguntas frecuentes — Precio vivienda Madrid | madridhome.tech",
-    description:
-      "Todo lo que necesitas saber sobre el mercado inmobiliario de Madrid, con datos reales actualizados a diario.",
-    url: "https://madridhome.tech/preguntas-frecuentes",
-  },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  const t = await getTranslations({
+    locale: params.locale,
+    namespace: "faq",
+  });
+
+  return {
+    title: `${t("title")} — madridhome.tech`,
+    description: t("subtitle"),
+    alternates: {
+      canonical: "/preguntas-frecuentes",
+      languages: {
+        es: "/es/preguntas-frecuentes",
+        en: "/en/preguntas-frecuentes",
+      },
+    },
+    openGraph: {
+      title: `${t("title")} | madridhome.tech`,
+      description: t("subtitle"),
+      url: "https://madridhome.tech/preguntas-frecuentes",
+    },
+  };
+}
 
 /* ── Data loader ───────────────────────────────────────────── */
 async function getMetrics(): Promise<MetricsData | null> {
@@ -44,7 +60,13 @@ interface FaqItem {
   answerJsx: React.ReactNode;
 }
 
-function buildFaqs(data: MetricsData): FaqItem[] {
+type TranslationFunction = (key: string, params?: Record<string, string | number>) => string;
+
+function buildFaqs(
+  data: MetricsData,
+  t: TranslationFunction,
+  locale: string
+): FaqItem[] {
   // Helpers
   const zones = [...data.zones].filter((z) => z.price_per_sqm != null);
   const sortedByPrice = [...zones].sort(
@@ -77,13 +99,20 @@ function buildFaqs(data: MetricsData): FaqItem[] {
   // Plain-text answers for JSON-LD
   const faqs: FaqItem[] = [
     {
-      question: "¿Cuánto cuesta un piso en Madrid?",
-      answer: `El precio mediano de una vivienda en Madrid es de ${fmtEur(priceTrend?.current ?? null)}, con una variación del ${fmtPct(priceTrend?.change_pct ?? null)} respecto al periodo anterior. El rango va desde ${fmtEurSqm(bottom5[0]?.price_per_sqm ?? null)} en ${bottom5[0]?.name ?? "—"} hasta ${fmtEurSqm(top5[0]?.price_per_sqm ?? null)} en ${top5[0]?.name ?? "—"}.`,
+      question: t("q1"),
+      answer: t("a1", {
+        price: fmtEur(priceTrend?.current ?? null, locale),
+        change: fmtPct(priceTrend?.change_pct ?? null, 1, locale),
+        min_price: fmtEurSqm(bottom5[0]?.price_per_sqm ?? null, locale),
+        min_district: bottom5[0]?.name ?? "—",
+        max_price: fmtEurSqm(top5[0]?.price_per_sqm ?? null, locale),
+        max_district: top5[0]?.name ?? "—",
+      } as Record<string, string | number>),
       answerJsx: (
         <p className="text-slate-300 text-sm leading-relaxed">
           El precio mediano de una vivienda en Madrid es de{" "}
           <strong className="text-white">
-            {fmtEur(priceTrend?.current ?? null)}
+            {fmtEur(priceTrend?.current ?? null, locale)}
           </strong>
           , con una variación del{" "}
           <strong
@@ -93,14 +122,14 @@ function buildFaqs(data: MetricsData): FaqItem[] {
                 : "text-emerald-400"
             }
           >
-            {fmtPct(priceTrend?.change_pct ?? null)}
+            {fmtPct(priceTrend?.change_pct ?? null, 1, locale)}
           </strong>{" "}
           respecto al periodo anterior. El rango va desde{" "}
           <Link
             href={`/distrito/${toSlug(bottom5[0]?.name ?? "")}`}
             className="text-cyan-400 hover:underline"
           >
-            {fmtEurSqm(bottom5[0]?.price_per_sqm ?? null)} en{" "}
+            {fmtEurSqm(bottom5[0]?.price_per_sqm ?? null, locale)} en{" "}
             {bottom5[0]?.name}
           </Link>{" "}
           hasta{" "}
@@ -108,40 +137,49 @@ function buildFaqs(data: MetricsData): FaqItem[] {
             href={`/distrito/${toSlug(top5[0]?.name ?? "")}`}
             className="text-cyan-400 hover:underline"
           >
-            {fmtEurSqm(top5[0]?.price_per_sqm ?? null)} en {top5[0]?.name}
+            {fmtEurSqm(top5[0]?.price_per_sqm ?? null, locale)} en {top5[0]?.name}
           </Link>
           .
         </p>
       ),
     },
     {
-      question: "¿Cuánto cuesta el metro cuadrado en Madrid?",
-      answer: `La media del precio por metro cuadrado en Madrid es de ${fmtEurSqm(avgSqm)}. El distrito más caro es ${top5[0]?.name} (${fmtEurSqm(top5[0]?.price_per_sqm ?? null)}) y el más asequible es ${bottom5[0]?.name} (${fmtEurSqm(bottom5[0]?.price_per_sqm ?? null)}).`,
+      question: t("q2"),
+      answer: t("a2", {
+        avg_sqm: fmtEurSqm(avgSqm, locale),
+        most_expensive: top5[0]?.name ?? "—",
+        most_expensive_price: fmtEurSqm(top5[0]?.price_per_sqm ?? null, locale),
+        cheapest: bottom5[0]?.name ?? "—",
+        cheapest_price: fmtEurSqm(bottom5[0]?.price_per_sqm ?? null, locale),
+      } as Record<string, string | number>),
       answerJsx: (
         <p className="text-slate-300 text-sm leading-relaxed">
           La media del precio por metro cuadrado en Madrid es de{" "}
-          <strong className="text-white">{fmtEurSqm(avgSqm)}</strong>. El
+          <strong className="text-white">{fmtEurSqm(avgSqm, locale)}</strong>. El
           distrito más caro es{" "}
           <Link
             href={`/distrito/${toSlug(top5[0]?.name ?? "")}`}
             className="text-cyan-400 hover:underline"
           >
-            {top5[0]?.name} ({fmtEurSqm(top5[0]?.price_per_sqm ?? null)})
+            {top5[0]?.name} ({fmtEurSqm(top5[0]?.price_per_sqm ?? null, locale)})
           </Link>{" "}
           y el más asequible es{" "}
           <Link
             href={`/distrito/${toSlug(bottom5[0]?.name ?? "")}`}
             className="text-cyan-400 hover:underline"
           >
-            {bottom5[0]?.name} ({fmtEurSqm(bottom5[0]?.price_per_sqm ?? null)})
+            {bottom5[0]?.name} ({fmtEurSqm(bottom5[0]?.price_per_sqm ?? null, locale)})
           </Link>
           .
         </p>
       ),
     },
     {
-      question: "¿Es buen momento para comprar vivienda en Madrid?",
-      answer: `Nuestro termómetro de mercado marca ${score.score ?? "—"}/100 (${score.label}). ${score.description} Una puntuación alta (>75) indica un mercado claramente alcista; baja (<40) sugiere oportunidades para compradores. La tendencia actual es ${score.trend === "up" ? "alcista" : score.trend === "down" ? "bajista" : "estable"}.`,
+      question: t("q3"),
+      answer: t("a3", {
+        score: score.score ?? "—",
+        label: score.label ?? "—",
+      } as Record<string, string | number>),
       answerJsx: (
         <p className="text-slate-300 text-sm leading-relaxed">
           Nuestro termómetro de mercado marca{" "}
@@ -163,8 +201,10 @@ function buildFaqs(data: MetricsData): FaqItem[] {
       ),
     },
     {
-      question: "¿Cuánto tarda en venderse un piso en Madrid?",
-      answer: `La mediana de tiempo de venta en Madrid es de ${salesSpeed?.current ?? "—"} días. Esto varía significativamente por distrito: en las zonas más demandadas puede bajar de 30 días, mientras que en distritos periféricos puede superar los 60.`,
+      question: t("q4"),
+      answer: t("a4", {
+        days: salesSpeed?.current ?? "—",
+      } as Record<string, string | number>),
       answerJsx: (
         <p className="text-slate-300 text-sm leading-relaxed">
           La mediana de tiempo de venta en Madrid es de{" "}
@@ -178,14 +218,16 @@ function buildFaqs(data: MetricsData): FaqItem[] {
       ),
     },
     {
-      question: "¿Cuál es la rentabilidad del alquiler en Madrid?",
-      answer: `La rentabilidad bruta media del alquiler en Madrid es del ${fmtPct(rentalYield?.avg_yield ?? null)}. Los barrios con mayor rentabilidad son: ${topYields.map((y) => `${y.barrio} (${fmtPct(y.gross_yield)})`).join(", ")}.`,
+      question: t("q5"),
+      answer: t("a5", {
+        yield: fmtPct(rentalYield?.avg_yield ?? null, 1, locale),
+      } as Record<string, string | number>),
       answerJsx: (
         <div className="text-slate-300 text-sm leading-relaxed">
           <p>
             La rentabilidad bruta media del alquiler en Madrid es del{" "}
             <strong className="text-emerald-400">
-              {fmtPct(rentalYield?.avg_yield ?? null)}
+              {fmtPct(rentalYield?.avg_yield ?? null, 1, locale)}
             </strong>
             . Los barrios con mayor rentabilidad son:
           </p>
@@ -198,7 +240,7 @@ function buildFaqs(data: MetricsData): FaqItem[] {
                 >
                   {y.barrio}
                 </Link>{" "}
-                — <strong className="text-emerald-400">{fmtPct(y.gross_yield)}</strong>{" "}
+                — <strong className="text-emerald-400">{fmtPct(y.gross_yield, 1, locale)}</strong>{" "}
                 <span className="text-slate-500">({y.distrito})</span>
               </li>
             ))}
@@ -207,13 +249,16 @@ function buildFaqs(data: MetricsData): FaqItem[] {
       ),
     },
     {
-      question: "¿Cómo afecta el Euríbor al mercado inmobiliario de Madrid?",
-      answer: `El Euríbor a 12 meses está en el ${fmtPct(euribor?.current ?? null)}, con tendencia ${euribor?.trend === "down" ? "a la baja" : euribor?.trend === "up" ? "al alza" : "estable"}. Un Euríbor más bajo abarata las hipotecas variables y facilita el acceso a la vivienda. Actualmente se firman unas ${fmtNum(hipotecas?.current ?? null)} hipotecas mensuales en Madrid.`,
+      question: t("q6"),
+      answer: t("a6", {
+        euribor: fmtPct(euribor?.current ?? null, 1, locale),
+        trend: euribor?.trend === "down" ? "a la baja" : euribor?.trend === "up" ? "al alza" : "estable",
+      } as Record<string, string | number>),
       answerJsx: (
         <p className="text-slate-300 text-sm leading-relaxed">
           El Euríbor a 12 meses está en el{" "}
           <strong className="text-white">
-            {fmtPct(euribor?.current ?? null)}
+            {fmtPct(euribor?.current ?? null, 1, locale)}
           </strong>
           , con tendencia{" "}
           <strong
@@ -230,15 +275,17 @@ function buildFaqs(data: MetricsData): FaqItem[] {
           . Un Euríbor más bajo abarata las hipotecas variables y facilita el
           acceso a la vivienda. Actualmente se firman unas{" "}
           <strong className="text-white">
-            {fmtNum(hipotecas?.current ?? null)}
+            {fmtNum(hipotecas?.current ?? null, locale)}
           </strong>{" "}
           hipotecas mensuales en Madrid.
         </p>
       ),
     },
     {
-      question: "¿Cuáles son los distritos más caros de Madrid?",
-      answer: `Los 5 distritos más caros de Madrid por €/m² son: ${top5.map((z) => `${z.name} (${fmtEurSqm(z.price_per_sqm)})`).join(", ")}.`,
+      question: t("q7"),
+      answer: t("a7", {
+        top_5: top5.map((z) => `${z.name} (${fmtEurSqm(z.price_per_sqm, locale)})`).join(", "),
+      } as Record<string, string | number>),
       answerJsx: (
         <div className="text-slate-300 text-sm leading-relaxed">
           <p>Los 5 distritos más caros de Madrid por €/m²:</p>
@@ -251,7 +298,7 @@ function buildFaqs(data: MetricsData): FaqItem[] {
                 >
                   {z.name}
                 </Link>{" "}
-                — <strong className="text-white">{fmtEurSqm(z.price_per_sqm)}</strong>
+                — <strong className="text-white">{fmtEurSqm(z.price_per_sqm, locale)}</strong>
               </li>
             ))}
           </ol>
@@ -259,8 +306,10 @@ function buildFaqs(data: MetricsData): FaqItem[] {
       ),
     },
     {
-      question: "¿Cuáles son los distritos más baratos de Madrid?",
-      answer: `Los 5 distritos más asequibles de Madrid por €/m² son: ${bottom5.map((z) => `${z.name} (${fmtEurSqm(z.price_per_sqm)})`).join(", ")}.`,
+      question: t("q8"),
+      answer: t("a8", {
+        bottom_5: bottom5.map((z) => `${z.name} (${fmtEurSqm(z.price_per_sqm, locale)})`).join(", "),
+      } as Record<string, string | number>),
       answerJsx: (
         <div className="text-slate-300 text-sm leading-relaxed">
           <p>Los 5 distritos más asequibles de Madrid por €/m²:</p>
@@ -273,7 +322,7 @@ function buildFaqs(data: MetricsData): FaqItem[] {
                 >
                   {z.name}
                 </Link>{" "}
-                — <strong className="text-white">{fmtEurSqm(z.price_per_sqm)}</strong>
+                — <strong className="text-white">{fmtEurSqm(z.price_per_sqm, locale)}</strong>
               </li>
             ))}
           </ol>
@@ -281,15 +330,17 @@ function buildFaqs(data: MetricsData): FaqItem[] {
       ),
     },
     {
-      question: "¿Qué es el gap notarial y qué indica?",
-      answer: `El gap notarial es la diferencia entre el precio de venta publicado por los portales y el precio real escriturado en notaría. En Madrid, el gap medio es del ${fmtPct(notarialGap?.current ?? null)}. Un gap alto indica que los vendedores están aceptando ofertas significativamente por debajo de su precio de salida.`,
+      question: t("q9"),
+      answer: t("a9", {
+        gap: fmtPct(notarialGap?.current ?? null, 1, locale),
+      } as Record<string, string | number>),
       answerJsx: (
         <p className="text-slate-300 text-sm leading-relaxed">
           El gap notarial es la diferencia entre el precio de venta publicado por
           los portales y el precio real escriturado en notaría. En Madrid, el gap
           medio es del{" "}
           <strong className="text-white">
-            {fmtPct(notarialGap?.current ?? null)}
+            {fmtPct(notarialGap?.current ?? null, 1, locale)}
           </strong>
           . Un gap alto indica que los vendedores están aceptando ofertas
           significativamente por debajo de su precio de salida.
@@ -297,33 +348,35 @@ function buildFaqs(data: MetricsData): FaqItem[] {
       ),
     },
     {
-      question: "¿Qué porcentaje de pisos en Madrid baja de precio?",
-      answer: `Actualmente el ${fmtPct((priceDrop?.drop_ratio ?? 0) * 100)} de los pisos en venta en Madrid ha experimentado al menos una bajada de precio. Esto afecta a ${fmtNum(priceDrop?.with_drops ?? null)} de los ${fmtNum(priceDrop?.total_active ?? null)} pisos activos.`,
+      question: t("q10"),
+      answer: t("a10", {
+        drop_pct: fmtPct((priceDrop?.drop_ratio ?? 0) * 100, 1, locale),
+      } as Record<string, string | number>),
       answerJsx: (
         <p className="text-slate-300 text-sm leading-relaxed">
           Actualmente el{" "}
           <strong className="text-amber-300">
-            {fmtPct((priceDrop?.drop_ratio ?? 0) * 100)}
+            {fmtPct((priceDrop?.drop_ratio ?? 0) * 100, 1, locale)}
           </strong>{" "}
           de los pisos en venta en Madrid ha experimentado al menos una bajada de
           precio. Esto afecta a{" "}
           <strong className="text-white">
-            {fmtNum(priceDrop?.with_drops ?? null)}
+            {fmtNum(priceDrop?.with_drops ?? null, locale)}
           </strong>{" "}
-          de los {fmtNum(priceDrop?.total_active ?? null)} pisos activos.
+          de los {fmtNum(priceDrop?.total_active ?? null, locale)} pisos activos.
         </p>
       ),
     },
     {
-      question: "¿De dónde vienen los datos de madridhome.tech?",
-      answer: `Los datos se obtienen diariamente mediante scraping automatizado de portales inmobiliarios (principalmente Idealista). Se procesan y agregan estadísticamente para mostrar indicadores de mercado. La base de datos contiene ${fmtNum(totalActive ?? null)} pisos activos en Madrid, actualizados cada 24 horas.`,
+      question: t("q11"),
+      answer: t("a11"),
       answerJsx: (
         <p className="text-slate-300 text-sm leading-relaxed">
           Los datos se obtienen diariamente mediante scraping automatizado de
           portales inmobiliarios. Se procesan y agregan estadísticamente para
           mostrar indicadores de mercado. La base de datos contiene{" "}
           <strong className="text-white">
-            {fmtNum(totalActive ?? null)} pisos activos
+            {fmtNum(totalActive ?? null, locale)} pisos activos
           </strong>{" "}
           en Madrid, actualizados cada 24 horas. Los datos macro (Euríbor, IPC,
           paro) provienen de fuentes oficiales (INE, BCE, Colegio de
@@ -332,8 +385,8 @@ function buildFaqs(data: MetricsData): FaqItem[] {
       ),
     },
     {
-      question: "¿Qué significa la puntuación del termómetro?",
-      answer: `El termómetro es una puntuación compuesta de 0 a 100 que resume el estado del mercado inmobiliario de Madrid. Combina: tendencia de precios, velocidad de venta, accesibilidad (ratio precio/ingreso), Euríbor, y datos notariales. Una puntuación >75 indica un mercado alcista (favorece a vendedores); <40 indica un mercado bajista (favorece a compradores); 40-75 indica transición. Actualmente: ${score.score ?? "—"}/100 (${score.label}).`,
+      question: t("q12"),
+      answer: t("a12"),
       answerJsx: (
         <div className="text-slate-300 text-sm leading-relaxed">
           <p>
@@ -371,7 +424,16 @@ function buildFaqs(data: MetricsData): FaqItem[] {
 }
 
 /* ── Page component ────────────────────────────────────────── */
-export default async function FaqPage() {
+export default async function FaqPage({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  const t = await getTranslations({
+    locale: params.locale,
+    namespace: "faq",
+  });
+
   const data = await getMetrics();
 
   if (!data) {
@@ -382,7 +444,7 @@ export default async function FaqPage() {
     );
   }
 
-  const faqs = buildFaqs(data);
+  const faqs = buildFaqs(data, t, params.locale);
 
   // JSON-LD FAQPage schema for Google rich snippets
   const jsonLd = {
@@ -409,10 +471,10 @@ export default async function FaqPage() {
 
       <header className="mb-8 mt-4">
         <h1 className="text-2xl sm:text-3xl font-bold text-white">
-          Preguntas frecuentes sobre el mercado inmobiliario en Madrid
+          {t("title")}
         </h1>
         <p className="text-slate-400 text-sm mt-2">
-          Respuestas actualizadas con datos reales del mercado
+          {t("subtitle")}
         </p>
       </header>
 
@@ -440,11 +502,10 @@ export default async function FaqPage() {
       {/* CTA — Explore districts */}
       <section className="mb-8 rounded-xl bg-slate-800/40 border border-slate-700/40 px-5 py-5 text-center">
         <h2 className="text-white font-semibold text-sm mb-2">
-          Explora el mercado por distrito y barrio
+          {t("explore_districts")}
         </h2>
         <p className="text-slate-400 text-xs mb-4">
-          Datos detallados de precios, tendencias y rentabilidad para los 21
-          distritos y 139 barrios de Madrid.
+          {t("explore_subtitle")}
         </p>
         <div className="flex gap-3 justify-center flex-wrap">
           <Link

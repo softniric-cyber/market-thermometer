@@ -1,10 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import type { Zone } from "@/lib/types";
 import { fmtEur, fmtEurSqm, fmtNum } from "@/lib/utils";
 import { toSlug } from "@/lib/districts";
+import { useTranslations, useLocale } from "next-intl";
 
 interface Props {
   zones: Zone[];
@@ -13,6 +14,8 @@ interface Props {
 type SortKey = "name" | "median_price" | "price_per_sqm" | "active_count" | "days_to_sell";
 
 export default function DistrictTable({ zones }: Props) {
+  const t = useTranslations("district");
+  const locale = useLocale();
   const [sortKey, setSortKey] = useState<SortKey>("price_per_sqm");
   const [sortAsc, setSortAsc] = useState(false);
 
@@ -32,12 +35,12 @@ export default function DistrictTable({ zones }: Props) {
     return sortAsc ? (va as number) - (vb as number) : (vb as number) - (va as number);
   });
 
-  const cols: { key: SortKey; label: string; fmt: (z: Zone) => string; align?: string }[] = [
-    { key: "name", label: "Distrito", fmt: (z) => z.name, align: "text-left" },
-    { key: "price_per_sqm", label: "€/m²", fmt: (z) => fmtEurSqm(z.price_per_sqm) },
-    { key: "median_price", label: "Precio mediano", fmt: (z) => fmtEur(z.median_price) },
-    { key: "active_count", label: "Activos", fmt: (z) => fmtNum(z.active_count ?? null) },
-    { key: "days_to_sell", label: "Días venta", fmt: (z) => z.days_to_sell != null ? `${z.days_to_sell}` : "—" },
+  const cols: { key: SortKey; labelKey: string; fmt: (z: Zone) => string; align?: string }[] = [
+    { key: "name", labelKey: "th_district", fmt: (z) => z.name, align: "text-left" },
+    { key: "price_per_sqm", labelKey: "th_sqm", fmt: (z) => fmtEurSqm(z.price_per_sqm, locale) },
+    { key: "median_price", labelKey: "th_price", fmt: (z) => fmtEur(z.median_price, locale) },
+    { key: "active_count", labelKey: "th_active", fmt: (z) => fmtNum(z.active_count ?? null, locale) },
+    { key: "days_to_sell", labelKey: "th_days", fmt: (z) => z.days_to_sell != null ? `${z.days_to_sell}` : "—" },
   ];
 
   // Color bar for €/m²
@@ -46,8 +49,8 @@ export default function DistrictTable({ zones }: Props) {
   return (
     <div className="rounded-xl bg-slate-800/60 border border-slate-700/50 overflow-hidden">
       <div className="px-4 py-3 border-b border-slate-700/50">
-        <h3 className="text-white font-semibold text-sm">Precios por distrito</h3>
-        <p className="text-slate-400 text-xs mt-0.5">21 distritos de Madrid — click para ordenar</p>
+        <h3 className="text-white font-semibold text-sm">{t("prices_by_district")}</h3>
+        <p className="text-slate-400 text-xs mt-0.5">{t("table_subtitle")}</p>
       </div>
       <div className="overflow-x-auto">
         <table className="w-full text-sm">
@@ -59,7 +62,7 @@ export default function DistrictTable({ zones }: Props) {
                   onClick={() => handleSort(c.key)}
                   className={`px-4 py-2 cursor-pointer hover:text-white transition-colors select-none ${c.align ?? "text-right"}`}
                 >
-                  {c.label}
+                  {t(c.labelKey)}
                   {sortKey === c.key && (
                     <span className="ml-1">{sortAsc ? "▲" : "▼"}</span>
                   )}
@@ -94,15 +97,15 @@ export default function DistrictTable({ zones }: Props) {
                         />
                       </div>
                       <span className="text-cyan-300 font-mono text-xs">
-                        {fmtEurSqm(zone.price_per_sqm)}
+                        {fmtEurSqm(zone.price_per_sqm, locale)}
                       </span>
                     </div>
                   </td>
                   <td className="px-4 py-2.5 text-right text-slate-300 font-mono text-xs">
-                    {fmtEur(zone.median_price)}
+                    {fmtEur(zone.median_price, locale)}
                   </td>
                   <td className="px-4 py-2.5 text-right text-slate-400 text-xs">
-                    {fmtNum(zone.active_count ?? null)}
+                    {fmtNum(zone.active_count ?? null, locale)}
                   </td>
                   <td className="px-4 py-2.5 text-right text-slate-400 text-xs">
                     {zone.days_to_sell != null ? `${zone.days_to_sell}d` : "—"}

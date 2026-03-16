@@ -10,24 +10,29 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import type { TrendPoint } from "@/lib/types";
+import { useTranslations, useLocale } from "next-intl";
 
 interface Props {
   data: TrendPoint[];
 }
 
 export default function PriceTrendChart({ data }: Props) {
+  const t = useTranslations("chart");
+  const locale = useLocale();
+
   if (!data || data.length < 2) {
     return (
       <div className="rounded-xl bg-slate-800/60 border border-slate-700/50 p-6 text-slate-500 text-sm text-center">
-        Datos insuficientes para mostrar tendencia
+        {t("insufficient_data")}
       </div>
     );
   }
 
   // Format data for Recharts
+  const localeStr = locale === "en" ? "en-GB" : "es-ES";
   const chartData = data.map((pt) => ({
     week: pt.week_start
-      ? new Date(pt.week_start).toLocaleDateString("es-ES", { day: "2-digit", month: "short" })
+      ? new Date(pt.week_start).toLocaleDateString(localeStr, { day: "2-digit", month: "short" })
       : pt.week ?? "",
     eurSqm: pt.avg_sqm ? Math.round(pt.avg_sqm) : null,
     price: pt.avg_price ? Math.round(pt.avg_price) : null,
@@ -44,8 +49,8 @@ export default function PriceTrendChart({ data }: Props) {
   return (
     <div className="rounded-xl bg-slate-800/60 border border-slate-700/50 p-4">
       <div className="mb-3">
-        <h3 className="text-white font-semibold text-sm">Tendencia €/m²</h3>
-        <p className="text-slate-400 text-xs mt-0.5">Evolución semanal del precio por metro cuadrado</p>
+        <h3 className="text-white font-semibold text-sm">{t("trend_title")}</h3>
+        <p className="text-slate-400 text-xs mt-0.5">{t("trend_subtitle")}</p>
       </div>
       <ResponsiveContainer width="100%" height={240}>
         <LineChart data={chartData} margin={{ top: 5, right: 10, left: 10, bottom: 5 }}>
@@ -72,8 +77,8 @@ export default function PriceTrendChart({ data }: Props) {
             }}
             labelStyle={{ color: "#e2e8f0" }}
             formatter={(value: number) => [
-              `${value.toLocaleString("es-ES")} €/m²`,
-              "Precio",
+              `${value.toLocaleString(localeStr)} €/m²`,
+              t("price_label"),
             ]}
           />
           <Line

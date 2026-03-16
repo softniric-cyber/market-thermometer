@@ -1,7 +1,7 @@
 import { readFile } from "fs/promises";
 import { join } from "path";
 import { notFound } from "next/navigation";
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import type { MetricsData } from "@/lib/types";
 import {
@@ -12,7 +12,9 @@ import {
   getDistrictMetrics,
 } from "@/lib/districts";
 import { getBarriosForDistrict, toBarrioSlug } from "@/lib/barrios";
-import { fmtEur, fmtEurSqm, fmtNum } from "@/lib/utils";
+import { fmtEur, fmtEurSqm, fmtNum, fmtDate, fmtPct } from "@/lib/utils";
+import { locales } from "@/i18n/config";
+import { Link } from "@/i18n/navigation";
 
 import Breadcrumb from "@/components/Breadcrumb";
 import DistrictKpiCards from "@/components/DistrictKpiCards";
@@ -27,36 +29,59 @@ export const revalidate = 3600;
 
 /* ── Static params for all 21 districts ────────────────────── */
 export function generateStaticParams() {
-  return getAllSlugs().map((slug) => ({ slug }));
+  return locales.flatMap((locale) =>
+    getAllSlugs().map((slug) => ({ locale, slug }))
+  );
 }
 
 /* ── Dynamic metadata per district ─────────────────────────── */
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: { locale: string; slug: string };
 }): Promise<Metadata> {
   const distrito = fromSlug(params.slug);
   if (!distrito) return {};
 
+  const t = await getTranslations({
+    locale: params.locale,
+    namespace: "meta",
+  });
+
   const data = await getMetrics();
   const zone = data?.zones.find((z) => z.name === distrito);
   const sqm = zone?.price_per_sqm
-    ? `${zone.price_per_sqm.toLocaleString("es-ES")} €/m²`
+    ? `${zone.price_per_sqm.toLocaleString(
+        params.locale === "en" ? "en-GB" : "es-ES"
+      )} €/m²`
     : "";
   const price = zone?.median_price
     ? `${(zone.median_price / 1000).toFixed(0)}K€`
     : "";
   const count = zone?.active_count ?? 0;
 
+  const title = t("district_title", { name: distrito, sqm });
+  const description = t("district_description", {
+    name: distrito,
+    price,
+    sqm,
+    count,
+  });
+
   return {
-    title: `Precio vivienda ${distrito} — ${sqm} · Madrid`,
-    description: `Consulta el precio de la vivienda en ${distrito}, Madrid. Mediana: ${price}, ${sqm}. ${count} pisos en venta. Evolución semanal, rentabilidad alquiler y datos actualizados a diario.`,
-    alternates: { canonical: `/distrito/${params.slug}` },
+    title,
+    description,
+    alternates: {
+      canonical: `/${params.locale}/distrito/${params.slug}`,
+      languages: {
+        es: `/es/distrito/${params.slug}`,
+        en: `/en/distrito/${params.slug}`,
+      },
+    },
     openGraph: {
-      title: `Precio vivienda ${distrito} — Madrid | madridhome.tech`,
-      description: `${distrito}: ${sqm}, ${count} pisos activos. Tendencias del mercado inmobiliario actualizadas a diario.`,
-      url: `https://madridhome.tech/distrito/${params.slug}`,
+      title,
+      description,
+      url: `https://madridhome.tech/${params.locale}/distrito/${params.slug}`,
     },
   };
 }
@@ -72,20 +97,21 @@ async function getMetrics(): Promise<MetricsData | null> {
   }
 }
 
-function formatDate(iso: string): string {
-  return new Date(iso).toLocaleDateString("es-ES", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
-}
-
 /* ── Page ──────────────────────────────────────────────────── */
 export default async function DistrictPage({
   params,
 }: {
-  params: { slug: string };
+  params: { locale: string; slug: string };
 }) {
+  const t = await getTranslations({
+    locale: params.locale,
+    namespace: "district",
+  });
+  const tc = await getTranslations({
+    locale: params.locale,
+    namespace: "common",
+  });
+
   const distrito = fromSlug(params.slug);
   if (!distrito) notFound();
 
@@ -110,23 +136,26 @@ export default async function DistrictPage({
           />
         </Link>
         <h1 className="text-2xl sm:text-3xl font-bold text-white">
-          Precio vivienda en {distrito}
-          <span className="text-slate-500 font-normal"> — Madrid</span>
+          {t("title", { name: distrito })}
+          <span className="text-slate-500 font-normal"> — {tc("madrid")}</span>
         </h1>
         <p className="text-slate-400 text-sm mt-2">
-          Datos actualizados el {formatDate(data.metadata.generated_at)}
+          {tc("data_updated_on", {
+            date: fmtDate(data.metadata.generated_at, params.locale),
+          })}
           {metrics.zone?.price_per_sqm && (
             <>
               {" · "}
               <strong className="text-slate-300">
-                {fmtEurSqm(metrics.zone.price_per_sqm)}
+                {fmtEurSqm(metrics.zone.price_per_sqm, params.locale)}
               </strong>
             </>
           )}
           {metrics.zone?.active_count && (
             <>
               {" · "}
-              {fmtNum(metrics.zone.active_count)} pisos en venta
+              {fmtNum(metrics.zone.active_count, params.locale)}{" "}
+              {tc("properties_for_sale")}
             </>
           )}
         </p>
@@ -152,7 +181,7 @@ export default async function DistrictPage({
       {metrics.trends.length > 0 && (
         <section className="mb-8">
           <h2 className="text-white font-semibold text-sm mb-3">
-            Evolución precio vivienda {distrito} (€/m²)
+            {t("price_evolution", { name: distrito })}
           </h2>
           <PriceTrendChart data={metrics.trends} />
         </section>
@@ -162,7 +191,7 @@ export default async function DistrictPage({
       {metrics.yields.length > 0 && (
         <section className="mb-8">
           <h2 className="text-white font-semibold text-sm mb-3">
-            Rentabilidad alquiler por barrio en {distrito}
+            {t("rental_yield_by_barrio", { name: distrito })}
           </h2>
           <RentalYields yields={metrics.yields} />
         </section>
@@ -171,27 +200,36 @@ export default async function DistrictPage({
       {/* Texto SEO descriptivo */}
       <section className="mb-8 rounded-xl bg-slate-800/40 border border-slate-700/40 px-5 py-4">
         <h2 className="text-white font-semibold text-sm mb-2">
-          Mercado inmobiliario en {distrito}
+          {t("market_title", { name: distrito })}
         </h2>
         <p className="text-slate-400 text-sm leading-relaxed">
-          {distrito} es uno de los 21 distritos de Madrid
+          {t("is_one_of_21", { name: distrito })}
           {openData?.poblacion
-            ? ` y cuenta con ${openData.poblacion.toLocaleString("es-ES")} habitantes`
+            ? ` ${t("has_inhabitants", {
+                count: openData.poblacion.toLocaleString(
+                  params.locale === "en" ? "en-GB" : "es-ES"
+                ),
+              })}`
             : ""}
           {openData?.edad_media
-            ? ` (edad media: ${openData.edad_media.toLocaleString("es-ES", { maximumFractionDigits: 1 })} años)`
+            ? ` (${t("median_age", {
+                age: openData.edad_media.toLocaleString(
+                  params.locale === "en" ? "en-GB" : "es-ES",
+                  { maximumFractionDigits: 1 }
+                ),
+              })})`
             : ""}
           .
           {metrics.zone?.median_price && (
             <>
               {" "}
-              El precio mediano de una vivienda en {distrito} es de{" "}
+              {t("median_price_is", { name: distrito })}{" "}
               <strong className="text-slate-300">
-                {fmtEur(metrics.zone.median_price)}
+                {fmtEur(metrics.zone.median_price, params.locale)}
               </strong>
-              , con un precio por metro cuadrado de{" "}
+              , {t("with_price_per_sqm")}{" "}
               <strong className="text-slate-300">
-                {fmtEurSqm(metrics.zone.price_per_sqm)}
+                {fmtEurSqm(metrics.zone.price_per_sqm, params.locale)}
               </strong>
               .
             </>
@@ -199,33 +237,30 @@ export default async function DistrictPage({
           {metrics.zone?.active_count && (
             <>
               {" "}
-              Actualmente hay{" "}
-              <strong className="text-slate-300">
-                {fmtNum(metrics.zone.active_count)} viviendas en venta
-              </strong>{" "}
-              en este distrito.
+              {t("currently_available", {
+                count: fmtNum(metrics.zone.active_count, params.locale),
+              })}
             </>
           )}
           {metrics.notarialGap?.gap_pct != null && (
             <>
               {" "}
-              El gap notarial (diferencia entre el precio de venta publicado y
-              el precio escriturado) es del{" "}
-              <strong className="text-slate-300">
-                {metrics.notarialGap.gap_pct.toFixed(1)}%
-              </strong>
-              .
+              {t("notarial_gap_text", {
+                pct: fmtPct(metrics.notarialGap.gap_pct, 1, params.locale),
+              })}
             </>
           )}
           {metrics.madridAvgSqm && metrics.zone?.price_per_sqm && (
             <>
               {" "}
-              Comparado con la media de Madrid ({fmtEurSqm(metrics.madridAvgSqm)}
-              ), {distrito}{" "}
+              {t("compared_to_avg", {
+                avg: fmtEurSqm(metrics.madridAvgSqm, params.locale),
+              })}{" "}
+              {distrito}{" "}
               {metrics.zone.price_per_sqm > metrics.madridAvgSqm
-                ? "se sitúa por encima"
-                : "se sitúa por debajo"}{" "}
-              del precio medio.
+                ? t("above_avg")
+                : t("below_avg")}{" "}
+              {t("vs_avg")}.
             </>
           )}
         </p>
@@ -234,7 +269,7 @@ export default async function DistrictPage({
       {/* Barrios del distrito */}
       <section className="mb-8">
         <h2 className="text-slate-300 font-semibold text-sm mb-3">
-          Barrios de {distrito}
+          {t("barrios_of", { name: distrito })}
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
           {getBarriosForDistrict(distrito).map(([, barrio]) => {
@@ -248,10 +283,15 @@ export default async function DistrictPage({
                 <p className="text-slate-200 text-xs font-medium truncate">{barrio}</p>
                 {bData?.price_per_sqm ? (
                   <p className="text-cyan-400 font-mono text-[10px] mt-0.5">
-                    {bData.price_per_sqm.toLocaleString("es-ES")} €/m²
+                    {bData.price_per_sqm.toLocaleString(
+                      params.locale === "en" ? "en-GB" : "es-ES"
+                    )}{" "}
+                    €/m²
                   </p>
                 ) : (
-                  <p className="text-slate-600 text-[10px] mt-0.5">Sin datos</p>
+                  <p className="text-slate-600 text-[10px] mt-0.5">
+                    {t("no_data")}
+                  </p>
                 )}
               </Link>
             );

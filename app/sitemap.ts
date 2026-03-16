@@ -2,57 +2,85 @@ import type { MetadataRoute } from "next";
 import { getAllSlugs } from "@/lib/districts";
 import { getAllBarrioSlugs } from "@/lib/barrios";
 import { getAllBlogSlugsSync } from "@/lib/blog/registry";
+import { locales } from "@/i18n/config";
+
+const BASE = "https://madridhome.tech";
+
+/** Build alternates map for a given path (without leading locale). */
+function altLangs(path: string) {
+  return Object.fromEntries(
+    locales.map((l) => [l, `${BASE}/${l}${path}`])
+  ) as Record<string, string>;
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const districtEntries: MetadataRoute.Sitemap = getAllSlugs().map((slug) => ({
-    url: `https://madridhome.tech/distrito/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: "daily" as const,
-    priority: 0.8,
-  }));
+  const now = new Date();
 
-  const barrioEntries: MetadataRoute.Sitemap = getAllBarrioSlugs().map((slug) => ({
-    url: `https://madridhome.tech/barrio/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: "daily" as const,
-    priority: 0.7,
-  }));
-
-  const blogSlugs = getAllBlogSlugsSync();
-  const blogEntries: MetadataRoute.Sitemap = blogSlugs.map((slug) => ({
-    url: `https://madridhome.tech/blog/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: "daily" as const,
-    priority: 0.7,
-  }));
-
-  return [
+  /* ── Static pages ─────────────────────────────────────────── */
+  const staticPages: MetadataRoute.Sitemap = locales.flatMap((locale) => [
     {
-      url: "https://madridhome.tech",
-      lastModified: new Date(),
-      changeFrequency: "daily",
+      url: `${BASE}/${locale}`,
+      lastModified: now,
+      changeFrequency: "daily" as const,
       priority: 1,
+      alternates: { languages: altLangs("") },
     },
     {
-      url: "https://madridhome.tech/tasar",
-      lastModified: new Date(),
-      changeFrequency: "weekly",
+      url: `${BASE}/${locale}/tasar`,
+      lastModified: now,
+      changeFrequency: "weekly" as const,
       priority: 0.9,
+      alternates: { languages: altLangs("/tasar") },
     },
     {
-      url: "https://madridhome.tech/blog",
-      lastModified: new Date(),
-      changeFrequency: "daily",
+      url: `${BASE}/${locale}/blog`,
+      lastModified: now,
+      changeFrequency: "daily" as const,
       priority: 0.8,
+      alternates: { languages: altLangs("/blog") },
     },
     {
-      url: "https://madridhome.tech/preguntas-frecuentes",
-      lastModified: new Date(),
-      changeFrequency: "weekly",
+      url: `${BASE}/${locale}/preguntas-frecuentes`,
+      lastModified: now,
+      changeFrequency: "weekly" as const,
       priority: 0.6,
+      alternates: { languages: altLangs("/preguntas-frecuentes") },
     },
-    ...districtEntries,
-    ...barrioEntries,
-    ...blogEntries,
-  ];
+  ]);
+
+  /* ── District pages ───────────────────────────────────────── */
+  const districtEntries: MetadataRoute.Sitemap = locales.flatMap((locale) =>
+    getAllSlugs().map((slug) => ({
+      url: `${BASE}/${locale}/distrito/${slug}`,
+      lastModified: now,
+      changeFrequency: "daily" as const,
+      priority: 0.8,
+      alternates: { languages: altLangs(`/distrito/${slug}`) },
+    }))
+  );
+
+  /* ── Barrio pages ─────────────────────────────────────────── */
+  const barrioEntries: MetadataRoute.Sitemap = locales.flatMap((locale) =>
+    getAllBarrioSlugs().map((slug) => ({
+      url: `${BASE}/${locale}/barrio/${slug}`,
+      lastModified: now,
+      changeFrequency: "daily" as const,
+      priority: 0.7,
+      alternates: { languages: altLangs(`/barrio/${slug}`) },
+    }))
+  );
+
+  /* ── Blog pages ───────────────────────────────────────────── */
+  const blogSlugs = getAllBlogSlugsSync();
+  const blogEntries: MetadataRoute.Sitemap = locales.flatMap((locale) =>
+    blogSlugs.map((slug) => ({
+      url: `${BASE}/${locale}/blog/${slug}`,
+      lastModified: now,
+      changeFrequency: "daily" as const,
+      priority: 0.7,
+      alternates: { languages: altLangs(`/blog/${slug}`) },
+    }))
+  );
+
+  return [...staticPages, ...districtEntries, ...barrioEntries, ...blogEntries];
 }

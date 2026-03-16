@@ -2,6 +2,7 @@
 
 import { scoreColor } from "@/lib/utils";
 import type { MarketScore } from "@/lib/types";
+import { useTranslations } from "next-intl";
 
 interface Props {
   score: MarketScore;
@@ -38,6 +39,7 @@ function arcPath(pctStart: number, pctEnd: number): string {
 }
 
 export default function Thermometer({ score }: Props) {
+  const t = useTranslations("thermometer");
   const value = Math.max(0, Math.min(100, score.score ?? 50));
   const pct   = value / 100;
   const color = scoreColor(value);
@@ -86,12 +88,12 @@ export default function Thermometer({ score }: Props) {
           fill="#64748b"
           style={{ fontSize: "11px", fontFamily: "Inter, sans-serif" }}
         >
-          / 100
+          {t("out_of")}
         </text>
 
         {/* Labels */}
-        <text x="4"   y="124" fill="#f87171" style={{ fontSize: "9px", fontFamily: "Inter, sans-serif" }}>BAJISTA</text>
-        <text x="172" y="124" fill="#34d399" style={{ fontSize: "9px", fontFamily: "Inter, sans-serif" }}>ALCISTA</text>
+        <text x="4"   y="124" fill="#f87171" style={{ fontSize: "9px", fontFamily: "Inter, sans-serif" }}>{t("bearish")}</text>
+        <text x="172" y="124" fill="#34d399" style={{ fontSize: "9px", fontFamily: "Inter, sans-serif" }}>{t("bullish")}</text>
       </svg>
 
       <div className="mt-1 text-center">

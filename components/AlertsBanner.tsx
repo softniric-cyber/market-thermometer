@@ -1,6 +1,7 @@
 "use client";
 
 import type { Alert } from "@/lib/types";
+import { useTranslations } from "next-intl";
 
 interface Props {
   alerts: Alert[];
@@ -13,11 +14,12 @@ const levelStyles: Record<string, { bg: string; border: string; icon: string }> 
 };
 
 export default function AlertsBanner({ alerts }: Props) {
+  const t = useTranslations("alerts");
   if (!alerts.length) return null;
 
   return (
     <div className="space-y-2">
-      <h3 className="text-white font-semibold text-sm mb-2">Alertas de mercado</h3>
+      <h3 className="text-white font-semibold text-sm mb-2">{t("market_alerts")}</h3>
       {alerts.map((alert, i) => {
         const style = levelStyles[alert.level] ?? levelStyles.info;
         return (

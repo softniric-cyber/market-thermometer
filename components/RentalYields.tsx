@@ -1,15 +1,18 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import type { RentalYield } from "@/lib/types";
 import { fmtPct, fmtEur } from "@/lib/utils";
 import { toBarrioSlug } from "@/lib/barrios";
+import { useTranslations, useLocale } from "next-intl";
 
 interface Props {
   yields: RentalYield[];
 }
 
 export default function RentalYields({ yields }: Props) {
+  const t = useTranslations("rental");
+  const locale = useLocale();
   if (!yields.length) return null;
 
   const maxYield = Math.max(...yields.map((y) => y.gross_yield ?? 0));
@@ -17,9 +20,9 @@ export default function RentalYields({ yields }: Props) {
   return (
     <div className="rounded-xl bg-slate-800/60 border border-slate-700/50 overflow-hidden">
       <div className="px-4 py-3 border-b border-slate-700/50">
-        <h3 className="text-white font-semibold text-sm">Rentabilidad bruta alquiler</h3>
+        <h3 className="text-white font-semibold text-sm">{t("title")}</h3>
         <p className="text-slate-400 text-xs mt-0.5">
-          Top barrios por yield (renta anual / precio venta)
+          {t("subtitle")}
         </p>
       </div>
       <div className="divide-y divide-slate-700/20">
@@ -42,10 +45,10 @@ export default function RentalYields({ yields }: Props) {
                 />
               </div>
               <div className="text-emerald-400 font-mono text-xs font-semibold w-14 text-right">
-                {fmtPct(y.gross_yield)}
+                {fmtPct(y.gross_yield, 1, locale)}
               </div>
               <div className="text-slate-500 text-[10px] w-16 text-right hidden md:block">
-                {y.rent_median ? `${fmtEur(y.rent_median)}/m` : ""}
+                {y.rent_median ? `${fmtEur(y.rent_median, locale)}/m` : ""}
               </div>
             </Link>
           );

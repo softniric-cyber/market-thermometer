@@ -1,23 +1,18 @@
-import Link from "next/link";
+"use client";
+
+import { Link } from "@/i18n/navigation";
 import type { BlogPostMeta } from "@/lib/blog/types";
+import { fmtDate } from "@/lib/utils";
+import { useTranslations, useLocale } from "next-intl";
 
 interface Props {
   post: BlogPostMeta;
 }
 
-function formatDate(iso: string): string {
-  try {
-    return new Date(iso).toLocaleDateString("es-ES", {
-      day: "numeric",
-      month: "long",
-      year: "numeric",
-    });
-  } catch {
-    return iso;
-  }
-}
-
 export default function PostCard({ post }: Props) {
+  const t = useTranslations("blog");
+  const locale = useLocale();
+
   return (
     <Link
       href={`/blog/${post.slug}`}
@@ -37,9 +32,9 @@ export default function PostCard({ post }: Props) {
         </span>
       </div>
       <p className="text-slate-500 text-[10px] mt-3">
-        {formatDate(post.publishedAt)}
+        {fmtDate(post.publishedAt, locale)}
         {post.type === "auto" && (
-          <span className="ml-2 text-cyan-600">● Datos en vivo</span>
+          <span className="ml-2 text-cyan-600">● {t("live_data")}</span>
         )}
       </p>
     </Link>

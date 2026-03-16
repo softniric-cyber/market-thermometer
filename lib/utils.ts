@@ -1,29 +1,35 @@
+type LocaleStr = "es-ES" | "en-GB" | string;
+
+function loc(locale?: string): LocaleStr {
+  return locale === "en" ? "en-GB" : "es-ES";
+}
+
 /** Format number as euros: 650000 → "650.000 €" */
-export function fmtEur(n: number | null | undefined): string {
+export function fmtEur(n: number | null | undefined, locale?: string): string {
   if (n == null) return "—";
-  return n.toLocaleString("es-ES", { maximumFractionDigits: 0 }) + " €";
+  return n.toLocaleString(loc(locale), { maximumFractionDigits: 0 }) + " €";
 }
 
 /** Format as €/m² */
-export function fmtEurSqm(n: number | null | undefined): string {
+export function fmtEurSqm(n: number | null | undefined, locale?: string): string {
   if (n == null) return "—";
-  return n.toLocaleString("es-ES", { maximumFractionDigits: 0 }) + " €/m²";
+  return n.toLocaleString(loc(locale), { maximumFractionDigits: 0 }) + " €/m²";
 }
 
 /** Format percentage: 23.5 → "23,5%" */
-export function fmtPct(n: number | null | undefined, decimals = 1): string {
+export function fmtPct(n: number | null | undefined, decimals = 1, locale?: string): string {
   if (n == null) return "—";
-  return n.toLocaleString("es-ES", { minimumFractionDigits: decimals, maximumFractionDigits: decimals }) + "%";
+  return n.toLocaleString(loc(locale), { minimumFractionDigits: decimals, maximumFractionDigits: decimals }) + "%";
 }
 
 /** Format number with thousands separator */
-export function fmtNum(n: number | null | undefined): string {
+export function fmtNum(n: number | null | undefined, locale?: string): string {
   if (n == null) return "—";
-  return n.toLocaleString("es-ES", { maximumFractionDigits: 0 });
+  return n.toLocaleString(loc(locale), { maximumFractionDigits: 0 });
 }
 
-/** Relative time in Spanish: "hace 3 horas" */
-export function timeAgo(isoDate: string): string {
+/** Relative time: "hace 3 horas" / "3 hours ago" */
+export function timeAgo(isoDate: string, locale?: string): string {
   const now = new Date();
   const then = new Date(isoDate);
   const diffMs = now.getTime() - then.getTime();
@@ -31,11 +37,29 @@ export function timeAgo(isoDate: string): string {
   const hours = Math.floor(mins / 60);
   const days = Math.floor(hours / 24);
 
-  if (mins < 1) return "justo ahora";
-  if (mins < 60) return `hace ${mins} min`;
-  if (hours < 24) return `hace ${hours}h`;
-  if (days === 1) return "hace 1 día";
-  return `hace ${days} días`;
+  const en = locale === "en";
+
+  if (mins < 1) return en ? "just now" : "justo ahora";
+  if (mins < 60) return en ? `${mins} min ago` : `hace ${mins} min`;
+  if (hours < 24) return en ? `${hours}h ago` : `hace ${hours}h`;
+  if (days === 1) return en ? "1 day ago" : "hace 1 día";
+  return en ? `${days} days ago` : `hace ${days} días`;
+}
+
+/** Format date locale-aware */
+export function fmtDate(
+  iso: string,
+  locale?: string,
+  opts?: Intl.DateTimeFormatOptions
+): string {
+  try {
+    return new Date(iso).toLocaleDateString(
+      loc(locale),
+      opts ?? { day: "numeric", month: "long", year: "numeric" }
+    );
+  } catch {
+    return iso;
+  }
 }
 
 /** Trend arrow */

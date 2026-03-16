@@ -1,7 +1,8 @@
 import { readFile } from "fs/promises";
 import { join } from "path";
 import { notFound } from "next/navigation";
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import type { Metadata } from "next";
 import type { MetricsData } from "@/lib/types";
 import {
@@ -12,7 +13,8 @@ import {
   getBarriosForDistrict,
 } from "@/lib/barrios";
 import { toSlug } from "@/lib/districts";
-import { fmtEurSqm, fmtNum } from "@/lib/utils";
+import { fmtEurSqm, fmtNum, fmtDate } from "@/lib/utils";
+import { locales } from "@/i18n/config";
 
 import Breadcrumb from "@/components/Breadcrumb";
 import BarrioKpiCards from "@/components/BarrioKpiCards";
@@ -23,9 +25,11 @@ import { getBarrioOpenData, getOpenDataYear } from "@/lib/opendata";
 
 export const revalidate = 3600;
 
-/* ── Static params for all 139 barrios ─────────────────────── */
+/* ── Static params for all 139 barrios × locales ─────────────────────── */
 export function generateStaticParams() {
-  return getAllBarrioSlugs().map((slug) => ({ slug }));
+  return locales.flatMap((locale) =>
+    getAllBarrioSlugs().map((slug) => ({ locale, slug }))
+  );
 }
 
 /* ── Shared data loader ─────────────────────────────────────── */
@@ -39,24 +43,11 @@ async function getMetrics(): Promise<MetricsData | null> {
   }
 }
 
-function formatDate(iso: string): string {
-  try {
-    return new Date(iso).toLocaleDateString("es-ES", {
-      weekday: "long",
-      day: "numeric",
-      month: "long",
-      year: "numeric",
-    });
-  } catch {
-    return iso;
-  }
-}
-
 /* ── Dynamic metadata per barrio ────────────────────────────── */
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: { locale: string; slug: string };
 }): Promise<Metadata> {
   const match = fromBarrioSlug(params.slug);
   if (!match) return {};
@@ -64,12 +55,13 @@ export async function generateMetadata({
   const { barrio, distrito } = match;
   const data = await getMetrics();
   const barrioData = data?.barrios?.find((b) => b.barrio === barrio);
+  const t = await getTranslations({ locale: params.locale, namespace: "meta" });
 
   const sqmStr = barrioData?.price_per_sqm
-    ? `${barrioData.price_per_sqm.toLocaleString("es-ES")} €/m²`
+    ? fmtEurSqm(barrioData.price_per_sqm, params.locale)
     : "";
   const countStr = barrioData?.active_count
-    ? `${barrioData.active_count} pisos en venta`
+    ? `${fmtNum(barrioData.active_count, params.locale)} ${t("barrio_description", { barrio: "", distrito: "", sqm: "", count: "" }).split(" ").slice(-3).join(" ")}`
     : "";
   const priceStr = barrioData?.median_price
     ? `${(barrioData.median_price / 1000).toFixed(0)}K€`
@@ -78,12 +70,21 @@ export async function generateMetadata({
   const descParts = [sqmStr, countStr].filter(Boolean).join(", ");
 
   return {
-    title: `Precio vivienda ${barrio} — ${distrito} · Madrid`,
-    description: `Precio vivienda en ${barrio} (${distrito}, Madrid). ${descParts}. Mediana: ${priceStr}. Evolución semanal, rentabilidad alquiler y datos actualizados a diario.`,
-    alternates: { canonical: `/barrio/${params.slug}` },
+    title: t("barrio_title", { barrio, distrito }),
+    description: t("barrio_description", { barrio, distrito, sqm: sqmStr, count: (barrioData?.active_count ?? 0).toString() || "0" }),
+    alternates: {
+      canonical: `/barrio/${params.slug}`,
+      languages: locales.reduce(
+        (acc, loc) => {
+          acc[loc === "en" ? "en-GB" : "es-ES"] = `/es/barrio/${params.slug}`;
+          return acc;
+        },
+        {} as Record<string, string>
+      ),
+    },
     openGraph: {
-      title: `Precio vivienda ${barrio} — ${distrito} · Madrid | madridhome.tech`,
-      description: `${barrio}: ${sqmStr}, ${countStr}. Datos del mercado inmobiliario actualizados a diario.`,
+      title: `${t("barrio_title", { barrio, distrito })} | madridhome.tech`,
+      description: t("barrio_description", { barrio, distrito, sqm: sqmStr, count: (barrioData?.active_count ?? 0).toString() || "0" }),
       url: `https://madridhome.tech/barrio/${params.slug}`,
     },
   };
@@ -93,8 +94,11 @@ export async function generateMetadata({
 export default async function BarrioPage({
   params,
 }: {
-  params: { slug: string };
+  params: { locale: string; slug: string };
 }) {
+  const t = await getTranslations({ locale: params.locale, namespace: "barrio" });
+  const tCommon = await getTranslations({ locale: params.locale, namespace: "common" });
+
   const match = fromBarrioSlug(params.slug);
   if (!match) notFound();
 
@@ -127,24 +131,23 @@ export default async function BarrioPage({
       {/* Header */}
       <header className="mb-6 mt-4">
         <h1 className="text-2xl sm:text-3xl font-bold text-white">
-          Precio vivienda en{" "}
-          <span className="text-cyan-400">{barrio}</span>
-          <span className="text-slate-500 font-normal"> — {distrito}, Madrid</span>
+          {t("title", { barrio })} <span className="text-cyan-400">{barrio}</span>
+          <span className="text-slate-500 font-normal"> {t("subtitle", { distrito })}</span>
         </h1>
         <p className="text-slate-400 text-sm mt-2">
-          Datos actualizados el {formatDate(data.metadata.generated_at)}
+          {tCommon("data_updated_on", { date: fmtDate(data.metadata.generated_at, params.locale, { weekday: "long", day: "numeric", month: "long", year: "numeric" }) })}
           {metrics.data?.price_per_sqm && (
             <>
               {" · "}
               <strong className="text-slate-300">
-                {fmtEurSqm(metrics.data.price_per_sqm)}
+                {fmtEurSqm(metrics.data.price_per_sqm, params.locale)}
               </strong>
             </>
           )}
           {metrics.data?.active_count != null && (
             <>
               {" · "}
-              {fmtNum(metrics.data.active_count)} pisos en venta
+              {fmtNum(metrics.data.active_count, params.locale)} {tCommon("properties_for_sale")}
             </>
           )}
         </p>
@@ -170,15 +173,14 @@ export default async function BarrioPage({
       {hasTrend ? (
         <section className="mb-8">
           <h2 className="text-white font-semibold text-sm mb-3">
-            Evolución precio vivienda {barrio} (€/m²)
+            {t("price_evolution", { barrio })}
           </h2>
           <PriceTrendChart data={metrics.trends} />
         </section>
       ) : (
         <section className="mb-8 rounded-xl bg-slate-800/40 border border-slate-700/40 px-5 py-4">
           <p className="text-slate-400 text-sm">
-            Datos de tendencia no disponibles para {barrio}. Se mostrará la evolución
-            semanal en cuanto haya suficientes registros históricos.
+            {t("trend_unavailable", { barrio })}
           </p>
         </section>
       )}
@@ -186,36 +188,25 @@ export default async function BarrioPage({
       {/* SEO paragraph */}
       <section className="mb-8">
         <h2 className="text-slate-300 font-semibold text-sm mb-2">
-          Mercado inmobiliario en {barrio}
+          {t("market_title", { barrio })}
         </h2>
         <p className="text-slate-400 text-sm leading-relaxed">
-          {barrio} es un barrio del distrito {distrito} en Madrid.{" "}
+          {t("is_barrio_of", { barrio, distrito })}{" "}
           {hasData ? (
             <>
-              Actualmente hay{" "}
+              {t("currently_available", { count: fmtNum(metrics.data!.active_count, params.locale) })}{" "}
+              {t("with_median_price")}{" "}
               <strong className="text-slate-200">
-                {fmtNum(metrics.data!.active_count)} pisos en venta
+                {fmtEurSqm(metrics.data!.price_per_sqm, params.locale)}
               </strong>
-              {metrics.data!.price_per_sqm && (
-                <>
-                  {" "}con un precio mediano de{" "}
-                  <strong className="text-slate-200">
-                    {fmtEurSqm(metrics.data!.price_per_sqm)}
-                  </strong>
-                </>
-              )}
               {metrics.data!.avg_days_market != null && (
                 <>
-                  . Los pisos permanecen de media{" "}
-                  <strong className="text-slate-200">
-                    {metrics.data!.avg_days_market} días
-                  </strong>{" "}
-                  en el mercado antes de venderse o retirarse
+                  . {t("avg_days", { days: metrics.data!.avg_days_market.toString() })}
                 </>
               )}
               {metrics.data!.gross_yield != null && (
                 <>
-                  . La rentabilidad bruta estimada del alquiler es del{" "}
+                  . {t("gross_yield")}{" "}
                   <strong className="text-emerald-400">
                     {metrics.data!.gross_yield.toFixed(1)}%
                   </strong>
@@ -225,8 +216,7 @@ export default async function BarrioPage({
             </>
           ) : (
             <>
-              Aún no hay suficientes datos de pisos activos en este barrio para
-              mostrar estadísticas de mercado.
+              {t("no_data")}
             </>
           )}
         </p>
@@ -236,13 +226,13 @@ export default async function BarrioPage({
       <section className="mb-8">
         <div className="flex items-center justify-between mb-3">
           <h2 className="text-slate-300 font-semibold text-sm">
-            Más barrios en {distrito}
+            {t("more_barrios", { distrito })}
           </h2>
           <Link
             href={`/distrito/${distritoSlug}`}
             className="text-cyan-400 text-xs hover:text-cyan-300 transition-colors"
           >
-            Ver datos del distrito →
+            {t("view_district")}
           </Link>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">

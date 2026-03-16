@@ -1,4 +1,7 @@
-import Link from "next/link";
+"use client";
+
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 
 interface BreadcrumbItem {
   label: string;
@@ -14,6 +17,7 @@ interface Props {
 }
 
 export default function Breadcrumb({ items, district, slug }: Props) {
+  const t = useTranslations("common");
   // Normalise to items array
   const crumbs: BreadcrumbItem[] =
     items ??
@@ -28,7 +32,7 @@ export default function Breadcrumb({ items, district, slug }: Props) {
       {
         "@type": "ListItem",
         position: 1,
-        name: "Inicio",
+        name: t("home"),
         item: "https://madridhome.tech",
       },
       ...crumbs.map((c, i) => ({
@@ -50,7 +54,7 @@ export default function Breadcrumb({ items, district, slug }: Props) {
         <ol className="flex items-center gap-1.5 flex-wrap">
           <li>
             <Link href="/" className="hover:text-slate-300 transition-colors">
-              Inicio
+              {t("home")}
             </Link>
           </li>
           {crumbs.map((c, i) => (

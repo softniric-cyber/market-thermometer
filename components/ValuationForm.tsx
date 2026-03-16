@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo, useCallback } from "react";
+import { useTranslations, useLocale } from "next-intl";
 import { BARRIO_LIST } from "@/lib/barrios";
 import {
   type PropertyInput,
@@ -28,6 +29,8 @@ DISTRICTS.sort();
 
 /* ── Component ────────────────────────────────────────────── */
 export default function ValuationForm() {
+  const t = useTranslations("valuation");
+  const locale = useLocale();
   const [form, setForm] = useState<PropertyInput>(DEFAULT_INPUT);
   const [result, setResult] = useState<ValuationResponse | null>(null);
   const [loading, setLoading] = useState(false);
@@ -56,7 +59,7 @@ export default function ValuationForm() {
       const res = await fetchValuation(form);
       setResult(res);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Error desconocido");
+      setError(err instanceof Error ? err.message : t("unknown_error"));
     } finally {
       setLoading(false);
     }
@@ -75,11 +78,11 @@ export default function ValuationForm() {
         {/* ── Ubicación ─────────────────────────────────── */}
         <fieldset>
           <legend className="text-slate-300 font-semibold text-sm mb-3">
-            Ubicación
+            {t("location")}
           </legend>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
-              <label className={labelClass}>Distrito</label>
+              <label className={labelClass}>{t("district")}</label>
               <select
                 className={selectClass}
                 value={form.distrito}
@@ -89,7 +92,7 @@ export default function ValuationForm() {
                 }}
                 required
               >
-                <option value="">Seleccionar distrito</option>
+                <option value="">{t("select_district")}</option>
                 {DISTRICTS.map((d) => (
                   <option key={d} value={d}>
                     {d}
@@ -98,7 +101,7 @@ export default function ValuationForm() {
               </select>
             </div>
             <div>
-              <label className={labelClass}>Barrio</label>
+              <label className={labelClass}>{t("neighborhood")}</label>
               <select
                 className={selectClass}
                 value={form.barrio}
@@ -106,7 +109,7 @@ export default function ValuationForm() {
                 disabled={!form.distrito}
                 required
               >
-                <option value="">Seleccionar barrio</option>
+                <option value="">{t("select_neighborhood")}</option>
                 {barrios.map((b) => (
                   <option key={b} value={b}>
                     {b}
@@ -120,11 +123,11 @@ export default function ValuationForm() {
         {/* ── Características principales ────────────────── */}
         <fieldset>
           <legend className="text-slate-300 font-semibold text-sm mb-3">
-            Características
+            {t("characteristics")}
           </legend>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             <div>
-              <label className={labelClass}>Superficie (m²)</label>
+              <label className={labelClass}>{t("surface")}</label>
               <input
                 type="number"
                 className={inputClass}
@@ -136,7 +139,7 @@ export default function ValuationForm() {
               />
             </div>
             <div>
-              <label className={labelClass}>Habitaciones</label>
+              <label className={labelClass}>{t("rooms")}</label>
               <input
                 type="number"
                 className={inputClass}
@@ -148,7 +151,7 @@ export default function ValuationForm() {
               />
             </div>
             <div>
-              <label className={labelClass}>Planta</label>
+              <label className={labelClass}>{t("floor")}</label>
               <select
                 className={selectClass}
                 value={form.floor}
@@ -162,7 +165,7 @@ export default function ValuationForm() {
               </select>
             </div>
             <div>
-              <label className={labelClass}>Estado</label>
+              <label className={labelClass}>{t("condition")}</label>
               <select
                 className={selectClass}
                 value={form.condition}
@@ -181,7 +184,7 @@ export default function ValuationForm() {
         {/* ── Extras ────────────────────────────────────── */}
         <fieldset>
           <legend className="text-slate-300 font-semibold text-sm mb-3">
-            Extras
+            {t("extras")}
           </legend>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             <label className={checkboxLabel}>
@@ -191,7 +194,7 @@ export default function ValuationForm() {
                 onChange={(e) => set("has_elevator", e.target.checked)}
                 className="accent-cyan-500"
               />
-              Ascensor
+              {t("elevator")}
             </label>
             <label className={checkboxLabel}>
               <input
@@ -200,7 +203,7 @@ export default function ValuationForm() {
                 onChange={(e) => set("is_exterior", e.target.checked)}
                 className="accent-cyan-500"
               />
-              Exterior
+              {t("exterior")}
             </label>
             <label className={checkboxLabel}>
               <input
@@ -209,7 +212,7 @@ export default function ValuationForm() {
                 onChange={(e) => set("has_terrace", e.target.checked)}
                 className="accent-cyan-500"
               />
-              Terraza
+              {t("terrace")}
             </label>
             <label className={checkboxLabel}>
               <input
@@ -218,12 +221,12 @@ export default function ValuationForm() {
                 onChange={(e) => set("has_garage", e.target.checked)}
                 className="accent-cyan-500"
               />
-              Garaje
+              {t("garage")}
             </label>
           </div>
 
           <div className="mt-3 max-w-[200px]">
-            <label className={labelClass}>Cert. energética (opcional)</label>
+            <label className={labelClass}>{t("energy_cert")}</label>
             <select
               className={selectClass}
               value={form.energy_cert ?? ""}
@@ -231,7 +234,7 @@ export default function ValuationForm() {
                 set("energy_cert", e.target.value || null)
               }
             >
-              <option value="">Sin especificar</option>
+              <option value="">{t("none_specified")}</option>
               {ENERGY_OPTIONS.map((c) => (
                 <option key={c} value={c}>
                   {c}
@@ -247,7 +250,7 @@ export default function ValuationForm() {
           disabled={loading || !form.distrito || !form.barrio}
           className="w-full sm:w-auto px-8 py-3 rounded-lg bg-cyan-600 hover:bg-cyan-500 disabled:bg-slate-700 disabled:text-slate-500 text-white font-semibold text-sm transition-colors"
         >
-          {loading ? "Calculando..." : "Calcular valoración"}
+          {loading ? t("calculating") : t("calculate")}
         </button>
       </form>
 

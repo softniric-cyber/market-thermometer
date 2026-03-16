@@ -1,6 +1,7 @@
 "use client";
 
 import type { OpenDataProfile as OpenDataProfileType } from "@/lib/opendata";
+import { useTranslations, useLocale } from "next-intl";
 
 interface Props {
   data: OpenDataProfileType;
@@ -10,104 +11,110 @@ interface Props {
 }
 
 interface ProfileItem {
-  label: string;
+  labelKey: string;
   icon: string;
   value: string;
-  sublabel?: string;
+  sublabelKey?: string;
 }
 
-function fmtNum(n: number | null | undefined): string {
+function fmtNum(n: number | null | undefined, locale: string): string {
   if (n == null) return "—";
-  return n.toLocaleString("es-ES", { maximumFractionDigits: 0 });
+  const localeStr = locale === "en" ? "en-GB" : "es-ES";
+  return n.toLocaleString(localeStr, { maximumFractionDigits: 0 });
 }
 
-function fmtDec(n: number | null | undefined, d = 1): string {
+function fmtDec(n: number | null | undefined, locale: string, d = 1): string {
   if (n == null) return "—";
-  return n.toLocaleString("es-ES", {
+  const localeStr = locale === "en" ? "en-GB" : "es-ES";
+  return n.toLocaleString(localeStr, {
     minimumFractionDigits: d,
     maximumFractionDigits: d,
   });
 }
 
-function fmtPct(n: number | null | undefined): string {
+function fmtPct(n: number | null | undefined, locale: string): string {
   if (n == null) return "—";
-  return `${fmtDec(n, 1)}%`;
+  return `${fmtDec(n, locale, 1)}%`;
 }
 
-function fmtEur(n: number | null | undefined): string {
+function fmtEur(n: number | null | undefined, locale: string): string {
   if (n == null) return "—";
-  return `${fmtNum(n)}\u00a0€`;
+  return `${fmtNum(n, locale)}\u00a0€`;
 }
 
 export default function OpenDataProfile({ data, year, scope }: Props) {
+  const t = useTranslations("opendata");
+  const locale = useLocale();
   const items: ProfileItem[] = [];
 
   if (data.poblacion != null) {
     items.push({
-      label: "Población",
+      labelKey: "population",
       icon: "👥",
-      value: fmtNum(data.poblacion),
-      sublabel: "habitantes",
+      value: fmtNum(data.poblacion, locale),
+      sublabelKey: "population_sublabel",
     });
   }
 
   if (data.edad_media != null) {
     items.push({
-      label: "Edad media",
+      labelKey: "median_age",
       icon: "📅",
-      value: `${fmtDec(data.edad_media)} años`,
+      value: `${fmtDec(data.edad_media, locale)} ${t("median_age_suffix")}`,
     });
   }
 
-  if (data.pct_extranjeros != null) {
+  // Guard: only show if it's a valid percentage (≤ 100)
+  if (data.pct_extranjeros != null && data.pct_extranjeros <= 100) {
     items.push({
-      label: "Extranjeros",
+      labelKey: "foreigners",
       icon: "🌍",
-      value: fmtPct(data.pct_extranjeros),
-      sublabel: "de la población",
+      value: fmtPct(data.pct_extranjeros, locale),
+      sublabelKey: "foreigners_sublabel",
     });
   }
 
   if (data.renta_media_hogar != null) {
     items.push({
-      label: "Renta por hogar",
+      labelKey: "household_income",
       icon: "💰",
-      value: fmtEur(data.renta_media_hogar),
-      sublabel: "media anual",
+      value: fmtEur(data.renta_media_hogar, locale),
+      sublabelKey: "household_income_sublabel",
     });
   }
 
   if (data.renta_media_persona != null) {
     items.push({
-      label: "Renta per cápita",
+      labelKey: "per_capita_income",
       icon: "👤",
-      value: fmtEur(data.renta_media_persona),
-      sublabel: "media anual",
+      value: fmtEur(data.renta_media_persona, locale),
+      sublabelKey: "per_capita_income_sublabel",
     });
   }
 
-  if (data.pct_estudios_superiores != null) {
+  // Guard: only show if it's a valid percentage (≤ 100)
+  if (data.pct_estudios_superiores != null && data.pct_estudios_superiores <= 100) {
     items.push({
-      label: "Estudios superiores",
+      labelKey: "higher_education",
       icon: "🎓",
-      value: fmtPct(data.pct_estudios_superiores),
-      sublabel: "de la población",
+      value: fmtPct(data.pct_estudios_superiores, locale),
+      sublabelKey: "higher_education_sublabel",
     });
   }
 
   if (data.densidad_hab_ha != null) {
     items.push({
-      label: "Densidad",
+      labelKey: "density",
       icon: "🏙️",
-      value: `${fmtNum(data.densidad_hab_ha)} hab/ha`,
+      value: `${fmtNum(data.densidad_hab_ha, locale)} ${t("density_suffix")}`,
     });
   }
 
   if (data.tamano_medio_hogar != null) {
     items.push({
-      label: "Tamaño hogar",
+      labelKey: "household_size",
       icon: "🏠",
-      value: `${fmtDec(data.tamano_medio_hogar)} personas`,
+      value: `${fmtDec(data.tamano_medio_hogar, locale)} ${t("household_size_suffix")}`,
     });
   }
 
@@ -116,7 +123,7 @@ export default function OpenDataProfile({ data, year, scope }: Props) {
   return (
     <div>
       <h2 className="text-white font-semibold text-sm mb-3">
-        Perfil socioeconómico{scope ? ` de ${scope}` : ""}
+        {scope ? t("profile_with_scope", { scope }) : t("profile_title")}
         {year && (
           <span className="text-slate-500 font-normal text-xs ml-2">
             ({year})
@@ -126,25 +133,24 @@ export default function OpenDataProfile({ data, year, scope }: Props) {
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
         {items.map((item) => (
           <div
-            key={item.label}
+            key={item.labelKey}
             className="rounded-xl bg-slate-800/60 border border-slate-700/50 px-4 py-3"
           >
             <div className="flex items-center gap-2 mb-1">
               <span className="text-sm">{item.icon}</span>
-              <span className="text-slate-400 text-xs">{item.label}</span>
+              <span className="text-slate-400 text-xs">{t(item.labelKey)}</span>
             </div>
             <div className="text-white text-lg font-semibold">{item.value}</div>
-            {item.sublabel && (
+            {item.sublabelKey && (
               <div className="text-slate-500 text-xs mt-0.5">
-                {item.sublabel}
+                {t(item.sublabelKey)}
               </div>
             )}
           </div>
         ))}
       </div>
       <p className="text-slate-600 text-[10px] mt-2">
-        Fuente: Ayuntamiento de Madrid — Panel de indicadores de distritos y
-        barrios
+        {t("source")}
       </p>
     </div>
   );

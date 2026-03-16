@@ -1,8 +1,10 @@
 import { readFile } from "fs/promises";
 import { join } from "path";
 import type { MetricsData } from "@/lib/types";
+import { getTranslations } from "next-intl/server";
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { fmtDate } from "@/lib/utils";
 import Thermometer from "@/components/Thermometer";
 import KpiCards from "@/components/KpiCards";
 import DistrictTable from "@/components/DistrictTable";
@@ -25,16 +27,16 @@ async function getMetrics(): Promise<MetricsData | null> {
   }
 }
 
-function formatDate(iso: string): string {
-  return new Date(iso).toLocaleDateString("es-ES", {
-    weekday: "long",
-    day: "numeric",
-    month: "long",
-    year: "numeric",
+export default async function Home({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  const t = await getTranslations({ locale: params.locale, namespace: "home" });
+  const tc = await getTranslations({
+    locale: params.locale,
+    namespace: "common",
   });
-}
-
-export default async function Home() {
   const data = await getMetrics();
 
   if (!data) {
@@ -43,11 +45,10 @@ export default async function Home() {
         <div className="text-center max-w-md">
           <div className="text-4xl mb-4">📊</div>
           <h1 className="text-white text-lg font-semibold mb-2">
-            Precio vivienda Madrid — Datos no disponibles
+            {tc("madrid")} — {tc("data_not_available")}
           </h1>
           <p className="text-slate-400 text-sm">
-            No se han podido cargar los indicadores de mercado. Inténtalo más
-            tarde.
+            {tc("try_later")}
           </p>
         </div>
       </div>
@@ -74,11 +75,29 @@ export default async function Home() {
 
       {/* H1 SEO — visible pero discreto */}
       <h1 className="text-center text-slate-300 text-base sm:text-lg font-medium -mt-6 mb-1">
-        Precio vivienda Madrid — Mercado inmobiliario en tiempo real
+        {tc("madrid")} — {t("price_history")}
       </h1>
       <p className="text-center text-slate-500 text-sm mb-8">
-        Datos actualizados el {formatDate(data.metadata.generated_at)}
-        {medianSqm && <> · Mediana: <strong className="text-slate-400">{medianSqm.toLocaleString("es-ES")} €/m²</strong></>}
+        {tc("data_updated_on", {
+          date: fmtDate(data.metadata.generated_at, params.locale, {
+            weekday: "long",
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+          }),
+        })}
+        {medianSqm && (
+          <>
+            {" · "}
+            Mediana:{" "}
+            <strong className="text-slate-400">
+              {medianSqm.toLocaleString(
+                params.locale === "en" ? "en-GB" : "es-ES"
+              )}{" "}
+              €/m²
+            </strong>
+          </>
+        )}
       </p>
 
       {/* Thermometer + Score */}
@@ -107,7 +126,7 @@ export default async function Home() {
         {/* Price Trend Chart */}
         <section className="animate-fade-in animate-delay-3">
           <h2 className="text-white font-semibold text-sm mb-3">
-            Evolución precio vivienda Madrid (€/m²)
+            {t("price_history")}
           </h2>
           <PriceTrendChart data={data.trends.market} />
         </section>
@@ -115,7 +134,7 @@ export default async function Home() {
         {/* Rental Yields */}
         <section className="animate-fade-in animate-delay-4">
           <h2 className="text-white font-semibold text-sm mb-3">
-            Rentabilidad alquiler por barrio en Madrid
+            {t("rental_by_barrio")}
           </h2>
           <RentalYields yields={data.rental_yields} />
         </section>
@@ -124,7 +143,7 @@ export default async function Home() {
       {/* District Table */}
       <section className="mb-8 animate-fade-in animate-delay-4">
         <h2 className="text-white font-semibold text-sm mb-3">
-          Precio medio por distrito en Madrid
+          {t("avg_by_district")}
         </h2>
         <DistrictTable zones={data.zones} />
       </section>
@@ -136,11 +155,10 @@ export default async function Home() {
           className="block rounded-xl bg-gradient-to-r from-cyan-600/20 to-cyan-500/10 border border-cyan-500/30 px-6 py-5 hover:from-cyan-600/30 hover:to-cyan-500/20 transition-all group"
         >
           <p className="text-white font-semibold text-base group-hover:text-cyan-300 transition-colors">
-            Tasador de viviendas con IA
+            {t("tasador_cta_title")}
           </p>
           <p className="text-slate-400 text-sm mt-1">
-            Introduce las características de tu piso y obtén una valoración
-            instantánea basada en datos reales del mercado →
+            {t("tasador_cta_subtitle")}
           </p>
         </Link>
       </section>
@@ -151,15 +169,13 @@ export default async function Home() {
           href="/blog"
           className="inline-block px-5 py-2.5 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-slate-200 text-sm hover:bg-cyan-500/20 hover:text-white transition-colors"
         >
-          📊 Informes y rankings del{" "}
-          <span className="text-cyan-400">blog →</span>
+          {t("blog_link")}
         </Link>
         <Link
           href="/preguntas-frecuentes"
           className="inline-block px-5 py-2.5 rounded-lg bg-slate-800/60 border border-slate-700/50 text-slate-300 text-sm hover:bg-slate-700/50 hover:text-white transition-colors"
         >
-          ¿Tienes dudas? Consulta las{" "}
-          <span className="text-cyan-400">preguntas frecuentes →</span>
+          {t("faq_link")}
         </Link>
       </section>
 

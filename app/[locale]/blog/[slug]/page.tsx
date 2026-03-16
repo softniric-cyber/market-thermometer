@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { getAllBlogSlugs, getBlogPost, getAllBlogPosts } from "@/lib/blog/registry";
+import { locales } from "@/i18n/config";
+import { fmtDate } from "@/lib/utils";
 import Breadcrumb from "@/components/Breadcrumb";
 import Footer from "@/components/Footer";
 
@@ -10,14 +13,16 @@ export const revalidate = 3600;
 /* ── Static params for all blog posts ─────────────────────── */
 export async function generateStaticParams() {
   const slugs = await getAllBlogSlugs();
-  return slugs.map((slug) => ({ slug }));
+  return locales.flatMap((locale) =>
+    slugs.map((slug) => ({ locale, slug }))
+  );
 }
 
 /* ── Dynamic metadata per post ────────────────────────────── */
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: { locale: string; slug: string };
 }): Promise<Metadata> {
   const post = await getBlogPost(params.slug);
   if (!post) return {};
@@ -25,7 +30,13 @@ export async function generateMetadata({
   return {
     title: `${post.title} — madridhome.tech`,
     description: post.description,
-    alternates: { canonical: `/blog/${post.slug}` },
+    alternates: {
+      canonical: `/blog/${post.slug}`,
+      languages: {
+        es: `/es/blog/${post.slug}`,
+        en: `/en/blog/${post.slug}`,
+      },
+    },
     openGraph: {
       title: `${post.title} — madridhome.tech`,
       description: post.description,
@@ -72,8 +83,13 @@ function articleJsonLd(post: {
 export default async function BlogPostPage({
   params,
 }: {
-  params: { slug: string };
+  params: { locale: string; slug: string };
 }) {
+  const t = await getTranslations({
+    locale: params.locale,
+    namespace: "blog",
+  });
+
   const post = await getBlogPost(params.slug);
   if (!post) notFound();
 
@@ -81,17 +97,7 @@ export default async function BlogPostPage({
   const allPosts = await getAllBlogPosts();
   const related = allPosts.filter((p) => p.slug !== post.slug).slice(0, 3);
 
-  const formattedDate = (() => {
-    try {
-      return new Date(post.publishedAt).toLocaleDateString("es-ES", {
-        day: "numeric",
-        month: "long",
-        year: "numeric",
-      });
-    } catch {
-      return post.publishedAt;
-    }
-  })();
+  const formattedDate = fmtDate(post.publishedAt, params.locale);
 
   return (
     <main className="min-h-screen px-4 py-8 max-w-4xl mx-auto">
@@ -119,7 +125,7 @@ export default async function BlogPostPage({
           </span>
           {post.type === "auto" && (
             <span className="text-[10px] font-medium text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">
-              Datos en vivo
+              {t("live_data")}
             </span>
           )}
         </div>
@@ -127,7 +133,7 @@ export default async function BlogPostPage({
           {post.title}
         </h1>
         <p className="text-slate-400 text-sm mt-2">
-          Actualizado el {formattedDate}
+          {t("updated", { date: formattedDate })}
         </p>
       </header>
 
@@ -150,7 +156,7 @@ export default async function BlogPostPage({
       {related.length > 0 && (
         <section className="mt-12 pt-8 border-t border-slate-800">
           <h2 className="text-slate-300 font-semibold text-sm mb-4">
-            Otros artículos
+            {t("other_articles")}
           </h2>
           <div className="space-y-3">
             {related.map((r) => (
@@ -177,7 +183,7 @@ export default async function BlogPostPage({
           href="/blog"
           className="text-cyan-400 text-sm hover:text-cyan-300 transition-colors"
         >
-          ← Volver al blog
+          {t("back_to_blog")}
         </Link>
       </div>
 

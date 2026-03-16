@@ -2,13 +2,14 @@
 
 import type { DistrictMetrics } from "@/lib/districts";
 import { fmtEur, fmtEurSqm, fmtNum, fmtPct } from "@/lib/utils";
+import { useTranslations, useLocale } from "next-intl";
 
 interface Props {
   metrics: DistrictMetrics;
 }
 
 interface KpiItem {
-  label: string;
+  labelKey: string;
   icon: string;
   value: string;
   comparison?: string;
@@ -16,6 +17,8 @@ interface KpiItem {
 }
 
 export default function DistrictKpiCards({ metrics }: Props) {
+  const t = useTranslations("district");
+  const locale = useLocale();
   const { zone, notarialGap, madridAvgSqm } = metrics;
 
   // Comparación con media Madrid
@@ -25,7 +28,7 @@ export default function DistrictKpiCards({ metrics }: Props) {
       : null;
   const vsMadridStr =
     vsMadrid != null
-      ? `${vsMadrid > 0 ? "+" : ""}${vsMadrid.toFixed(0)}% vs media Madrid`
+      ? t("vs_madrid", { pct: `${vsMadrid > 0 ? "+" : ""}${vsMadrid.toFixed(0)}` })
       : undefined;
   const vsMadridColor =
     vsMadrid != null
@@ -38,34 +41,34 @@ export default function DistrictKpiCards({ metrics }: Props) {
 
   const kpis: KpiItem[] = [
     {
-      label: "Precio mediano",
+      labelKey: "price_median",
       icon: "💶",
-      value: fmtEur(zone?.median_price),
+      value: fmtEur(zone?.median_price, locale),
     },
     {
-      label: "Precio por m²",
+      labelKey: "price_per_sqm",
       icon: "📐",
-      value: fmtEurSqm(zone?.price_per_sqm),
+      value: fmtEurSqm(zone?.price_per_sqm, locale),
       comparison: vsMadridStr,
       comparisonColor: vsMadridColor,
     },
     {
-      label: "Pisos en venta",
+      labelKey: "properties_for_sale",
       icon: "🏠",
-      value: fmtNum(zone?.active_count),
+      value: fmtNum(zone?.active_count, locale),
     },
     {
-      label: "Días en mercado",
+      labelKey: "days_on_market",
       icon: "📅",
-      value: zone?.days_to_sell != null ? `${Math.round(zone.days_to_sell)} días` : "—",
+      value: zone?.days_to_sell != null ? `${Math.round(zone.days_to_sell)} ${t("days_suffix")}` : "—",
     },
     {
-      label: "Gap notarial",
+      labelKey: "notarial_gap",
       icon: "⚖️",
-      value: notarialGap?.gap_pct != null ? fmtPct(notarialGap.gap_pct) : "—",
+      value: notarialGap?.gap_pct != null ? fmtPct(notarialGap.gap_pct, 1, locale) : "—",
       comparison:
         notarialGap?.gap_pct != null
-          ? "Diferencia precio pedido vs escriturado"
+          ? t("gap_description")
           : undefined,
     },
   ];
@@ -74,12 +77,12 @@ export default function DistrictKpiCards({ metrics }: Props) {
     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
       {kpis.map((kpi) => (
         <div
-          key={kpi.label}
+          key={kpi.labelKey}
           className="rounded-xl bg-slate-800/60 border border-slate-700/50 px-4 py-3"
         >
           <div className="flex items-center gap-2 mb-1">
             <span className="text-sm">{kpi.icon}</span>
-            <span className="text-slate-400 text-xs">{kpi.label}</span>
+            <span className="text-slate-400 text-xs">{t(kpi.labelKey)}</span>
           </div>
           <div className="text-white text-lg font-semibold">{kpi.value}</div>
           {kpi.comparison && (

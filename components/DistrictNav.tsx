@@ -1,7 +1,10 @@
-import Link from "next/link";
+"use client";
+
+import { Link } from "@/i18n/navigation";
 import { DISTRICTS, toSlug } from "@/lib/districts";
 import type { Zone } from "@/lib/types";
 import { fmtEurSqm } from "@/lib/utils";
+import { useTranslations, useLocale } from "next-intl";
 
 interface Props {
   currentDistrict: string;
@@ -9,12 +12,14 @@ interface Props {
 }
 
 export default function DistrictNav({ currentDistrict, zones }: Props) {
+  const t = useTranslations("district");
+  const locale = useLocale();
   const zoneMap = new Map(zones.map((z) => [z.name, z]));
 
   return (
     <div>
       <h2 className="text-white font-semibold text-sm mb-3">
-        Todos los distritos de Madrid
+        {t("all_districts")}
       </h2>
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
         {DISTRICTS.map((name) => {
@@ -34,7 +39,7 @@ export default function DistrictNav({ currentDistrict, zones }: Props) {
             >
               <div className="font-medium truncate">{name}</div>
               <div className="text-xs text-slate-500 mt-0.5">
-                {fmtEurSqm(zone?.price_per_sqm)}
+                {fmtEurSqm(zone?.price_per_sqm, locale)}
               </div>
             </Link>
           );

@@ -1,25 +1,51 @@
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import { getAllBlogPosts } from "@/lib/blog/registry";
+import { Link } from "@/i18n/navigation";
 import Breadcrumb from "@/components/Breadcrumb";
 import PostCard from "@/components/blog/PostCard";
 import Footer from "@/components/Footer";
 
 export const revalidate = 3600;
 
-export const metadata: Metadata = {
-  title: "Blog — Mercado inmobiliario Madrid",
-  description:
-    "Informes semanales, rankings de distritos y análisis del mercado inmobiliario de Madrid con datos actualizados a diario.",
-  alternates: { canonical: "/blog" },
-  openGraph: {
-    title: "Blog — Mercado inmobiliario Madrid | madridhome.tech",
-    description:
-      "Artículos y análisis sobre el mercado inmobiliario madrileño.",
-    url: "https://madridhome.tech/blog",
-  },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  const t = await getTranslations({
+    locale: params.locale,
+    namespace: "blog",
+  });
 
-export default async function BlogIndexPage() {
+  return {
+    title: `${t("title")} — madridhome.tech`,
+    description: t("subtitle"),
+    alternates: {
+      canonical: "/blog",
+      languages: {
+        es: "/es/blog",
+        en: "/en/blog",
+      },
+    },
+    openGraph: {
+      title: `${t("title")} | madridhome.tech`,
+      description: t("subtitle"),
+      url: "https://madridhome.tech/blog",
+    },
+  };
+}
+
+export default async function BlogIndexPage({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  const t = await getTranslations({
+    locale: params.locale,
+    namespace: "blog",
+  });
+
   const posts = await getAllBlogPosts();
 
   // Group by category
@@ -34,10 +60,10 @@ export default async function BlogIndexPage() {
 
       <header className="mb-8 mt-4">
         <h1 className="text-2xl sm:text-3xl font-bold text-white">
-          Blog del mercado inmobiliario de Madrid
+          {t("title")}
         </h1>
         <p className="text-slate-400 text-sm mt-2">
-          Informes, rankings y análisis con datos actualizados a diario
+          {t("subtitle")}
         </p>
       </header>
 
@@ -56,7 +82,7 @@ export default async function BlogIndexPage() {
 
       {posts.length === 0 && (
         <p className="text-slate-500 text-sm">
-          No hay artículos disponibles todavía.
+          {t("no_articles")}
         </p>
       )}
 
