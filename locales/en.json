@@ -28,7 +28,7 @@
     "notarial_gap": "Asking vs actual gap",
     "notarial_gap_subtitle": "Asking price vs registered price",
     "days_suffix": "days",
-    "eur_per_month": "{amount}\u00a0€/month",
+    "eur_per_month": "{amount} €/month",
     "weekly_change": "{pct}% weekly",
     "vs_madrid": "{pct}% vs Madrid average",
     "properties": "properties"
@@ -92,7 +92,109 @@
     "days_suffix": "d"
   },
   "alerts": {
-    "market_alerts": "Market alerts"
+    "market_alerts": "Market alerts",
+    "codes": {
+      "price_spike": {
+        "title": "Sharp price surge",
+        "message": "Prices rose {pct}% in the past week."
+      },
+      "price_crash": {
+        "title": "Sharp price drop",
+        "message": "Prices fell {pct}% in the past week."
+      },
+      "price_up": {
+        "title": "Prices rising",
+        "message": "Up {pct}% compared to the previous week."
+      },
+      "price_down": {
+        "title": "Prices falling",
+        "message": "Down {pct}% compared to the previous week."
+      },
+      "trend_change": {
+        "title": "Price trend reversal",
+        "message": "Trend shifted from '{before}' to '{after}' around {week}."
+      },
+      "market_hot": {
+        "title": "Very active market",
+        "message": "Median sale time: {days} days. High demand pressure."
+      },
+      "sales_slow": {
+        "title": "Sales slowing down",
+        "message": "Time on market increased by {days} days this week."
+      },
+      "sales_fast": {
+        "title": "Sales accelerating",
+        "message": "Time on market dropped by {days} days this week."
+      },
+      "supply_excess_severe": {
+        "title": "Severe supply surplus",
+        "message": "Supply/demand ratio = {ratio}×. Far more listings enter than exit."
+      },
+      "supply_excess": {
+        "title": "Supply surplus",
+        "message": "Supply/demand ratio = {ratio}×. Inventory is growing fast."
+      },
+      "demand_high": {
+        "title": "Demand far exceeds supply",
+        "message": "Supply/demand ratio = {ratio}×. Stock is absorbed quickly."
+      },
+      "inventory_up": {
+        "title": "Inventory growing fast",
+        "message": "Active stock rose {pct}% — now {count} listings."
+      },
+      "inventory_down": {
+        "title": "Inventory falling fast",
+        "message": "Active stock fell {pct}% — now {count} listings."
+      },
+      "rotation_high": {
+        "title": "Very high rotation",
+        "message": "{rate}% of inventory sold in the last {weeks} weeks."
+      },
+      "rotation_low": {
+        "title": "Very low rotation",
+        "message": "Only {rate}% of inventory sold in the last {weeks} weeks."
+      },
+      "rotation_down": {
+        "title": "Rotation rate declining",
+        "message": "Rotation fell {change} pp vs the previous period."
+      },
+      "pti_extreme": {
+        "title": "Extreme price-to-income ratio",
+        "message": "Median price equals {pti} years of gross reference income."
+      },
+      "euribor_high": {
+        "title": "Very high Euribor",
+        "message": "12M Euribor at {rate}% — significantly raising mortgage costs."
+      },
+      "euribor_down": {
+        "title": "Euribor falling",
+        "message": "12M Euribor at {rate}% with a downward trend. Good news for mortgages."
+      },
+      "mortgage_expensive": {
+        "title": "Mortgages costlier than 2 years ago",
+        "message": "At Euribor {rate}%, a €200k 25-year mortgage costs €{diff}/month more than when Euribor was {past_rate}% ({past_date})."
+      },
+      "mortgage_cheap": {
+        "title": "Mortgages cheaper than 2 years ago",
+        "message": "At Euribor {rate}%, a €200k 25-year mortgage costs €{diff}/month less than when Euribor was {past_rate}% ({past_date})."
+      },
+      "notarial_gap_extreme": {
+        "title": "Extreme asking price premium",
+        "message": "Idealista listings exceed {yr} notarial prices by {gap}%. Highest gap in {max_d} (+{max_g}%). Large negotiation margin."
+      },
+      "notarial_gap_high": {
+        "title": "Asking prices above notarial",
+        "message": "Average Idealista vs notarial {yr} gap: +{gap}%. Sellers are asking above what most deals close at."
+      },
+      "notarial_gap_aligned": {
+        "title": "Asking prices aligned with notarial",
+        "message": "Average Madrid vs notarial {yr} gap: {gap}%. Asking and closing prices are closely matched."
+      },
+      "aged_stock": {
+        "title": "Aged stock: {pct}% listed over {min_days} days",
+        "message": "{aged} of {total} active listings have been on the market for more than {min_days} days ({pct}%). Real demand may be weaker than supply volume suggests."
+      }
+    }
   },
   "chart": {
     "trend_title": "€/m² Trend",

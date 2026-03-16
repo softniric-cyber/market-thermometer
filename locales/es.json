@@ -28,7 +28,7 @@
     "notarial_gap": "Gap oferta vs real",
     "notarial_gap_subtitle": "Precio pedido vs escriturado",
     "days_suffix": "días",
-    "eur_per_month": "{amount}\u00a0€/mes",
+    "eur_per_month": "{amount} €/mes",
     "weekly_change": "{pct}% semanal",
     "vs_madrid": "{pct}% vs media Madrid",
     "properties": "propiedades"
@@ -92,7 +92,109 @@
     "days_suffix": "d"
   },
   "alerts": {
-    "market_alerts": "Alertas de mercado"
+    "market_alerts": "Alertas de mercado",
+    "codes": {
+      "price_spike": {
+        "title": "Subida brusca de precios",
+        "message": "Los precios subieron un {pct}% en la última semana."
+      },
+      "price_crash": {
+        "title": "Caída brusca de precios",
+        "message": "Los precios bajaron un {pct}% en la última semana."
+      },
+      "price_up": {
+        "title": "Precios al alza",
+        "message": "Subida del {pct}% respecto a la semana anterior."
+      },
+      "price_down": {
+        "title": "Precios a la baja",
+        "message": "Bajada del {pct}% respecto a la semana anterior."
+      },
+      "trend_change": {
+        "title": "Cambio de tendencia de precios",
+        "message": "La tendencia pasó de '{before}' a '{after}' alrededor de {week}."
+      },
+      "market_hot": {
+        "title": "Mercado muy activo",
+        "message": "Mediana de venta: {days} días. Alta presión de demanda."
+      },
+      "sales_slow": {
+        "title": "Ventas ralentizándose",
+        "message": "El tiempo en mercado aumentó {days} días esta semana."
+      },
+      "sales_fast": {
+        "title": "Aceleración de ventas",
+        "message": "El tiempo en mercado bajó {days} días esta semana."
+      },
+      "supply_excess_severe": {
+        "title": "Exceso severo de oferta",
+        "message": "Ratio O/D = {ratio}×. Entran muchas más propiedades de las que salen."
+      },
+      "supply_excess": {
+        "title": "Exceso de oferta",
+        "message": "Ratio O/D = {ratio}×. El inventario está creciendo rápido."
+      },
+      "demand_high": {
+        "title": "Demanda muy superior a oferta",
+        "message": "Ratio O/D = {ratio}×. El stock se absorbe rápidamente."
+      },
+      "inventory_up": {
+        "title": "Inventario creciendo rápido",
+        "message": "El stock activo creció un {pct}% — ahora {count} propiedades."
+      },
+      "inventory_down": {
+        "title": "Inventario cayendo rápido",
+        "message": "El stock activo cayó un {pct}% — ahora {count} propiedades."
+      },
+      "rotation_high": {
+        "title": "Rotación muy alta",
+        "message": "El {rate}% del inventario se vendió en las últimas {weeks} semanas."
+      },
+      "rotation_low": {
+        "title": "Rotación muy baja",
+        "message": "Solo el {rate}% del inventario se vendió en las últimas {weeks} semanas."
+      },
+      "rotation_down": {
+        "title": "Tasa de rotación bajando",
+        "message": "La rotación bajó {change} pp respecto al periodo anterior."
+      },
+      "pti_extreme": {
+        "title": "Ratio precio/ingreso extremo",
+        "message": "El precio mediano equivale a {pti} años de ingreso bruto de referencia."
+      },
+      "euribor_high": {
+        "title": "Euríbor muy elevado",
+        "message": "Euríbor 12M en {rate}% — encarece significativamente las hipotecas."
+      },
+      "euribor_down": {
+        "title": "Euríbor bajando",
+        "message": "Euríbor 12M en {rate}% con tendencia bajista. Buena señal para hipotecas."
+      },
+      "mortgage_expensive": {
+        "title": "Hipotecas más caras que hace 2 años",
+        "message": "Con Euríbor al {rate}%, una hipoteca de 200.000 € a 25 años cuesta {diff} €/mes más que cuando el Euríbor era {past_rate}% ({past_date})."
+      },
+      "mortgage_cheap": {
+        "title": "Hipotecas más baratas que hace 2 años",
+        "message": "Con Euríbor al {rate}%, una hipoteca de 200.000 € a 25 años cuesta {diff} €/mes menos que cuando el Euríbor era {past_rate}% ({past_date})."
+      },
+      "notarial_gap_extreme": {
+        "title": "Sobreprecio extremo vs precio real",
+        "message": "La oferta en Idealista supera en {gap}% el precio notarial {yr}. Mayor tensión en {max_d} (+{max_g}%). Margen de negociación elevado."
+      },
+      "notarial_gap_high": {
+        "title": "Oferta por encima del precio real",
+        "message": "Gap medio Idealista vs notarial {yr}: +{gap}%. Los vendedores piden más de lo que se escritura."
+      },
+      "notarial_gap_aligned": {
+        "title": "Precios de oferta alineados con el notarial",
+        "message": "Gap medio Madrid vs notarial {yr}: {gap}%. Las diferencias entre oferta y precio real son mínimas."
+      },
+      "aged_stock": {
+        "title": "Stock envejecido: {pct}% lleva +{min_days} días",
+        "message": "{aged} de {total} pisos activos llevan más de {min_days} días en el mercado ({pct}%). La demanda real puede ser más débil de lo que sugiere el volumen de oferta."
+      }
+    }
   },
   "chart": {
     "trend_title": "Tendencia €/m²",

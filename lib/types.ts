@@ -74,6 +74,8 @@ export interface Alert {
   level: "critical" | "warning" | "info";
   title: string;
   message: string;
+  code?: string;
+  params?: Record<string, string | number>;
 }
 
 export interface BarrioData {

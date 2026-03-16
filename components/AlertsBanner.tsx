@@ -22,6 +22,22 @@ export default function AlertsBanner({ alerts }: Props) {
       <h3 className="text-white font-semibold text-sm mb-2">{t("market_alerts")}</h3>
       {alerts.map((alert, i) => {
         const style = levelStyles[alert.level] ?? levelStyles.info;
+
+        // Use translated strings when a code is available; fall back to raw DB text
+        const titleKey = alert.code ? `codes.${alert.code}.title` : null;
+        const msgKey = alert.code ? `codes.${alert.code}.message` : null;
+        const params = alert.params as Record<string, string | number> | undefined;
+
+        let title = alert.title;
+        let message = alert.message;
+
+        if (titleKey) {
+          try { title = t(titleKey, params); } catch { /* fallback to raw */ }
+        }
+        if (msgKey) {
+          try { message = t(msgKey, params); } catch { /* fallback to raw */ }
+        }
+
         return (
           <div
             key={i}
@@ -29,9 +45,9 @@ export default function AlertsBanner({ alerts }: Props) {
           >
             <span className="text-sm mt-0.5">{style.icon}</span>
             <div className="flex-1 min-w-0">
-              <span className="text-white text-sm font-medium">{alert.title}</span>
+              <span className="text-white text-sm font-medium">{title}</span>
               <p className="text-slate-300 text-xs mt-0.5 leading-relaxed">
-                {alert.message}
+                {message}
               </p>
             </div>
           </div>
