@@ -12,6 +12,7 @@ import PriceTrendChart from "@/components/PriceTrendChart";
 import AlertsBanner from "@/components/AlertsBanner";
 import RentalYields from "@/components/RentalYields";
 import RentBurden from "@/components/RentBurden";
+import Lanzamientos from "@/components/Lanzamientos";
 import Footer from "@/components/Footer";
 
 // ISR: revalidar cada hora (3600s). Vercel sirve HTML cacheado
@@ -136,6 +137,13 @@ export default async function Home({
         {data.indicators.rent_burden?.current && (
           <section className="animate-fade-in animate-delay-4">
             <RentBurden indicator={data.indicators.rent_burden} />
+          </section>
+        )}
+
+        {/* Lanzamientos CGPJ */}
+        {data.indicators.lanzamientos?.current && (
+          <section className="animate-fade-in animate-delay-4">
+            <Lanzamientos indicator={data.indicators.lanzamientos} />
           </section>
         )}
 

@@ -359,5 +359,22 @@
       "overburdened": "Sobrecarga",
       "severely_overburdened": "Sobrecarga extrema"
     }
+  },
+  "lanzamientos": {
+    "title": "Desahucios por impago (CGPJ)",
+    "subtitle": "Lanzamientos practicados — Comunidad de Madrid",
+    "source": "Fuente: CGPJ — Efecto de la crisis en los órganos judiciales",
+    "quarter": "Trimestre",
+    "total": "Total",
+    "alquiler": "Alquiler (LAU)",
+    "hipoteca": "Hipoteca",
+    "otros": "Otros",
+    "alquiler_pct": "% sobre alquiler",
+    "yoy_up": "Subida interanual",
+    "yoy_down": "Bajada interanual",
+    "yoy_stable": "Estable interanual",
+    "yoy_label": "vs mismo trimestre año anterior",
+    "chart_title": "Evolución últimos 12 trimestres",
+    "latest_quarter": "Último trimestre disponible"
   }
 }

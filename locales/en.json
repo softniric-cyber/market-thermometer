@@ -359,5 +359,22 @@
       "overburdened": "Overburdened",
       "severely_overburdened": "Severely overburdened"
     }
+  },
+  "lanzamientos": {
+    "title": "Evictions for non-payment (CGPJ)",
+    "subtitle": "Court-ordered evictions — Community of Madrid",
+    "source": "Source: CGPJ — Impact of the crisis on judicial bodies",
+    "quarter": "Quarter",
+    "total": "Total",
+    "alquiler": "Rental (LAU)",
+    "hipoteca": "Mortgage",
+    "otros": "Other",
+    "alquiler_pct": "% rental share",
+    "yoy_up": "Year-on-year increase",
+    "yoy_down": "Year-on-year decrease",
+    "yoy_stable": "Year-on-year stable",
+    "yoy_label": "vs same quarter previous year",
+    "chart_title": "Trend: last 12 quarters",
+    "latest_quarter": "Latest available quarter"
   }
 }

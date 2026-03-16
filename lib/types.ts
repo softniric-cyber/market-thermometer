@@ -39,6 +39,14 @@ export interface Indicator {
   median_rent?: number;
   severity?: string;
   by_district?: RentBurdenDistrict[];
+  // lanzamientos CGPJ
+  quarter_label?: string;
+  alquiler?: number | null;
+  hipoteca?: number | null;
+  otros?: number | null;
+  alquiler_pct?: number | null;
+  yoy_change?: number | null;
+  yoy_change_pct?: number | null;
 }
 
 export interface RentBurdenDistrict {
