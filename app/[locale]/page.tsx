@@ -11,7 +11,6 @@ import DistrictTable from "@/components/DistrictTable";
 import PriceTrendChart from "@/components/PriceTrendChart";
 import AlertsBanner from "@/components/AlertsBanner";
 import RentalYields from "@/components/RentalYields";
-import RentBurden from "@/components/RentBurden";
 import Lanzamientos from "@/components/Lanzamientos";
 import Footer from "@/components/Footer";
 
@@ -132,13 +131,6 @@ export default async function Home({
           </h2>
           <PriceTrendChart data={data.trends.market} />
         </section>
-
-        {/* Rent Burden */}
-        {data.indicators.rent_burden?.current && (
-          <section className="animate-fade-in animate-delay-4">
-            <RentBurden indicator={data.indicators.rent_burden} />
-          </section>
-        )}
 
         {/* Lanzamientos CGPJ */}
         {data.indicators.lanzamientos?.current && (

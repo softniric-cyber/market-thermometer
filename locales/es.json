@@ -27,6 +27,8 @@
     "employed_subtitle": "{pct}% vs trim. ant.",
     "notarial_gap": "Gap oferta vs real",
     "notarial_gap_subtitle": "Precio pedido vs escriturado",
+    "evictions": "Desahucios alquiler",
+    "evictions_subtitle": "{quarter} · {pct}% interanual",
     "days_suffix": "días",
     "eur_per_month": "{amount} €/mes",
     "weekly_change": "{pct}% semanal",

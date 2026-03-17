@@ -27,6 +27,8 @@
     "employed_subtitle": "{pct}% vs prev. quarter",
     "notarial_gap": "Asking vs actual gap",
     "notarial_gap_subtitle": "Asking price vs registered price",
+    "evictions": "Rental evictions",
+    "evictions_subtitle": "{quarter} · {pct}% YoY",
     "days_suffix": "days",
     "eur_per_month": "{amount} €/month",
     "weekly_change": "{pct}% weekly",

@@ -168,6 +168,24 @@ export default function KpiCards({ indicators, macro, dbStats }: Props) {
       invertGood: true,
       subtitleKey: "notarial_gap_subtitle",
     },
+    {
+      key: "evictions",
+      labelKey: "evictions",
+      icon: "⚖️",
+      getValue: (ind, _, __, locale) => {
+        const v = ind.lanzamientos?.alquiler;
+        return v != null ? fmtNum(v as number, locale) : "—";
+      },
+      getTrend: (ind) => ind.lanzamientos?.trend,
+      invertGood: true,
+      getSubtitle: (ind, _, t) => {
+        const q = ind.lanzamientos?.quarter_label;
+        const pct = ind.lanzamientos?.yoy_change_pct;
+        if (!q) return "";
+        const pctStr = pct != null ? `${pct > 0 ? "+" : ""}${pct.toFixed(1)}` : "—";
+        return t("evictions_subtitle", { quarter: q, pct: pctStr });
+      },
+    },
   ];
 
   return (
