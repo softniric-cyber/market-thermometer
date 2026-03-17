@@ -29,6 +29,8 @@
     "notarial_gap_subtitle": "Asking price vs registered price",
     "evictions": "Rental evictions",
     "evictions_subtitle": "{quarter} · {pct}% YoY",
+    "morosidad": "Rent default debt",
+    "morosidad_subtitle": "{year} · +{pct}% YoY",
     "days_suffix": "days",
     "eur_per_month": "{amount} €/month",
     "weekly_change": "{pct}% weekly",

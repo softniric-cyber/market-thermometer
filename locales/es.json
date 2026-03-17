@@ -29,6 +29,8 @@
     "notarial_gap_subtitle": "Precio pedido vs escriturado",
     "evictions": "Desahucios alquiler",
     "evictions_subtitle": "{quarter} · {pct}% interanual",
+    "morosidad": "Deuda morosidad",
+    "morosidad_subtitle": "{year} · +{pct}% interanual",
     "days_suffix": "días",
     "eur_per_month": "{amount} €/mes",
     "weekly_change": "{pct}% semanal",

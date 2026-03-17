@@ -186,6 +186,24 @@ export default function KpiCards({ indicators, macro, dbStats }: Props) {
         return t("evictions_subtitle", { quarter: q, pct: pctStr });
       },
     },
+    {
+      key: "morosidad",
+      labelKey: "morosidad",
+      icon: "📛",
+      getValue: (ind, _, __, locale) => {
+        const v = ind.morosidad?.current;
+        return v != null ? `${fmtNum(v as number, locale)} €` : "—";
+      },
+      getTrend: (ind) => ind.morosidad?.trend,
+      invertGood: true,
+      getSubtitle: (ind, _, t) => {
+        const year = ind.morosidad?.data_year;
+        const pct  = ind.morosidad?.yoy_change_pct;
+        if (!year) return "";
+        const pctStr = pct != null ? pct.toFixed(1) : "—";
+        return t("morosidad_subtitle", { year, pct: pctStr });
+      },
+    },
   ];
 
   return (
