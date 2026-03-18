@@ -24,7 +24,7 @@ export async function generateMetadata({
 }: {
   params: { locale: string; slug: string };
 }): Promise<Metadata> {
-  const post = await getBlogPost(params.slug);
+  const post = await getBlogPost(params.slug, params.locale);
   if (!post) return {};
 
   return {
@@ -90,7 +90,7 @@ export default async function BlogPostPage({
     namespace: "blog",
   });
 
-  const post = await getBlogPost(params.slug);
+  const post = await getBlogPost(params.slug, params.locale);
   if (!post) notFound();
 
   // Get other posts for "related" section

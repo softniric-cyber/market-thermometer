@@ -61,7 +61,8 @@ export async function getAllBlogPosts(): Promise<BlogPostMeta[]> {
 
 // ── Single post by slug (for post detail page) ───────────────
 export async function getBlogPost(
-  slug: string
+  slug: string,
+  locale?: string
 ): Promise<BlogPostFull | null> {
   const data = await getMetrics();
 
@@ -73,6 +74,6 @@ export async function getBlogPost(
     }
   }
 
-  // Then check MDX
-  return getMdxPost(slug);
+  // Then check MDX (locale-aware)
+  return getMdxPost(slug, locale);
 }

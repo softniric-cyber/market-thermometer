@@ -111,10 +111,21 @@ export async function discoverMdxPosts(): Promise<BlogPostMeta[]> {
 }
 
 // ── Load single MDX post ─────────────────────────────────────
-export async function getMdxPost(slug: string): Promise<BlogPostFull | null> {
-  for (const ext of [".mdx", ".md"]) {
+// Lookup order: slug.{locale}.mdx → slug.{locale}.md → slug.mdx → slug.md
+export async function getMdxPost(
+  slug: string,
+  locale?: string
+): Promise<BlogPostFull | null> {
+  const candidates: string[] = [];
+
+  if (locale) {
+    candidates.push(`${slug}.${locale}.mdx`, `${slug}.${locale}.md`);
+  }
+  candidates.push(`${slug}.mdx`, `${slug}.md`);
+
+  for (const filename of candidates) {
     try {
-      const raw = await readFile(join(CONTENT_DIR, slug + ext), "utf-8");
+      const raw = await readFile(join(CONTENT_DIR, filename), "utf-8");
       const { meta, content } = parseFrontmatter(raw);
       return {
         slug,
