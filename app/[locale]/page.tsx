@@ -11,7 +11,6 @@ import DistrictTable from "@/components/DistrictTable";
 import PriceTrendChart from "@/components/PriceTrendChart";
 import AlertsBanner from "@/components/AlertsBanner";
 import RentalYields from "@/components/RentalYields";
-import Lanzamientos from "@/components/Lanzamientos";
 import NewPostBanner from "@/components/NewPostBanner";
 import NewsSection from "@/components/NewsSection";
 import type { NewsItem } from "@/components/NewsSection";
@@ -174,12 +173,6 @@ export default async function Home({
           <RentalYields yields={data.rental_yields} />
         </section>
 
-        {/* Lanzamientos CGPJ */}
-        {data.indicators.lanzamientos?.current && (
-          <section className="animate-fade-in animate-delay-4">
-            <Lanzamientos indicator={data.indicators.lanzamientos} />
-          </section>
-        )}
       </div>
 
       {/* District Table */}
