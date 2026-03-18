@@ -382,5 +382,8 @@
     "yoy_label": "vs mismo trimestre año anterior",
     "chart_title": "Evolución últimos 12 trimestres",
     "latest_quarter": "Último trimestre disponible"
+  },
+  "news": {
+    "title": "Noticias del mercado"
   }
 }

@@ -382,5 +382,8 @@
     "yoy_label": "vs same quarter previous year",
     "chart_title": "Trend: last 12 quarters",
     "latest_quarter": "Latest available quarter"
+  },
+  "news": {
+    "title": "Market news"
   }
 }
