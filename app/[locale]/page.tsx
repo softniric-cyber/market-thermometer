@@ -95,11 +95,6 @@ export default async function Home({
         />
       </header>
 
-      {/* New post banner */}
-      {latestMdxPost && (
-        <NewPostBanner slug={latestMdxPost.slug} title={latestMdxPost.title} />
-      )}
-
       {/* H1 SEO — visible pero discreto */}
       <h1 className="text-center text-slate-300 text-base sm:text-lg font-medium -mt-6 mb-1">
         {tc("madrid")} — {t("price_history")}
@@ -131,6 +126,11 @@ export default async function Home({
       <section className="flex justify-center mb-10 animate-fade-in animate-delay-1">
         <Thermometer score={data.market_score} />
       </section>
+
+      {/* New post banner */}
+      {latestMdxPost && (
+        <NewPostBanner slug={latestMdxPost.slug} title={latestMdxPost.title} />
+      )}
 
       {/* KPI Cards */}
       <section className="mb-8 animate-fade-in animate-delay-2">
