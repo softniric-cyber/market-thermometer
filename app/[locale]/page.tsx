@@ -12,7 +12,9 @@ import PriceTrendChart from "@/components/PriceTrendChart";
 import AlertsBanner from "@/components/AlertsBanner";
 import RentalYields from "@/components/RentalYields";
 import Lanzamientos from "@/components/Lanzamientos";
+import NewPostBanner from "@/components/NewPostBanner";
 import Footer from "@/components/Footer";
+import { getAllBlogPosts } from "@/lib/blog/registry";
 
 // ISR: revalidar cada hora (3600s). Vercel sirve HTML cacheado
 // y lo regenera en background cuando expira.
@@ -39,6 +41,9 @@ export default async function Home({
     namespace: "common",
   });
   const data = await getMetrics();
+  const allPosts = await getAllBlogPosts(params.locale);
+  // Only show MDX posts in the banner (exclude auto-generated data posts)
+  const latestMdxPost = allPosts.find((p) => p.type === "mdx") ?? null;
 
   if (!data) {
     return (
@@ -73,6 +78,11 @@ export default async function Home({
           className="h-40 sm:h-52 w-auto"
         />
       </header>
+
+      {/* New post banner */}
+      {latestMdxPost && (
+        <NewPostBanner slug={latestMdxPost.slug} title={latestMdxPost.title} />
+      )}
 
       {/* H1 SEO — visible pero discreto */}
       <h1 className="text-center text-slate-300 text-base sm:text-lg font-medium -mt-6 mb-1">

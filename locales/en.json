@@ -8,7 +8,9 @@
     "back": "← Back",
     "madrid": "Madrid",
     "data_updated_on": "Data updated on {date}",
-    "properties_for_sale": "properties for sale"
+    "properties_for_sale": "properties for sale",
+    "new_article": "New article",
+    "read_article": "Read →"
   },
   "kpi": {
     "price_median": "Median price",

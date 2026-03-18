@@ -8,7 +8,9 @@
     "back": "← Volver",
     "madrid": "Madrid",
     "data_updated_on": "Datos actualizados el {date}",
-    "properties_for_sale": "pisos en venta"
+    "properties_for_sale": "pisos en venta",
+    "new_article": "Nuevo artículo",
+    "read_article": "Leer →"
   },
   "kpi": {
     "price_median": "Precio mediano",
