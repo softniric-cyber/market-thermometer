@@ -66,46 +66,115 @@ function markdownToHtml(md: string): string {
   return html;
 }
 
+const KNOWN_LOCALES = ["es", "en"];
+
+// ── Extract base slug and locale from a filename ─────────────
+// "post.es.mdx" → { baseSlug: "post", locale: "es" }
+// "post.mdx"    → { baseSlug: "post", locale: null }
+function parseFilename(filename: string): {
+  baseSlug: string;
+  locale: string | null;
+} {
+  const withoutExt = filename.replace(/\.(mdx|md)$/, "");
+  const parts = withoutExt.split(".");
+  const maybeLoc = parts[parts.length - 1];
+  if (KNOWN_LOCALES.includes(maybeLoc)) {
+    return {
+      baseSlug: parts.slice(0, -1).join("."),
+      locale: maybeLoc,
+    };
+  }
+  return { baseSlug: withoutExt, locale: null };
+}
+
 // ── Discover MDX slugs — sync version for sitemap ────────────
 export function discoverMdxSlugsSync(): string[] {
   try {
     const files = readdirSync(CONTENT_DIR);
-    return files
-      .filter((f) => f.endsWith(".mdx") || f.endsWith(".md"))
-      .map((f) => f.replace(/\.(mdx|md)$/, ""));
+    const seen: Record<string, true> = {};
+    for (const f of files) {
+      if (!f.endsWith(".mdx") && !f.endsWith(".md")) continue;
+      seen[parseFilename(f).baseSlug] = true;
+    }
+    return Object.keys(seen);
   } catch {
     return [];
   }
 }
 
-// ── Discover all MDX posts ───────────────────────────────────
-export async function discoverMdxPosts(): Promise<BlogPostMeta[]> {
+// ── Discover all MDX posts (locale-aware) ───────────────────
+// For posts with locale variants (slug.es.mdx / slug.en.mdx):
+//   - Only show the variant that matches `locale`
+//   - Fall back to the unlocalized file if no variant exists
+// Posts without locale variants always appear.
+export async function discoverMdxPosts(
+  locale?: string
+): Promise<BlogPostMeta[]> {
   try {
     const files = await readdir(CONTENT_DIR);
-    const posts: BlogPostMeta[] = [];
 
+    // Group files by base slug
+    const bySlug: Record<string, { locales: string[]; hasGeneric: boolean }> = {};
     for (const file of files) {
       if (!file.endsWith(".mdx") && !file.endsWith(".md")) continue;
-      const slug = file.replace(/\.(mdx|md)$/, "");
-      try {
-        const raw = await readFile(join(CONTENT_DIR, file), "utf-8");
-        const { meta } = parseFrontmatter(raw);
-        posts.push({
-          slug,
-          title: meta.title || slug,
-          description: meta.description || "",
-          publishedAt: meta.publishedAt || new Date().toISOString(),
-          category: meta.category || "Artículo",
-          type: "mdx",
-        });
-      } catch {
-        // Skip invalid files
+      const { baseSlug, locale: fileLoc } = parseFilename(file);
+      if (!bySlug[baseSlug]) bySlug[baseSlug] = { locales: [], hasGeneric: false };
+      if (fileLoc) {
+        bySlug[baseSlug].locales.push(fileLoc);
+      } else {
+        bySlug[baseSlug].hasGeneric = true;
+      }
+    }
+
+    const posts: BlogPostMeta[] = [];
+
+    for (const baseSlug of Object.keys(bySlug)) {
+      const { locales, hasGeneric } = bySlug[baseSlug];
+      // Decide which file to read for metadata
+      let fileToRead: string | null = null;
+
+      if (locales.length > 0) {
+        // Has locale variants — only show the one matching current locale
+        const matchingLoc = locale && locales.includes(locale) ? locale : locales[0];
+        if (locale && !locales.includes(locale) && !hasGeneric) {
+          // No matching locale and no generic fallback — skip
+          continue;
+        }
+        if (locale && locales.includes(locale)) {
+          fileToRead = `${baseSlug}.${locale}`;
+        } else if (hasGeneric) {
+          fileToRead = baseSlug;
+        } else {
+          fileToRead = `${baseSlug}.${matchingLoc}`;
+        }
+      } else {
+        // No locale variants — always show
+        fileToRead = baseSlug;
+      }
+
+      if (!fileToRead) continue;
+
+      for (const ext of [".mdx", ".md"]) {
+        try {
+          const raw = await readFile(join(CONTENT_DIR, fileToRead + ext), "utf-8");
+          const { meta } = parseFrontmatter(raw);
+          posts.push({
+            slug: baseSlug,
+            title: meta.title || baseSlug,
+            description: meta.description || "",
+            publishedAt: meta.publishedAt || new Date().toISOString(),
+            category: meta.category || "Artículo",
+            type: "mdx",
+          });
+          break;
+        } catch {
+          continue;
+        }
       }
     }
 
     return posts;
   } catch {
-    // content/blog/ directory doesn't exist yet
     return [];
   }
 }

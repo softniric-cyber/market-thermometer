@@ -43,7 +43,9 @@ export async function getAllBlogSlugs(): Promise<string[]> {
 }
 
 // ── All post metadata (for blog index) ───────────────────────
-export async function getAllBlogPosts(): Promise<BlogPostMeta[]> {
+export async function getAllBlogPosts(
+  locale?: string
+): Promise<BlogPostMeta[]> {
   const data = await getMetrics();
   const autoPosts: BlogPostMeta[] = data
     ? AUTO_GENERATORS.map((gen) => {
@@ -51,7 +53,7 @@ export async function getAllBlogPosts(): Promise<BlogPostMeta[]> {
         return meta;
       })
     : [];
-  const mdxPosts = await discoverMdxPosts();
+  const mdxPosts = await discoverMdxPosts(locale);
 
   return [...autoPosts, ...mdxPosts].sort(
     (a, b) =>

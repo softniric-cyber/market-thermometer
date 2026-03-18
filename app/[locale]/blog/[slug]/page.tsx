@@ -93,8 +93,8 @@ export default async function BlogPostPage({
   const post = await getBlogPost(params.slug, params.locale);
   if (!post) notFound();
 
-  // Get other posts for "related" section
-  const allPosts = await getAllBlogPosts();
+  // Get other posts for "related" section (locale-filtered)
+  const allPosts = await getAllBlogPosts(params.locale);
   const related = allPosts.filter((p) => p.slug !== post.slug).slice(0, 3);
 
   const formattedDate = fmtDate(post.publishedAt, params.locale);

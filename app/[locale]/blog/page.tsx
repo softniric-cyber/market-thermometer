@@ -46,7 +46,7 @@ export default async function BlogIndexPage({
     namespace: "blog",
   });
 
-  const posts = await getAllBlogPosts();
+  const posts = await getAllBlogPosts(params.locale);
 
   // Group by category
   const groups: Record<string, typeof posts> = {};
