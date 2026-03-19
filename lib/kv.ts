@@ -3,12 +3,12 @@
  * Zero dependencies — uses native fetch().
  *
  * Env vars required:
- *   KV_REST_API_URL   — e.g. https://xxxx.upstash.io
- *   KV_REST_API_TOKEN — Bearer token
+ *   UPSTASH_REDIS_REST_URL   — e.g. https://xxxx.upstash.io
+ *   UPSTASH_REDIS_REST_TOKEN — Bearer token
  */
 
-const url = () => process.env.KV_REST_API_URL!;
-const token = () => process.env.KV_REST_API_TOKEN!;
+const url = () => process.env.UPSTASH_REDIS_REST_URL!;
+const token = () => process.env.REDIS_REST_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN!;
 
 async function exec<T = unknown>(...args: (string | number)[]): Promise<T> {
   const res = await fetch(`${url()}`, {
