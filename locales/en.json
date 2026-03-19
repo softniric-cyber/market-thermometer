@@ -385,5 +385,22 @@
   },
   "news": {
     "title": "Market news"
+  },
+  "comments": {
+    "title": "Comments",
+    "loading": "Loading comments...",
+    "no_comments": "Be the first to comment.",
+    "add_comment": "Add a comment",
+    "name_placeholder": "Your name *",
+    "email_placeholder": "Email (optional, not published)",
+    "text_placeholder": "Write your comment...",
+    "captcha_placeholder": "Answer",
+    "send": "Send",
+    "sending": "Sending...",
+    "success": "Comment published.",
+    "error_required": "Name and comment are required.",
+    "error_captcha": "Solve the math problem to prove you are not a robot.",
+    "error_captcha_wrong": "Wrong answer. Try again.",
+    "error_generic": "Error submitting. Please try again."
   }
 }

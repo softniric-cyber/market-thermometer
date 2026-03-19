@@ -385,5 +385,22 @@
   },
   "news": {
     "title": "Noticias del mercado"
+  },
+  "comments": {
+    "title": "Comentarios",
+    "loading": "Cargando comentarios...",
+    "no_comments": "Sé el primero en comentar.",
+    "add_comment": "Añadir comentario",
+    "name_placeholder": "Tu nombre *",
+    "email_placeholder": "Email (opcional, no se publica)",
+    "text_placeholder": "Escribe tu comentario...",
+    "captcha_placeholder": "Respuesta",
+    "send": "Enviar",
+    "sending": "Enviando...",
+    "success": "Comentario publicado.",
+    "error_required": "Nombre y comentario son obligatorios.",
+    "error_captcha": "Resuelve la operación para demostrar que no eres un robot.",
+    "error_captcha_wrong": "Respuesta incorrecta. Inténtalo de nuevo.",
+    "error_generic": "Error al enviar. Inténtalo de nuevo."
   }
 }

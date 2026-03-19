@@ -6,6 +6,7 @@ import { getAllBlogSlugs, getBlogPost, getAllBlogPosts } from "@/lib/blog/regist
 import { locales } from "@/i18n/config";
 import { fmtDate } from "@/lib/utils";
 import Breadcrumb from "@/components/Breadcrumb";
+import CommentsSection from "@/components/CommentsSection";
 import Footer from "@/components/Footer";
 
 export const revalidate = 3600;
@@ -151,6 +152,9 @@ export default async function BlogPostPage({
           prose-em:text-slate-400"
         dangerouslySetInnerHTML={{ __html: post.html }}
       />
+
+      {/* Comments */}
+      <CommentsSection slug={post.slug} />
 
       {/* Related posts */}
       {related.length > 0 && (
