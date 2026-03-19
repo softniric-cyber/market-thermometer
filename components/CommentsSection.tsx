@@ -124,13 +124,16 @@ export default function CommentsSection({ slug }: Props) {
         return;
       }
 
-      // Success
+      // Success — clear consumed token immediately, then fetch a fresh one
       setName("");
       setEmail("");
       setText("");
+      setCaptchaToken("");
+      setCaptchaQuestion("");
+      setCaptchaAnswer("");
       setSuccess(true);
       fetchComments();
-      fetchCaptcha();
+      await fetchCaptcha();
     } catch {
       setError(t("error_generic"));
     }
@@ -235,11 +238,11 @@ export default function CommentsSection({ slug }: Props) {
 
         <button
           type="submit"
-          disabled={submitting}
+          disabled={submitting || !captchaToken}
           className="rounded-lg bg-cyan-600 hover:bg-cyan-500 disabled:bg-slate-700
             text-white text-sm font-medium px-5 py-2 transition-colors"
         >
-          {submitting ? t("sending") : t("send")}
+          {submitting ? t("sending") : !captchaToken ? "..." : t("send")}
         </button>
       </form>
     </section>
