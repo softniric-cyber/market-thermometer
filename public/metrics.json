@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-03-18T11:04:20.953636Z",
+    "generated_at": "2026-03-19T13:26:58.545300Z",
     "version": "1.0",
     "source": "Termómetro Inmobiliario Madrid"
   },
@@ -16,13 +16,6 @@
       "name": "Precio Mediano",
       "unit": "€",
       "series": [
-        {
-          "week": "2026-02",
-          "week_start": "2026-01-14",
-          "median_price": 517150,
-          "median_price_sqm": 6154,
-          "count": 14248
-        },
         {
           "week": "2026-03",
           "week_start": "2026-01-19",
@@ -71,6 +64,7 @@
       "change": 21417,
       "change_pct": 5.37,
       "trend": "up",
+      "current_sqm": 5612,
       "breakpoint": {
         "breakpoint": false,
         "direction_before": "down",
@@ -88,13 +82,6 @@
           "median_days": 1.0,
           "avg_days": 1.4,
           "sold_count": 264
-        },
-        {
-          "week": "2026-03",
-          "week_start": "2026-01-19",
-          "median_days": 6.0,
-          "avg_days": 6.3,
-          "sold_count": 1373
         },
         {
           "week": "2026-04",
@@ -267,9 +254,9 @@
     "affordability": {
       "name": "Índice de Asequibilidad",
       "unit": "€/mes",
-      "current": 1988,
-      "annual_cost": 23859,
-      "price_to_income": 17.0,
+      "current": 1556,
+      "annual_cost": 18666,
+      "price_to_income": 13.3,
       "affordable": false,
       "trend": "down"
     },
@@ -10139,7 +10126,7 @@
       "n_drop_events": 1127,
       "avg_days_to_drop": 17.9,
       "recent_7d": 0,
-      "recent_30d": 679
+      "recent_30d": 614
     },
     "by_barrio": [
       {
@@ -11602,10 +11589,10 @@
     {
       "level": "critical",
       "title": "Ratio precio/ingreso extremo",
-      "message": "El precio mediano equivale a 17.0 años de ingreso bruto de referencia.",
+      "message": "El precio mediano equivale a 13.3 años de ingreso bruto de referencia.",
       "code": "pti_extreme",
       "params": {
-        "pti": 17.0
+        "pti": 13.3
       }
     },
     {
@@ -13194,6 +13181,6 @@
     },
     "madrid_median_sqm": 6058,
     "training_samples": 25510,
-    "training_date": "2026-03-18T11:04:20.935813Z"
+    "training_date": "2026-03-19T13:26:58.542161Z"
   }
 }

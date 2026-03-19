@@ -43,6 +43,10 @@ export default function KpiCards({ indicators, macro, dbStats }: Props) {
       labelKey: "price_per_sqm",
       icon: "📐",
       getValue: (ind, _, __, locale) => {
+        // Prefer current_sqm (aligned with the "current" week used for change_pct)
+        // over series[-1] which may be an incomplete week
+        const direct = ind.price_trend?.current_sqm as number | undefined;
+        if (direct) return fmtEurSqm(direct, locale);
         const series = ind.price_trend?.series as Array<Record<string, number>> | undefined;
         const last = series?.[series.length - 1];
         const val = last?.median_price_sqm ?? last?.median_sqm;

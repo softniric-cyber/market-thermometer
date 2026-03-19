@@ -47,6 +47,8 @@ export interface Indicator {
   alquiler_pct?: number | null;
   yoy_change?: number | null;
   yoy_change_pct?: number | null;
+  // price_trend extras
+  current_sqm?: number | null;
   // morosidad (annual static)
   national_avg?: number | null;
   data_year?: number | null;
