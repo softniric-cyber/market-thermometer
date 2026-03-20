@@ -384,7 +384,11 @@
     "latest_quarter": "Último trimestre disponible"
   },
   "news": {
-    "title": "Noticias del mercado"
+    "title": "Noticias del mercado",
+    "see_all": "Ver todas las noticias",
+    "all_title": "Todas las noticias",
+    "all_description": "Histórico de noticias relevantes del mercado inmobiliario en Madrid.",
+    "back_home": "Volver al panel"
   },
   "comments": {
     "title": "Comentarios",

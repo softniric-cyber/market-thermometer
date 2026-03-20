@@ -384,7 +384,11 @@
     "latest_quarter": "Latest available quarter"
   },
   "news": {
-    "title": "Market news"
+    "title": "Market news",
+    "see_all": "See all news",
+    "all_title": "All news",
+    "all_description": "Full archive of relevant Madrid real estate market news.",
+    "back_home": "Back to dashboard"
   },
   "comments": {
     "title": "Comments",

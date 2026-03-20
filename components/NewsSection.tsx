@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 export interface NewsItem {
   title: string;
@@ -12,6 +13,10 @@ export interface NewsItem {
 
 interface Props {
   news: NewsItem[];
+  /** Max items to show (default 4). Pass Infinity for "all". */
+  limit?: number;
+  /** Show "Ver todo" link (default true) */
+  showSeeAll?: boolean;
 }
 
 function timeAgo(dateStr: string, locale: string): string {
@@ -36,10 +41,16 @@ function timeAgo(dateStr: string, locale: string): string {
   });
 }
 
-export default function NewsSection({ news }: Props) {
+export default function NewsSection({
+  news,
+  limit = 4,
+  showSeeAll = true,
+}: Props) {
   const t = useTranslations("news");
 
   if (!news || news.length === 0) return null;
+
+  const visible = limit === Infinity ? news : news.slice(0, limit);
 
   return (
     <div className="rounded-2xl bg-slate-800/60 border border-slate-700/50 p-5">
@@ -49,7 +60,7 @@ export default function NewsSection({ news }: Props) {
       </h3>
 
       <ul className="space-y-4">
-        {news.slice(0, 3).map((item, i) => (
+        {visible.map((item, i) => (
           <li key={i}>
             <a
               href={item.url}
@@ -70,12 +81,22 @@ export default function NewsSection({ news }: Props) {
                 <span>{timeAgo(item.date, "es")}</span>
               </p>
             </a>
-            {i < Math.min(news.length, 3) - 1 && (
+            {i < visible.length - 1 && (
               <hr className="border-slate-700/40 mt-4" />
             )}
           </li>
         ))}
       </ul>
+
+      {showSeeAll && news.length > limit && (
+        <Link
+          href="/noticias"
+          className="block text-center text-cyan-400 hover:text-cyan-300 text-xs
+            font-medium mt-4 pt-3 border-t border-slate-700/40 transition-colors"
+        >
+          {t("see_all")} →
+        </Link>
+      )}
     </div>
   );
 }

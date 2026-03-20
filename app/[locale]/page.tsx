@@ -1,5 +1,6 @@
 import { readFile } from "fs/promises";
 import { join } from "path";
+import { getAllNews } from "@/lib/news";
 import type { MetricsData } from "@/lib/types";
 import { getTranslations } from "next-intl/server";
 
@@ -13,7 +14,6 @@ import AlertsBanner from "@/components/AlertsBanner";
 import RentalYields from "@/components/RentalYields";
 import NewPostBanner from "@/components/NewPostBanner";
 import NewsSection from "@/components/NewsSection";
-import type { NewsItem } from "@/components/NewsSection";
 import Footer from "@/components/Footer";
 import { getAllBlogPosts } from "@/lib/blog/registry";
 
@@ -31,19 +31,6 @@ async function getMetrics(): Promise<MetricsData | null> {
   }
 }
 
-async function getNews(): Promise<NewsItem[]> {
-  try {
-    const filePath = join(process.cwd(), "content", "news.json");
-    const raw = await readFile(filePath, "utf-8");
-    const items = JSON.parse(raw) as NewsItem[];
-    // Sort newest first, take top 3
-    return items
-      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-      .slice(0, 3);
-  } catch {
-    return [];
-  }
-}
 
 export default async function Home({
   params,
@@ -56,7 +43,7 @@ export default async function Home({
     namespace: "common",
   });
   const data = await getMetrics();
-  const news = await getNews();
+  const news = await getAllNews();
   const allPosts = await getAllBlogPosts(params.locale);
   // Only show MDX posts in the banner (exclude auto-generated data posts)
   const latestMdxPost = allPosts.find((p) => p.type === "mdx") ?? null;
