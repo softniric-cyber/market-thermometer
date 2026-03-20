@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-03-20T12:37:49.116195Z",
+    "generated_at": "2026-03-20T18:36:02.714101Z",
     "version": "1.0",
     "source": "Termómetro Inmobiliario Madrid"
   },
@@ -79,35 +79,35 @@
         {
           "week": "2026-02",
           "week_start": "2026-01-14",
-          "median_days": 1.0,
-          "avg_days": 1.4,
-          "sold_count": 264
+          "median_days": 2.0,
+          "avg_days": 1.8,
+          "sold_count": 203
         },
         {
           "week": "2026-04",
           "week_start": "2026-01-26",
-          "median_days": 2.0,
-          "avg_days": 3.7,
-          "sold_count": 207
+          "median_days": 3.0,
+          "avg_days": 4.5,
+          "sold_count": 170
         },
         {
           "week": "2026-05",
           "week_start": "2026-02-02",
-          "median_days": 2.0,
-          "avg_days": 4.6,
-          "sold_count": 253
+          "median_days": 4.0,
+          "avg_days": 6.2,
+          "sold_count": 187
         },
         {
           "week": "2026-06",
           "week_start": "2026-02-09",
-          "median_days": 3.0,
-          "avg_days": 6.3,
-          "sold_count": 156
+          "median_days": 5.0,
+          "avg_days": 7.8,
+          "sold_count": 125
         }
       ],
-      "current": 2.0,
-      "previous": 2.0,
-      "change": 0.0,
+      "current": 4.0,
+      "previous": 3.0,
+      "change": 1.0,
       "trend": "stable"
     },
     "supply_demand": {
@@ -11617,10 +11617,10 @@
     {
       "level": "info",
       "title": "Mercado muy activo",
-      "message": "Mediana de venta: 2 días. Alta presión de demanda.",
+      "message": "Mediana de venta: 4 días. Alta presión de demanda.",
       "code": "market_hot",
       "params": {
-        "days": 2
+        "days": 4
       }
     }
   ],
@@ -13172,6 +13172,6 @@
     },
     "madrid_median_sqm": 6058,
     "training_samples": 25510,
-    "training_date": "2026-03-20T12:37:49.114356Z"
+    "training_date": "2026-03-20T18:36:02.711994Z"
   }
 }
