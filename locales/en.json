@@ -118,7 +118,7 @@
       },
       "trend_change": {
         "title": "Price trend reversal",
-        "message": "Trend shifted from '{before}' to '{after}' around {week}."
+        "message": "Trend shifted from ''{before}'' to ''{after}'' around {week}."
       },
       "market_hot": {
         "title": "Very active market",

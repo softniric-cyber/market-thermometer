@@ -118,7 +118,7 @@
       },
       "trend_change": {
         "title": "Cambio de tendencia de precios",
-        "message": "La tendencia pasó de '{before}' a '{after}' alrededor de {week}."
+        "message": "La tendencia pasó de ''{before}'' a ''{after}'' alrededor de {week}."
       },
       "market_hot": {
         "title": "Mercado muy activo",
