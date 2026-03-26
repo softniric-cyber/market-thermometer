@@ -11,7 +11,6 @@ import KpiCards from "@/components/KpiCards";
 import DistrictTable from "@/components/DistrictTable";
 import PriceTrendChart from "@/components/PriceTrendChart";
 import AlertsBanner from "@/components/AlertsBanner";
-import RentalYields from "@/components/RentalYields";
 import NewPostBanner from "@/components/NewPostBanner";
 import NewsSection from "@/components/NewsSection";
 import Footer from "@/components/Footer";
@@ -152,13 +151,6 @@ export default async function Home({
           </section>
         )}
 
-        {/* Rental Yields */}
-        <section className="animate-fade-in animate-delay-4">
-          <h2 className="text-white font-semibold text-sm mb-3">
-            {t("rental_by_barrio")}
-          </h2>
-          <RentalYields yields={data.rental_yields} />
-        </section>
 
       </div>
 

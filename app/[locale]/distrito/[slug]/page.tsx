@@ -20,7 +20,6 @@ import Breadcrumb from "@/components/Breadcrumb";
 import DistrictKpiCards from "@/components/DistrictKpiCards";
 import OpenDataProfile from "@/components/OpenDataProfile";
 import PriceTrendChart from "@/components/PriceTrendChart";
-import RentalYields from "@/components/RentalYields";
 import DistrictNav from "@/components/DistrictNav";
 import Footer from "@/components/Footer";
 import { getDistrictOpenData, getOpenDataYear } from "@/lib/opendata";
@@ -187,15 +186,6 @@ export default async function DistrictPage({
         </section>
       )}
 
-      {/* Rental Yields */}
-      {metrics.yields.length > 0 && (
-        <section className="mb-8">
-          <h2 className="text-white font-semibold text-sm mb-3">
-            {t("rental_yield_by_barrio", { name: distrito })}
-          </h2>
-          <RentalYields yields={metrics.yields} />
-        </section>
-      )}
 
       {/* Texto SEO descriptivo */}
       <section className="mb-8 rounded-xl bg-slate-800/40 border border-slate-700/40 px-5 py-4">
