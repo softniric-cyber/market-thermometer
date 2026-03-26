@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-03-26T19:23:13.813795Z",
+    "generated_at": "2026-03-26T19:40:41.564358Z",
     "version": "1.0",
     "source": "Termómetro Inmobiliario Madrid"
   },
@@ -16515,137 +16515,137 @@
   "seller_stats": {
     "total": 24286,
     "particular": 11613,
-    "professional": 0,
-    "other": 12673,
+    "professional": 12672,
+    "other": 1,
     "particular_pct": 47.8,
-    "professional_pct": 0.0,
-    "other_pct": 52.2,
+    "professional_pct": 52.2,
+    "other_pct": 0.0,
     "by_district": [
       {
         "distrito": "Arganzuela",
         "total": 871,
         "particular_pct": 43.1,
-        "professional_pct": 0.0
+        "professional_pct": 56.9
       },
       {
         "distrito": "Barajas",
         "total": 180,
         "particular_pct": 53.3,
-        "professional_pct": 0.0
+        "professional_pct": 46.7
       },
       {
         "distrito": "Carabanchel",
         "total": 1336,
         "particular_pct": 54.0,
-        "professional_pct": 0.0
+        "professional_pct": 46.0
       },
       {
         "distrito": "Centro",
         "total": 2820,
         "particular_pct": 39.5,
-        "professional_pct": 0.0
+        "professional_pct": 60.5
       },
       {
         "distrito": "Chamartín",
         "total": 1012,
         "particular_pct": 44.1,
-        "professional_pct": 0.0
+        "professional_pct": 55.9
       },
       {
         "distrito": "Chamberí",
         "total": 1550,
         "particular_pct": 38.1,
-        "professional_pct": 0.0
+        "professional_pct": 61.9
       },
       {
         "distrito": "Ciudad Lineal",
         "total": 1246,
         "particular_pct": 58.0,
-        "professional_pct": 0.0
+        "professional_pct": 42.0
       },
       {
         "distrito": "Fuencarral-El Pardo",
         "total": 895,
         "particular_pct": 45.6,
-        "professional_pct": 0.0
+        "professional_pct": 54.4
       },
       {
         "distrito": "Hortaleza",
         "total": 857,
         "particular_pct": 49.5,
-        "professional_pct": 0.0
+        "professional_pct": 50.5
       },
       {
         "distrito": "Latina",
         "total": 907,
         "particular_pct": 55.0,
-        "professional_pct": 0.0
+        "professional_pct": 45.0
       },
       {
         "distrito": "Moncloa-Aravaca",
         "total": 899,
         "particular_pct": 44.4,
-        "professional_pct": 0.0
+        "professional_pct": 55.6
       },
       {
         "distrito": "Moratalaz",
         "total": 285,
         "particular_pct": 58.9,
-        "professional_pct": 0.0
+        "professional_pct": 41.1
       },
       {
         "distrito": "Puente de Vallecas",
         "total": 1202,
         "particular_pct": 55.9,
-        "professional_pct": 0.0
+        "professional_pct": 44.1
       },
       {
         "distrito": "Retiro",
         "total": 1257,
         "particular_pct": 42.5,
-        "professional_pct": 0.0
+        "professional_pct": 57.5
       },
       {
         "distrito": "Salamanca",
         "total": 3063,
         "particular_pct": 36.0,
-        "professional_pct": 0.0
+        "professional_pct": 64.0
       },
       {
         "distrito": "San Blas-Canillejas",
         "total": 1083,
         "particular_pct": 55.8,
-        "professional_pct": 0.0
+        "professional_pct": 44.2
       },
       {
         "distrito": "Tetuán",
         "total": 1541,
         "particular_pct": 55.0,
-        "professional_pct": 0.0
+        "professional_pct": 45.0
       },
       {
         "distrito": "Usera",
         "total": 885,
         "particular_pct": 52.9,
-        "professional_pct": 0.0
+        "professional_pct": 47.1
       },
       {
         "distrito": "Vicálvaro",
         "total": 714,
         "particular_pct": 60.4,
-        "professional_pct": 0.0
+        "professional_pct": 39.6
       },
       {
         "distrito": "Villa de Vallecas",
         "total": 714,
         "particular_pct": 54.8,
-        "professional_pct": 0.0
+        "professional_pct": 45.2
       },
       {
         "distrito": "Villaverde",
         "total": 968,
         "particular_pct": 61.8,
-        "professional_pct": 0.0
+        "professional_pct": 38.2
       }
     ]
   },
@@ -18253,6 +18253,6 @@
     },
     "madrid_median_sqm": 5921,
     "training_samples": 32996,
-    "training_date": "2026-03-26T19:23:13.808728Z"
+    "training_date": "2026-03-26T19:40:41.559835Z"
   }
 }
