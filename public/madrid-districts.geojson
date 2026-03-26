@@ -1,0 +1,377 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "NOMBRE": "Centro",
+        "CODIGO": "01"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-3.7360, 40.4270],
+          [-3.7050, 40.4270],
+          [-3.6980, 40.4150],
+          [-3.7190, 40.4050],
+          [-3.7360, 40.4150],
+          [-3.7360, 40.4270]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NOMBRE": "Arganzuela",
+        "CODIGO": "02"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-3.7360, 40.4050],
+          [-3.6980, 40.4150],
+          [-3.6890, 40.3950],
+          [-3.7200, 40.3850],
+          [-3.7360, 40.4050]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NOMBRE": "Retiro",
+        "CODIGO": "03"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-3.6980, 40.4150],
+          [-3.6500, 40.4180],
+          [-3.6350, 40.4050],
+          [-3.6890, 40.3950],
+          [-3.6980, 40.4150]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NOMBRE": "Salamanca",
+        "CODIGO": "04"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-3.6500, 40.4280],
+          [-3.6000, 40.4320],
+          [-3.5900, 40.4100],
+          [-3.6350, 40.4050],
+          [-3.6500, 40.4180],
+          [-3.6500, 40.4280]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NOMBRE": "Chamartín",
+        "CODIGO": "05"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-3.6500, 40.4320],
+          [-3.6000, 40.4450],
+          [-3.5850, 40.4250],
+          [-3.5900, 40.4100],
+          [-3.6000, 40.4320],
+          [-3.6500, 40.4280]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NOMBRE": "Tetuán",
+        "CODIGO": "06"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-3.7050, 40.4270],
+          [-3.6500, 40.4280],
+          [-3.6000, 40.4450],
+          [-3.6300, 40.4600],
+          [-3.6800, 40.4450],
+          [-3.7050, 40.4270]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NOMBRE": "Chamberí",
+        "CODIGO": "07"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-3.7050, 40.4270],
+          [-3.6800, 40.4450],
+          [-3.6300, 40.4600],
+          [-3.6600, 40.4750],
+          [-3.7150, 40.4600],
+          [-3.7050, 40.4270]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NOMBRE": "Moncloa-Aravaca",
+        "CODIGO": "08"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-3.7360, 40.4270],
+          [-3.7050, 40.4270],
+          [-3.7150, 40.4600],
+          [-3.6600, 40.4750],
+          [-3.7000, 40.4900],
+          [-3.7450, 40.4700],
+          [-3.7360, 40.4270]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NOMBRE": "Latina",
+        "CODIGO": "09"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-3.7360, 40.4150],
+          [-3.7360, 40.4270],
+          [-3.7450, 40.4700],
+          [-3.7700, 40.4500],
+          [-3.7800, 40.4100],
+          [-3.7360, 40.4150]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NOMBRE": "Carabanchel",
+        "CODIGO": "10"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-3.7200, 40.3850],
+          [-3.6890, 40.3950],
+          [-3.6350, 40.4050],
+          [-3.6500, 40.3750],
+          [-3.7000, 40.3600],
+          [-3.7200, 40.3850]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NOMBRE": "Puente de Vallecas",
+        "CODIGO": "11"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-3.6350, 40.4050],
+          [-3.5900, 40.4100],
+          [-3.5500, 40.3900],
+          [-3.5800, 40.3700],
+          [-3.6500, 40.3750],
+          [-3.6350, 40.4050]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NOMBRE": "Moratalaz",
+        "CODIGO": "12"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-3.5900, 40.4100],
+          [-3.5850, 40.4250],
+          [-3.5300, 40.4400],
+          [-3.5200, 40.4100],
+          [-3.5500, 40.3900],
+          [-3.5900, 40.4100]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NOMBRE": "Ciudad Lineal",
+        "CODIGO": "13"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-3.5850, 40.4250],
+          [-3.6000, 40.4450],
+          [-3.5400, 40.4700],
+          [-3.5300, 40.4400],
+          [-3.5850, 40.4250]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NOMBRE": "Hortaleza",
+        "CODIGO": "14"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-3.6000, 40.4450],
+          [-3.6300, 40.4600],
+          [-3.5700, 40.4900],
+          [-3.5400, 40.4700],
+          [-3.6000, 40.4450]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NOMBRE": "San Blas-Canillejas",
+        "CODIGO": "15"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-3.5400, 40.4700],
+          [-3.5700, 40.4900],
+          [-3.5100, 40.5200],
+          [-3.4800, 40.5000],
+          [-3.5300, 40.4400],
+          [-3.5400, 40.4700]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NOMBRE": "Barajas",
+        "CODIGO": "16"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-3.5300, 40.4400],
+          [-3.4800, 40.5000],
+          [-3.4200, 40.4950],
+          [-3.4300, 40.4200],
+          [-3.5200, 40.4100],
+          [-3.5300, 40.4400]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NOMBRE": "Vicálvaro",
+        "CODIGO": "17"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-3.5200, 40.4100],
+          [-3.4300, 40.4200],
+          [-3.4100, 40.3700],
+          [-3.5000, 40.3600],
+          [-3.5200, 40.4100]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NOMBRE": "Villa de Vallecas",
+        "CODIGO": "18"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-3.5000, 40.3600],
+          [-3.4100, 40.3700],
+          [-3.3800, 40.3100],
+          [-3.4500, 40.2900],
+          [-3.5000, 40.3600]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NOMBRE": "Villaverde",
+        "CODIGO": "19"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-3.7000, 40.3600],
+          [-3.6500, 40.3750],
+          [-3.5800, 40.3700],
+          [-3.5000, 40.3600],
+          [-3.4500, 40.2900],
+          [-3.5500, 40.2700],
+          [-3.7000, 40.3600]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NOMBRE": "Fuencarral-El Pardo",
+        "CODIGO": "20"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-3.6300, 40.4600],
+          [-3.6600, 40.4750],
+          [-3.6100, 40.5200],
+          [-3.5700, 40.4900],
+          [-3.6300, 40.4600]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NOMBRE": "Usera",
+        "CODIGO": "21"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-3.7800, 40.4100],
+          [-3.7700, 40.4500],
+          [-3.7200, 40.4400],
+          [-3.7000, 40.3600],
+          [-3.7800, 40.4100]
+        ]]
+      }
+    }
+  ]
+}

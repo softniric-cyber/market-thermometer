@@ -15,6 +15,7 @@ import NewPostBanner from "@/components/NewPostBanner";
 import NewsSection from "@/components/NewsSection";
 import PriceDropZones from "@/components/PriceDropZones";
 import SellerDistribution from "@/components/SellerDistribution";
+import DistrictHeatMap from "@/components/DistrictHeatMap";
 import Footer from "@/components/Footer";
 import { getAllBlogPosts } from "@/lib/blog/registry";
 
@@ -41,6 +42,7 @@ export default async function Home({
   const t = await getTranslations({ locale: params.locale, namespace: "home" });
   const tDrops = await getTranslations({ locale: params.locale, namespace: "drops" });
   const tSeller = await getTranslations({ locale: params.locale, namespace: "seller" });
+  const tMap = await getTranslations({ locale: params.locale, namespace: "map" });
   const tc = await getTranslations({
     locale: params.locale,
     namespace: "common",
@@ -180,6 +182,26 @@ export default async function Home({
           />
         </section>
       )}
+
+      {/* District Heat Map */}
+      <section className="mb-8 animate-fade-in animate-delay-4">
+        <h2 className="text-white font-semibold text-sm mb-3">
+          {tMap("title")}
+        </h2>
+        <p className="text-slate-400 text-xs mb-3">{tMap("subtitle")}</p>
+        <DistrictHeatMap
+          zones={data.zones}
+          locale={params.locale}
+          labels={{
+            title: tMap("title"),
+            subtitle: tMap("subtitle"),
+            price_per_sqm: tMap("price_per_sqm"),
+            active: tMap("active"),
+            days: tMap("days"),
+            click_to_view: tMap("click_to_view"),
+          }}
+        />
+      </section>
 
       {/* District Table */}
       <section className="mb-8 animate-fade-in animate-delay-4">

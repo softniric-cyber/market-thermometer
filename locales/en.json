@@ -404,6 +404,14 @@
     "chart_title": "Trend: last 12 quarters",
     "latest_quarter": "Latest available quarter"
   },
+  "map": {
+    "title": "Price map by district",
+    "subtitle": "Average price per sqm across Madrid's 21 districts",
+    "price_per_sqm": "Price/sqm",
+    "active": "Properties for sale",
+    "days": "Days on market",
+    "click_to_view": "Click to view district details"
+  },
   "news": {
     "title": "Market news",
     "see_all": "See all news",

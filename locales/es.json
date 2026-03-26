@@ -404,6 +404,14 @@
     "chart_title": "Evolución últimos 12 trimestres",
     "latest_quarter": "Último trimestre disponible"
   },
+  "map": {
+    "title": "Mapa de precios por distrito",
+    "subtitle": "Precio medio por m² en los 21 distritos de Madrid",
+    "price_per_sqm": "Precio/m²",
+    "active": "Pisos en venta",
+    "days": "Días en mercado",
+    "click_to_view": "Click para ver detalle del distrito"
+  },
   "news": {
     "title": "Noticias del mercado",
     "see_all": "Ver todas las noticias",
