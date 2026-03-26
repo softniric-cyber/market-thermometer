@@ -99,6 +99,18 @@
     "rooms_size": "{rooms} hab. · {size} m²",
     "days_suffix": "d"
   },
+  "drops": {
+    "title": "Zonas con bajadas de precio",
+    "subtitle": "Barrios con más reducciones en pisos activos",
+    "with_drops": "Con bajada de precio",
+    "avg_drop": "Bajada media",
+    "recent_7d": "Bajadas últimos 7 días",
+    "days_to_drop": "Días hasta 1ª bajada",
+    "days": "días",
+    "top_barrios": "Top barrios con bajadas",
+    "drop_rate": "% pisos con bajada",
+    "avg": "media"
+  },
   "alerts": {
     "market_alerts": "Alertas de mercado",
     "codes": {

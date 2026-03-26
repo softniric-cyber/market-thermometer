@@ -137,6 +137,33 @@ export interface BarrioBaseline {
   avg_floor: number | null;
 }
 
+export interface PriceDropOverview {
+  total_active: number;
+  with_drops: number;
+  drop_pct_of_total: number;
+  avg_drop_pct: number;
+  max_drop_pct: number;
+  n_drop_events: number;
+  avg_days_to_drop: number;
+  recent_7d: number;
+  recent_30d: number;
+}
+
+export interface PriceDropBarrio {
+  barrio: string;
+  distrito: string;
+  total: number;
+  with_drops: number;
+  avg_drop_pct: number;
+  max_drop_pct: number;
+  drop_rate_pct: number;
+}
+
+export interface PriceDropStats {
+  overview: PriceDropOverview;
+  by_barrio: PriceDropBarrio[];
+}
+
 export interface ValuationModel {
   barrio_baselines: Record<string, BarrioBaseline>;
   district_baselines: Record<string, { median_sqm: number; count: number }>;
@@ -160,7 +187,7 @@ export interface MetricsData {
   notarial_gap: Array<Record<string, unknown>>;
   barrios: BarrioData[];
   barrio_trends: BarrioTrend[];
-  price_drop_stats: Record<string, unknown>;
+  price_drop_stats: PriceDropStats;
   db_stats: Record<string, unknown>;
   alerts: Alert[];
   valuation_model?: ValuationModel;

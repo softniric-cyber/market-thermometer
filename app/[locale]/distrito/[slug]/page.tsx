@@ -21,6 +21,7 @@ import DistrictKpiCards from "@/components/DistrictKpiCards";
 import OpenDataProfile from "@/components/OpenDataProfile";
 import PriceTrendChart from "@/components/PriceTrendChart";
 import DistrictNav from "@/components/DistrictNav";
+import PriceDropZones from "@/components/PriceDropZones";
 import Footer from "@/components/Footer";
 import { getDistrictOpenData, getOpenDataYear } from "@/lib/opendata";
 
@@ -110,6 +111,10 @@ export default async function DistrictPage({
     locale: params.locale,
     namespace: "common",
   });
+  const tDrops = await getTranslations({
+    locale: params.locale,
+    namespace: "drops",
+  });
 
   const distrito = fromSlug(params.slug);
   if (!distrito) notFound();
@@ -186,6 +191,21 @@ export default async function DistrictPage({
         </section>
       )}
 
+
+      {/* Price Drop Zones (filtered by district) */}
+      {data.price_drop_stats?.by_barrio?.filter(b => b.distrito === distrito).length > 0 && (
+        <section className="mb-8">
+          <h2 className="text-white font-semibold text-sm mb-3">
+            {tDrops("title")} — {distrito}
+          </h2>
+          <PriceDropZones
+            overview={data.price_drop_stats.overview}
+            byBarrio={data.price_drop_stats.by_barrio}
+            filterDistrito={distrito}
+            limit={5}
+          />
+        </section>
+      )}
 
       {/* Texto SEO descriptivo */}
       <section className="mb-8 rounded-xl bg-slate-800/40 border border-slate-700/40 px-5 py-4">

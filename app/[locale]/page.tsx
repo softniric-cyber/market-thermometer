@@ -13,6 +13,7 @@ import PriceTrendChart from "@/components/PriceTrendChart";
 import AlertsBanner from "@/components/AlertsBanner";
 import NewPostBanner from "@/components/NewPostBanner";
 import NewsSection from "@/components/NewsSection";
+import PriceDropZones from "@/components/PriceDropZones";
 import Footer from "@/components/Footer";
 import { getAllBlogPosts } from "@/lib/blog/registry";
 
@@ -37,6 +38,7 @@ export default async function Home({
   params: { locale: string };
 }) {
   const t = await getTranslations({ locale: params.locale, namespace: "home" });
+  const tDrops = await getTranslations({ locale: params.locale, namespace: "drops" });
   const tc = await getTranslations({
     locale: params.locale,
     namespace: "common",
@@ -153,6 +155,19 @@ export default async function Home({
 
 
       </div>
+
+      {/* Price Drop Zones */}
+      {data.price_drop_stats?.overview && data.price_drop_stats?.by_barrio?.length > 0 && (
+        <section className="mb-8 animate-fade-in animate-delay-4">
+          <h2 className="text-white font-semibold text-sm mb-3">
+            {tDrops("title")}
+          </h2>
+          <PriceDropZones
+            overview={data.price_drop_stats.overview}
+            byBarrio={data.price_drop_stats.by_barrio}
+          />
+        </section>
+      )}
 
       {/* District Table */}
       <section className="mb-8 animate-fade-in animate-delay-4">
