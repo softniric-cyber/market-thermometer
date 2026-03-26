@@ -14,6 +14,7 @@ import AlertsBanner from "@/components/AlertsBanner";
 import NewPostBanner from "@/components/NewPostBanner";
 import NewsSection from "@/components/NewsSection";
 import PriceDropZones from "@/components/PriceDropZones";
+import SellerDistribution from "@/components/SellerDistribution";
 import Footer from "@/components/Footer";
 import { getAllBlogPosts } from "@/lib/blog/registry";
 
@@ -39,6 +40,7 @@ export default async function Home({
 }) {
   const t = await getTranslations({ locale: params.locale, namespace: "home" });
   const tDrops = await getTranslations({ locale: params.locale, namespace: "drops" });
+  const tSeller = await getTranslations({ locale: params.locale, namespace: "seller" });
   const tc = await getTranslations({
     locale: params.locale,
     namespace: "common",
@@ -128,6 +130,16 @@ export default async function Home({
           dbStats={{ ...data.db_stats, price_drop_stats: data.price_drop_stats }}
         />
       </section>
+
+      {/* Seller Distribution */}
+      {data.seller_stats && data.seller_stats.total > 0 && (
+        <section className="mb-8 animate-fade-in animate-delay-2">
+          <h2 className="text-white font-semibold text-sm mb-3">
+            {tSeller("title")}
+          </h2>
+          <SellerDistribution stats={data.seller_stats} />
+        </section>
+      )}
 
       {/* Alerts */}
       {data.alerts.length > 0 && (

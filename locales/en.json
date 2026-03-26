@@ -99,6 +99,13 @@
     "rooms_size": "{rooms} rooms · {size} m²",
     "days_suffix": "d"
   },
+  "seller": {
+    "title": "Who sells in Madrid",
+    "particular": "Private sellers",
+    "professional": "Agencies",
+    "other": "Other",
+    "listings": "listings"
+  },
   "drops": {
     "title": "Price drop zones",
     "subtitle": "Neighborhoods with most reductions in active listings",

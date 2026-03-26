@@ -99,6 +99,13 @@
     "rooms_size": "{rooms} hab. · {size} m²",
     "days_suffix": "d"
   },
+  "seller": {
+    "title": "Quién vende en Madrid",
+    "particular": "Particulares",
+    "professional": "Agencias",
+    "other": "Otros",
+    "listings": "anuncios"
+  },
   "drops": {
     "title": "Zonas con bajadas de precio",
     "subtitle": "Barrios con más reducciones en pisos activos",

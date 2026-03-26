@@ -22,6 +22,7 @@ import OpenDataProfile from "@/components/OpenDataProfile";
 import PriceTrendChart from "@/components/PriceTrendChart";
 import DistrictNav from "@/components/DistrictNav";
 import PriceDropZones from "@/components/PriceDropZones";
+import SellerDistribution from "@/components/SellerDistribution";
 import Footer from "@/components/Footer";
 import { getDistrictOpenData, getOpenDataYear } from "@/lib/opendata";
 
@@ -115,6 +116,10 @@ export default async function DistrictPage({
     locale: params.locale,
     namespace: "drops",
   });
+  const tSeller = await getTranslations({
+    locale: params.locale,
+    namespace: "seller",
+  });
 
   const distrito = fromSlug(params.slug);
   if (!distrito) notFound();
@@ -177,6 +182,19 @@ export default async function DistrictPage({
             data={openData}
             year={openDataYear}
             scope={distrito}
+          />
+        </section>
+      )}
+
+      {/* Seller Distribution */}
+      {data.seller_stats && data.seller_stats.total > 0 && (
+        <section className="mb-8">
+          <h2 className="text-white font-semibold text-sm mb-3">
+            {tSeller("title")} — {distrito}
+          </h2>
+          <SellerDistribution
+            stats={data.seller_stats}
+            filterDistrito={distrito}
           />
         </section>
       )}

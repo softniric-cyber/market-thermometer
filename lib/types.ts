@@ -164,6 +164,24 @@ export interface PriceDropStats {
   by_barrio: PriceDropBarrio[];
 }
 
+export interface SellerDistrictStats {
+  distrito: string;
+  total: number;
+  particular_pct: number;
+  professional_pct: number;
+}
+
+export interface SellerStats {
+  total: number;
+  particular: number;
+  professional: number;
+  other: number;
+  particular_pct: number;
+  professional_pct: number;
+  other_pct: number;
+  by_district?: SellerDistrictStats[];
+}
+
 export interface ValuationModel {
   barrio_baselines: Record<string, BarrioBaseline>;
   district_baselines: Record<string, { median_sqm: number; count: number }>;
@@ -188,6 +206,7 @@ export interface MetricsData {
   barrios: BarrioData[];
   barrio_trends: BarrioTrend[];
   price_drop_stats: PriceDropStats;
+  seller_stats?: SellerStats;
   db_stats: Record<string, unknown>;
   alerts: Alert[];
   valuation_model?: ValuationModel;
