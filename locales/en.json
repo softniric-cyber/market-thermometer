@@ -71,7 +71,9 @@
     "properties_for_sale": "Properties for sale",
     "days_on_market": "Days on market",
     "notarial_gap": "Notarial gap",
-    "gap_description": "Asking price vs registered price difference"
+    "gap_description": "Asking price vs registered price difference",
+    "vs_madrid": "{pct}% vs Madrid average",
+    "days_suffix": "days"
   },
   "barrio": {
     "title": "Property prices in {barrio}",

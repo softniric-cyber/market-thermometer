@@ -71,7 +71,9 @@
     "properties_for_sale": "Pisos en venta",
     "days_on_market": "Días en mercado",
     "notarial_gap": "Gap notarial",
-    "gap_description": "Diferencia precio pedido vs escriturado"
+    "gap_description": "Diferencia precio pedido vs escriturado",
+    "vs_madrid": "{pct}% vs media Madrid",
+    "days_suffix": "días"
   },
   "barrio": {
     "title": "Precio vivienda en {barrio}",
