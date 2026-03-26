@@ -55,7 +55,7 @@ export async function validateCaptcha(
   const expected = await kv.get(captchaKey(token));
   if (!expected) return false; // expired or already used
   await kv.del(captchaKey(token)); // consume
-  return expected === answer.trim();
+  return String(expected) === answer.trim();
 }
 
 // ── CRUD ─────────────────────────────────────────────────────────────────────
