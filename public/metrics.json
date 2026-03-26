@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-03-26T08:32:37.819111Z",
+    "generated_at": "2026-03-26T19:23:13.813795Z",
     "version": "1.0",
     "source": "Termómetro Inmobiliario Madrid"
   },
@@ -16512,6 +16512,143 @@
       ">20%": 13
     }
   },
+  "seller_stats": {
+    "total": 24286,
+    "particular": 11613,
+    "professional": 0,
+    "other": 12673,
+    "particular_pct": 47.8,
+    "professional_pct": 0.0,
+    "other_pct": 52.2,
+    "by_district": [
+      {
+        "distrito": "Arganzuela",
+        "total": 871,
+        "particular_pct": 43.1,
+        "professional_pct": 0.0
+      },
+      {
+        "distrito": "Barajas",
+        "total": 180,
+        "particular_pct": 53.3,
+        "professional_pct": 0.0
+      },
+      {
+        "distrito": "Carabanchel",
+        "total": 1336,
+        "particular_pct": 54.0,
+        "professional_pct": 0.0
+      },
+      {
+        "distrito": "Centro",
+        "total": 2820,
+        "particular_pct": 39.5,
+        "professional_pct": 0.0
+      },
+      {
+        "distrito": "Chamartín",
+        "total": 1012,
+        "particular_pct": 44.1,
+        "professional_pct": 0.0
+      },
+      {
+        "distrito": "Chamberí",
+        "total": 1550,
+        "particular_pct": 38.1,
+        "professional_pct": 0.0
+      },
+      {
+        "distrito": "Ciudad Lineal",
+        "total": 1246,
+        "particular_pct": 58.0,
+        "professional_pct": 0.0
+      },
+      {
+        "distrito": "Fuencarral-El Pardo",
+        "total": 895,
+        "particular_pct": 45.6,
+        "professional_pct": 0.0
+      },
+      {
+        "distrito": "Hortaleza",
+        "total": 857,
+        "particular_pct": 49.5,
+        "professional_pct": 0.0
+      },
+      {
+        "distrito": "Latina",
+        "total": 907,
+        "particular_pct": 55.0,
+        "professional_pct": 0.0
+      },
+      {
+        "distrito": "Moncloa-Aravaca",
+        "total": 899,
+        "particular_pct": 44.4,
+        "professional_pct": 0.0
+      },
+      {
+        "distrito": "Moratalaz",
+        "total": 285,
+        "particular_pct": 58.9,
+        "professional_pct": 0.0
+      },
+      {
+        "distrito": "Puente de Vallecas",
+        "total": 1202,
+        "particular_pct": 55.9,
+        "professional_pct": 0.0
+      },
+      {
+        "distrito": "Retiro",
+        "total": 1257,
+        "particular_pct": 42.5,
+        "professional_pct": 0.0
+      },
+      {
+        "distrito": "Salamanca",
+        "total": 3063,
+        "particular_pct": 36.0,
+        "professional_pct": 0.0
+      },
+      {
+        "distrito": "San Blas-Canillejas",
+        "total": 1083,
+        "particular_pct": 55.8,
+        "professional_pct": 0.0
+      },
+      {
+        "distrito": "Tetuán",
+        "total": 1541,
+        "particular_pct": 55.0,
+        "professional_pct": 0.0
+      },
+      {
+        "distrito": "Usera",
+        "total": 885,
+        "particular_pct": 52.9,
+        "professional_pct": 0.0
+      },
+      {
+        "distrito": "Vicálvaro",
+        "total": 714,
+        "particular_pct": 60.4,
+        "professional_pct": 0.0
+      },
+      {
+        "distrito": "Villa de Vallecas",
+        "total": 714,
+        "particular_pct": 54.8,
+        "professional_pct": 0.0
+      },
+      {
+        "distrito": "Villaverde",
+        "total": 968,
+        "particular_pct": 61.8,
+        "professional_pct": 0.0
+      }
+    ]
+  },
   "db_stats": {
     "active_count": 24286,
     "sold_count": 8783,
@@ -18116,6 +18253,6 @@
     },
     "madrid_median_sqm": 5921,
     "training_samples": 32996,
-    "training_date": "2026-03-26T08:32:37.814654Z"
+    "training_date": "2026-03-26T19:23:13.808728Z"
   }
 }
