@@ -136,13 +136,12 @@ export default function PriceDropZones({
         <div className="divide-y divide-slate-700/30">
           {top.map((barrio, i) => {
             const barWidth = (barrio.drop_rate_pct / maxRate) * 100;
-            const barriSlug = toSlug(barrio.barrio);
             const distSlug = toSlug(barrio.distrito);
 
             return (
               <Link
                 key={`${barrio.barrio}-${barrio.distrito}`}
-                href={`/distrito/${distSlug}/${barriSlug}`}
+                href={`/distrito/${distSlug}`}
                 className="flex items-center gap-3 px-4 py-2.5 hover:bg-slate-700/30 transition-colors group"
               >
                 {/* Rank */}
