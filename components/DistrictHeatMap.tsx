@@ -62,6 +62,7 @@ function MapInner({
   zones,
   locale,
   labels,
+  notarialPrices,
 }: {
   geojson: GeoCollection;
   zones: Zone[];
@@ -72,6 +73,7 @@ function MapInner({
     days: string;
     click_to_view: string;
   };
+  notarialPrices: Record<string, number>;
 }) {
   /* eslint-disable @typescript-eslint/no-var-requires */
   const RL = require("react-leaflet") as any;
@@ -112,11 +114,18 @@ function MapInner({
     const zone = priceMap.get(name);
     if (!zone) return;
 
+    const notarialPrice = notarialPrices[name];
+    const notarialLabel =
+      locale === "en" ? "Notarial price (Notariado)" : "Precio notarial (Notariado)";
+    const notarialRow = notarialPrice
+      ? `${notarialLabel}: <strong>${fmt(notarialPrice)} €/m²</strong><br/>`
+      : "";
+
     const tooltip = `
       <div style="font-family:system-ui;font-size:13px;line-height:1.5;">
         <strong style="font-size:14px;">${name}</strong><br/>
         ${labels.price_per_sqm}: <strong>${fmt(zone.price_per_sqm ?? 0)} €/m²</strong><br/>
-        ${labels.active}: ${fmt(zone.active_count ?? 0)}<br/>
+        ${notarialRow}${labels.active}: ${fmt(zone.active_count ?? 0)}<br/>
         ${labels.days}: ${zone.days_to_sell ?? "—"}<br/>
         <em style="color:#94a3b8;font-size:11px;">${labels.click_to_view}</em>
       </div>
@@ -162,11 +171,8 @@ function MapInner({
 }
 
 /* ── Dynamic wrapper (no SSR) ─────────────────────────────────── */
-const LazyMap = dynamic(
-  () =>
-    Promise.resolve(
-      (props: Parameters<typeof MapInner>[0]) => <MapInner {...props} />
-    ),
+const LazyMap = dynamic<Parameters<typeof MapInner>[0]>(
+  () => Promise.resolve(MapInner),
   { ssr: false }
 );
 
@@ -217,6 +223,7 @@ export default function DistrictHeatMap({
 }) {
   const [geojson, setGeojson] = useState<GeoCollection | null>(null);
   const [leafletCss, setLeafletCss] = useState(false);
+  const [notarialPrices, setNotarialPrices] = useState<Record<string, number>>({});
 
   useEffect(() => {
     // Load Leaflet CSS
@@ -232,6 +239,14 @@ export default function DistrictHeatMap({
     fetch("/madrid-districts.geojson")
       .then((r) => r.json())
       .then((data) => setGeojson(data))
+      .catch(() => {});
+
+    // Load notarial prices from Portal del Notariado (via API route)
+    fetch("/api/notarial-prices")
+      .then((r) => r.json())
+      .then((data) => {
+        if (!data.error) setNotarialPrices(data);
+      })
       .catch(() => {});
   }, []);
 
@@ -264,6 +279,7 @@ export default function DistrictHeatMap({
             days: labels.days,
             click_to_view: labels.click_to_view,
           }}
+          notarialPrices={notarialPrices}
         />
       </div>
       <Legend min={minPrice} max={maxPrice} locale={locale} />
