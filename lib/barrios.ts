@@ -1,4 +1,5 @@
 import type { MetricsData, BarrioData, BarrioTrend, TrendPoint } from "@/lib/types";
+import type { NotarialGapEntry } from "@/lib/districts";
 
 // --------------------------------------------------------------------------
 // Full map of 139 barrios — [distrito, barrio]
@@ -124,6 +125,7 @@ export interface BarrioMetrics {
   data: BarrioData | null;
   trends: TrendPoint[];
   madridAvgSqm: number | null;
+  notarialGap: NotarialGapEntry | null;
 }
 
 export function getBarrioMetrics(
@@ -151,6 +153,12 @@ export function getBarrioMetrics(
       ? Math.round(validSqm.reduce((a, b) => a + b, 0) / validSqm.length)
       : null;
 
+  // Notarial gap at district level (finest granularity available from Notariado)
+  const notarialGap =
+    ((metricsData.notarial_gap ?? []) as unknown as NotarialGapEntry[]).find(
+      (g) => g.distrito === distrito
+    ) ?? null;
+
   return {
     barrio,
     distrito,
@@ -158,5 +166,6 @@ export function getBarrioMetrics(
     data,
     trends,
     madridAvgSqm,
+    notarialGap,
   };
 }

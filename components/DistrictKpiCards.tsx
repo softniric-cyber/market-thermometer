@@ -63,6 +63,15 @@ export default function DistrictKpiCards({ metrics }: Props) {
       value: zone?.days_to_sell != null ? `${Math.round(zone.days_to_sell)} ${t("days_suffix")}` : "—",
     },
     {
+      labelKey: "notarial_price",
+      icon: "🏛️",
+      value: notarialGap?.notarial_price != null ? fmtEurSqm(notarialGap.notarial_price, locale) : "—",
+      comparison:
+        notarialGap?.notarial_price != null
+          ? t("notarial_price_desc")
+          : undefined,
+    },
+    {
       labelKey: "notarial_gap",
       icon: "⚖️",
       value: notarialGap?.gap_pct != null ? fmtPct(notarialGap.gap_pct, 1, locale) : "—",
@@ -74,7 +83,7 @@ export default function DistrictKpiCards({ metrics }: Props) {
   ];
 
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
       {kpis.map((kpi) => (
         <div
           key={kpi.labelKey}

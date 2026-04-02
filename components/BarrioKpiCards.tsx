@@ -1,7 +1,7 @@
 "use client";
 
 import type { BarrioMetrics } from "@/lib/barrios";
-import { fmtEur, fmtEurSqm, fmtNum } from "@/lib/utils";
+import { fmtEur, fmtEurSqm, fmtNum, fmtPct } from "@/lib/utils";
 import { useTranslations, useLocale } from "next-intl";
 
 interface Props {
@@ -18,7 +18,7 @@ interface KpiCard {
 export default function BarrioKpiCards({ metrics }: Props) {
   const t = useTranslations("barrio");
   const locale = useLocale();
-  const { data, madridAvgSqm } = metrics;
+  const { data, madridAvgSqm, notarialGap } = metrics;
 
   const sqm = data?.price_per_sqm ?? null;
   const sqmVsMadrid =
@@ -63,6 +63,26 @@ export default function BarrioKpiCards({ metrics }: Props) {
               ? t("median_rent", { amount: fmtEur(data.rent_median, locale) })
               : undefined,
             color: "text-emerald-300",
+          } satisfies KpiCard,
+        ]
+      : []),
+    ...(notarialGap?.notarial_price != null
+      ? [
+          {
+            labelKey: "notarial_price",
+            value: fmtEurSqm(notarialGap.notarial_price, locale),
+            sub: t("notarial_price_desc"),
+            color: "text-orange-300",
+          } satisfies KpiCard,
+        ]
+      : []),
+    ...(notarialGap?.gap_pct != null
+      ? [
+          {
+            labelKey: "notarial_gap",
+            value: fmtPct(notarialGap.gap_pct, 1, locale),
+            sub: t("gap_description"),
+            color: "text-rose-300",
           } satisfies KpiCard,
         ]
       : []),
