@@ -57,21 +57,21 @@ export async function generateMetadata({
   const barrioData = data?.barrios?.find((b) => b.barrio === barrio);
   const t = await getTranslations({ locale: params.locale, namespace: "meta" });
 
+  const now = new Date();
+  const year = now.getFullYear().toString();
+  const month = now.toLocaleString(params.locale === "en" ? "en-GB" : "es-ES", { month: "long" });
+  const monthCap = month.charAt(0).toUpperCase() + month.slice(1);
+
   const sqmStr = barrioData?.price_per_sqm
     ? fmtEurSqm(barrioData.price_per_sqm, params.locale)
     : "";
   const countStr = barrioData?.active_count
-    ? `${fmtNum(barrioData.active_count, params.locale)} ${t("barrio_description", { barrio: "", distrito: "", sqm: "", count: "" }).split(" ").slice(-3).join(" ")}`
-    : "";
-  const priceStr = barrioData?.median_price
-    ? `${(barrioData.median_price / 1000).toFixed(0)}K€`
-    : "";
-
-  const descParts = [sqmStr, countStr].filter(Boolean).join(", ");
+    ? `${fmtNum(barrioData.active_count, params.locale)}`
+    : "0";
 
   return {
-    title: t("barrio_title", { barrio, distrito }),
-    description: t("barrio_description", { barrio, distrito, sqm: sqmStr, count: (barrioData?.active_count ?? 0).toString() || "0" }),
+    title: t("barrio_title", { barrio, distrito, sqm: sqmStr }),
+    description: t("barrio_description", { barrio, distrito, sqm: sqmStr, count: countStr, year, month: monthCap }),
     alternates: {
       canonical: `/barrio/${params.slug}`,
       languages: locales.reduce(
@@ -83,8 +83,8 @@ export async function generateMetadata({
       ),
     },
     openGraph: {
-      title: `${t("barrio_title", { barrio, distrito })} | madridhome.tech`,
-      description: t("barrio_description", { barrio, distrito, sqm: sqmStr, count: (barrioData?.active_count ?? 0).toString() || "0" }),
+      title: `${t("barrio_title", { barrio, distrito, sqm: sqmStr })} | madridhome.tech`,
+      description: t("barrio_description", { barrio, distrito, sqm: sqmStr, count: countStr, year, month: monthCap }),
       url: `https://madridhome.tech/barrio/${params.slug}`,
     },
   };

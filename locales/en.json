@@ -373,12 +373,12 @@
     "faq_link": "Have questions? Check our frequently asked questions →"
   },
   "meta": {
-    "home_title": "Property prices in Madrid — Real estate market thermometer",
-    "home_description": "Check Madrid property prices updated daily. Market score, average price by district, €/m² evolution, rental yield and Madrid real estate market alerts.",
-    "district_title": "Property prices in {name} — {sqm} · Madrid",
-    "district_description": "Check property prices in {name}, Madrid. Median: {price}, {sqm}. {count} properties for sale. Weekly trends, rental yield and data updated daily.",
-    "barrio_title": "Property prices in {barrio} — {distrito} · Madrid",
-    "barrio_description": "Property prices in {barrio} ({distrito}, Madrid). {sqm}. {count} properties for sale. Weekly trends and data updated daily."
+    "home_title": "Madrid property prices {year} — Price per square metre by district & neighbourhood",
+    "home_description": "Madrid price per square metre updated daily ({month} {year}). Average price by district, €/m² trends, rental yield, notarial data and Madrid real estate market alerts.",
+    "district_title": "Price per square metre {name} Madrid — {sqm} ({month} {year})",
+    "district_description": "Price per square metre in {name} (Madrid) updated {month} {year}: {sqm}. Median price: {price}. {count} properties for sale. Weekly trends, notarial price, rental yield and market data.",
+    "barrio_title": "Price per sqm {barrio} neighbourhood ({distrito}) Madrid — {sqm}",
+    "barrio_description": "Price per square metre in {barrio}, {distrito} district (Madrid) in {month} {year}: {sqm}. {count} properties for sale. Price trends, notarial data and daily updated market insights."
   },
   "rent_burden": {
     "title": "Rent burden rate",

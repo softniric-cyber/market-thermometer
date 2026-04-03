@@ -373,12 +373,12 @@
     "faq_link": "¿Tienes dudas? Consulta las preguntas frecuentes →"
   },
   "meta": {
-    "home_title": "Precio vivienda Madrid — Termómetro del mercado inmobiliario",
-    "home_description": "Consulta el precio de la vivienda en Madrid actualizado a diario. Score de mercado, precio medio por distrito, evolución €/m², rentabilidad alquiler y alertas del mercado inmobiliario madrileño.",
-    "district_title": "Precio vivienda {name} — {sqm} · Madrid",
-    "district_description": "Consulta el precio de la vivienda en {name}, Madrid. Mediana: {price}, {sqm}. {count} pisos en venta. Evolución semanal, rentabilidad alquiler y datos actualizados a diario.",
-    "barrio_title": "Precio vivienda {barrio} — {distrito} · Madrid",
-    "barrio_description": "Precio vivienda en {barrio} ({distrito}, Madrid). {sqm}. {count} pisos en venta. Evolución semanal y datos actualizados a diario."
+    "home_title": "Precio vivienda Madrid {year} — Precio metro cuadrado por distrito y barrio",
+    "home_description": "Precio del metro cuadrado en Madrid actualizado a diario ({month} {year}). Precio medio por distrito, evolución €/m², rentabilidad alquiler, datos notariales y alertas del mercado inmobiliario madrileño.",
+    "district_title": "Precio metro cuadrado {name} Madrid — {sqm} ({month} {year})",
+    "district_description": "Precio metro cuadrado en {name} (Madrid) actualizado en {month} {year}: {sqm}. Precio mediano: {price}. {count} pisos en venta. Evolución semanal, precio notarial, rentabilidad alquiler y tendencias del mercado.",
+    "barrio_title": "Precio metro cuadrado barrio {barrio} ({distrito}) Madrid — {sqm}",
+    "barrio_description": "Precio del metro cuadrado en el barrio de {barrio}, distrito {distrito} (Madrid) en {month} {year}: {sqm}. {count} pisos en venta. Evolución de precios, datos notariales y tendencias actualizadas a diario."
   },
   "rent_burden": {
     "title": "Tasa de esfuerzo de alquiler",

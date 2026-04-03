@@ -49,6 +49,11 @@ export async function generateMetadata({
     namespace: "meta",
   });
 
+  const now = new Date();
+  const year = now.getFullYear().toString();
+  const month = now.toLocaleString(params.locale === "en" ? "en-GB" : "es-ES", { month: "long" });
+  const monthCap = month.charAt(0).toUpperCase() + month.slice(1);
+
   const data = await getMetrics();
   const zone = data?.zones.find((z) => z.name === distrito);
   const sqm = zone?.price_per_sqm
@@ -61,12 +66,14 @@ export async function generateMetadata({
     : "";
   const count = zone?.active_count ?? 0;
 
-  const title = t("district_title", { name: distrito, sqm });
+  const title = t("district_title", { name: distrito, sqm, year, month: monthCap });
   const description = t("district_description", {
     name: distrito,
     price,
     sqm,
     count,
+    year,
+    month: monthCap,
   });
 
   return {

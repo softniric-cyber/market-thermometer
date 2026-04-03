@@ -15,20 +15,25 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: "meta" });
 
+  const now = new Date();
+  const year = now.getFullYear().toString();
+  const month = now.toLocaleString(locale === "en" ? "en-GB" : "es-ES", { month: "long" });
+  const monthCap = month.charAt(0).toUpperCase() + month.slice(1);
+
   return {
     metadataBase: new URL(SITE_URL),
     title: {
-      default: `${t("home_title")} | madridhome.tech`,
+      default: `${t("home_title", { year })} | madridhome.tech`,
       template: "%s | madridhome.tech",
     },
-    description: t("home_description"),
+    description: t("home_description", { year, month: monthCap }),
     alternates: {
       canonical: `/${locale}`,
       languages: { es: "/es", en: "/en" },
     },
     openGraph: {
-      title: t("home_title"),
-      description: t("home_description"),
+      title: t("home_title", { year }),
+      description: t("home_description", { year, month: monthCap }),
       url: SITE_URL,
       siteName: "madridhome.tech",
       locale: locale === "en" ? "en_GB" : "es_ES",
