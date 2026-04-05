@@ -116,7 +116,7 @@ function MapInner({
 
     const notarialPrice = notarialPrices[name];
     const notarialLabel =
-      locale === "en" ? "Notarial price (Notariado)" : "Precio notarial (Notariado)";
+      locale === "en" ? "Notarial price (real)" : "Precio notarial (real)";
     const notarialRow = notarialPrice
       ? `${notarialLabel}: <strong>${fmt(notarialPrice)} €/m²</strong><br/>`
       : "";

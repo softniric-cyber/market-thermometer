@@ -413,7 +413,7 @@
   "map": {
     "title": "Price map by district",
     "subtitle": "Average price per sqm across Madrid's 21 districts",
-    "price_per_sqm": "Price/sqm",
+    "price_per_sqm": "Price/sqm (listed)",
     "active": "Properties for sale",
     "days": "Days on market",
     "click_to_view": "Click to view district details"
