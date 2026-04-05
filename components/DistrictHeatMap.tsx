@@ -161,7 +161,7 @@ function MapInner({
         attribution='&copy; <a href="https://carto.com/">CARTO</a>'
       />
       <GeoJSONLayer
-        key="districts"
+        key={`districts-${Object.keys(notarialPrices).length}`}
         data={geojson as any}
         style={style}
         onEachFeature={onEachFeature}
