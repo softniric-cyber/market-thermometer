@@ -373,12 +373,12 @@
     "faq_link": "¿Tienes dudas? Consulta las preguntas frecuentes →"
   },
   "meta": {
-    "home_title": "Precio vivienda Madrid {year} — Precio metro cuadrado por distrito y barrio",
-    "home_description": "Precio del metro cuadrado en Madrid actualizado a diario ({month} {year}). Precio medio por distrito, evolución €/m², rentabilidad alquiler, datos notariales y alertas del mercado inmobiliario madrileño.",
-    "district_title": "Precio metro cuadrado {name} Madrid — {sqm} ({month} {year})",
-    "district_description": "Precio metro cuadrado en {name} (Madrid) actualizado en {month} {year}: {sqm}. Precio mediano: {price}. {count} pisos en venta. Evolución semanal, precio notarial, rentabilidad alquiler y tendencias del mercado.",
-    "barrio_title": "Precio metro cuadrado barrio {barrio} ({distrito}) Madrid — {sqm}",
-    "barrio_description": "Precio del metro cuadrado en el barrio de {barrio}, distrito {distrito} (Madrid) en {month} {year}: {sqm}. {count} pisos en venta. Evolución de precios, datos notariales y tendencias actualizadas a diario."
+    "home_title": "Precio vivienda Madrid {year} — Precio m² por distrito y barrio ({month})",
+    "home_description": "Precio metro cuadrado en Madrid actualizado en {month} {year}. Mapa interactivo por distrito y barrio, precio real (notarial) vs ofertado, rentabilidad alquiler, hipoteca y tendencias del mercado inmobiliario.",
+    "district_title": "Precio vivienda {name} Madrid {year} — {sqm} €/m² ({month})",
+    "district_description": "{name} (Madrid) en {month} {year}: precio metro cuadrado {sqm}, precio mediano {price}, {count} pisos en venta. Precio real notarial, evolución semanal, rentabilidad alquiler y tendencia actualizada.",
+    "barrio_title": "Precio vivienda barrio {barrio} ({distrito}) Madrid {year} — {sqm} €/m²",
+    "barrio_description": "Barrio {barrio}, {distrito} (Madrid) en {month} {year}: {sqm} €/m², {count} pisos en venta. Precio real notarial, evolución de precios y tendencias del mercado inmobiliario actualizadas."
   },
   "rent_burden": {
     "title": "Tasa de esfuerzo de alquiler",
