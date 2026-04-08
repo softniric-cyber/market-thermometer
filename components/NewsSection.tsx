@@ -5,7 +5,9 @@ import Link from "next/link";
 
 export interface NewsItem {
   title: string;
+  title_en?: string;
   summary: string;
+  summary_en?: string;
   url: string;
   date: string;
   source: string;
@@ -13,6 +15,7 @@ export interface NewsItem {
 
 interface Props {
   news: NewsItem[];
+  locale?: string;
   /** Max items to show (default 4). Pass Infinity for "all". */
   limit?: number;
   /** Show "Ver todo" link (default true) */
@@ -43,6 +46,7 @@ function timeAgo(dateStr: string, locale: string): string {
 
 export default function NewsSection({
   news,
+  locale = "es",
   limit = 4,
   showSeeAll = true,
 }: Props) {
@@ -60,7 +64,10 @@ export default function NewsSection({
       </h3>
 
       <ul className="space-y-4">
-        {visible.map((item, i) => (
+        {visible.map((item, i) => {
+          const title = locale === "en" && item.title_en ? item.title_en : item.title;
+          const summary = locale === "en" && item.summary_en ? item.summary_en : item.summary;
+          return (
           <li key={i}>
             <a
               href={item.url}
@@ -70,22 +77,23 @@ export default function NewsSection({
             >
               <p className="text-cyan-100 text-sm font-medium leading-snug
                 group-hover:text-cyan-300 transition-colors line-clamp-2">
-                {item.title}
+                {title}
               </p>
               <p className="text-slate-400 text-xs mt-1 leading-relaxed line-clamp-2">
-                {item.summary}
+                {summary}
               </p>
               <p className="text-slate-500 text-xs mt-1.5 flex items-center gap-2">
                 <span className="text-cyan-500/70">{item.source}</span>
                 <span>·</span>
-                <span>{timeAgo(item.date, "es")}</span>
+                <span>{timeAgo(item.date, locale)}</span>
               </p>
             </a>
             {i < visible.length - 1 && (
               <hr className="border-slate-700/40 mt-4" />
             )}
           </li>
-        ))}
+          );
+        })}
       </ul>
 
       {showSeeAll && news.length > limit && (

@@ -163,7 +163,7 @@ export default async function Home({
         {/* News */}
         {news.length > 0 && (
           <section className="animate-fade-in animate-delay-4">
-            <NewsSection news={news} />
+            <NewsSection news={news} locale={params.locale} />
           </section>
         )}
 
