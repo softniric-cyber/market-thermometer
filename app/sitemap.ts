@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { getAllSlugs } from "@/lib/districts";
 import { getAllBarrioSlugs } from "@/lib/barrios";
 import { getAllBlogSlugsSync } from "@/lib/blog/registry";
+import { RANKING_PAGES } from "@/lib/rankings";
 import { locales } from "@/i18n/config";
 
 const BASE = "https://madridhome.tech";
@@ -82,5 +83,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
-  return [...staticPages, ...districtEntries, ...barrioEntries, ...blogEntries];
+  /* ── Ranking pages ─────────────────────────────────────────── */
+  const rankingEntries: MetadataRoute.Sitemap = locales.flatMap((locale) =>
+    RANKING_PAGES.map((slug) => ({
+      url: `${BASE}/${locale}/rankings/${slug}`,
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+      alternates: { languages: altLangs(`/rankings/${slug}`) },
+    }))
+  );
+
+  return [...staticPages, ...districtEntries, ...barrioEntries, ...rankingEntries, ...blogEntries];
 }
