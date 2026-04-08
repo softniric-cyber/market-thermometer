@@ -370,7 +370,8 @@
     "tasador_cta_title": "AI-powered property valuation",
     "tasador_cta_subtitle": "Enter your property characteristics and get an instant valuation based on real market data →",
     "blog_link": "📊 Blog reports and rankings →",
-    "faq_link": "Have questions? Check our frequently asked questions →"
+    "faq_link": "Have questions? Check our frequently asked questions →",
+    "reports_link": "📋 Monthly market reports →"
   },
   "meta": {
     "home_title": "Madrid property prices {year} — Price per m² by district & neighbourhood ({month})",
@@ -477,5 +478,35 @@
     "error_captcha": "Solve the math problem to prove you are not a robot.",
     "error_captcha_wrong": "Wrong answer. Try again.",
     "error_generic": "Error submitting. Please try again."
+  },
+  "report": {
+    "page_title": "Madrid housing market report — {monthYear}",
+    "page_desc": "Monthly analysis of Madrid's real estate market: price per square metre by district, top risers and fallers, trends and key data for {monthYear}.",
+    "index_title": "Monthly Madrid housing market reports",
+    "index_desc": "Archive of monthly reports with pricing data, trends and analysis of Madrid's housing market.",
+    "heading": "Housing market report",
+    "subtitle": "Madrid — {monthYear}",
+    "market_overview": "Market overview",
+    "avg_sqm": "Average price per sqm",
+    "mom_change": "Month-on-month change",
+    "total_listings": "Properties for sale",
+    "top_risers": "Top rising districts",
+    "top_fallers": "Least rising districts",
+    "district_table_title": "Price by district",
+    "district": "District",
+    "price_sqm": "€/sqm",
+    "change": "MoM change",
+    "active": "For sale",
+    "days": "Days",
+    "highlights": "Key highlights",
+    "most_expensive": "Most expensive",
+    "cheapest": "Most affordable",
+    "fastest": "Fastest selling",
+    "slowest": "Slowest selling",
+    "days_suffix": "days on average",
+    "methodology": "Data sourced from analysis of listings published on real estate portals. Prices reflect asking prices, not transaction prices.",
+    "back_to_reports": "← View all reports",
+    "all_reports": "All reports",
+    "no_data": "No data available for this period."
   }
 }

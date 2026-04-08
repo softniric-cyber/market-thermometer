@@ -370,7 +370,8 @@
     "tasador_cta_title": "Tasador de viviendas con IA",
     "tasador_cta_subtitle": "Introduce las características de tu piso y obtén una valoración instantánea basada en datos reales del mercado →",
     "blog_link": "📊 Informes y rankings del blog →",
-    "faq_link": "¿Tienes dudas? Consulta las preguntas frecuentes →"
+    "faq_link": "¿Tienes dudas? Consulta las preguntas frecuentes →",
+    "reports_link": "📋 Informes mensuales del mercado →"
   },
   "meta": {
     "home_title": "Precio vivienda Madrid {year} — Precio m² por distrito y barrio ({month})",
@@ -477,5 +478,35 @@
     "error_captcha": "Resuelve la operación para demostrar que no eres un robot.",
     "error_captcha_wrong": "Respuesta incorrecta. Inténtalo de nuevo.",
     "error_generic": "Error al enviar. Inténtalo de nuevo."
+  },
+  "report": {
+    "page_title": "Informe del mercado inmobiliario de Madrid — {monthYear}",
+    "page_desc": "Análisis mensual del mercado de vivienda en Madrid: precios por metro cuadrado, distritos que más suben y bajan, tendencias y datos clave de {monthYear}.",
+    "index_title": "Informes mensuales del mercado inmobiliario de Madrid",
+    "index_desc": "Archivo de informes mensuales con datos de precios, tendencias y análisis del mercado de vivienda en Madrid.",
+    "heading": "Informe del mercado inmobiliario",
+    "subtitle": "Madrid — {monthYear}",
+    "market_overview": "Resumen del mercado",
+    "avg_sqm": "Precio medio por m²",
+    "mom_change": "Variación mensual",
+    "total_listings": "Pisos en venta",
+    "top_risers": "Distritos que más suben",
+    "top_fallers": "Distritos que menos suben",
+    "district_table_title": "Precio por distrito",
+    "district": "Distrito",
+    "price_sqm": "€/m²",
+    "change": "Var. mensual",
+    "active": "En venta",
+    "days": "Días",
+    "highlights": "Datos destacados",
+    "most_expensive": "Más caro",
+    "cheapest": "Más barato",
+    "fastest": "Se vende más rápido",
+    "slowest": "Tarda más en venderse",
+    "days_suffix": "días de media",
+    "methodology": "Datos obtenidos mediante análisis de anuncios publicados en portales inmobiliarios. Los precios reflejan precios de oferta, no de transacción.",
+    "back_to_reports": "← Ver todos los informes",
+    "all_reports": "Todos los informes",
+    "no_data": "No hay datos disponibles para este periodo."
   }
 }

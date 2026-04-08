@@ -1,0 +1,295 @@
+{
+  "slug": "2026-03",
+  "year": 2026,
+  "month": 3,
+  "generated_at": "2026-04-08T10:48:27.321980+00:00",
+  "avg_sqm": 6419,
+  "prev_avg_sqm": 6419,
+  "market_change_pct": 0.0,
+  "total_listings": 15509,
+  "districts": [
+    {
+      "name": "Salamanca",
+      "price_per_sqm": 11357,
+      "prev_price_per_sqm": 11357,
+      "change_pct": 0.0,
+      "median_price": 1510000,
+      "active_count": 2384,
+      "days_to_sell": 9.0
+    },
+    {
+      "name": "Chamberí",
+      "price_per_sqm": 9315,
+      "prev_price_per_sqm": 9315,
+      "change_pct": 0.0,
+      "median_price": 1200000,
+      "active_count": 1181,
+      "days_to_sell": 6.0
+    },
+    {
+      "name": "Retiro",
+      "price_per_sqm": 8832,
+      "prev_price_per_sqm": 8832,
+      "change_pct": 0.0,
+      "median_price": 894750,
+      "active_count": 708,
+      "days_to_sell": 6.0
+    },
+    {
+      "name": "Chamartín",
+      "price_per_sqm": 8492,
+      "prev_price_per_sqm": 8492,
+      "change_pct": 0.0,
+      "median_price": 1100000,
+      "active_count": 753,
+      "days_to_sell": 6.0
+    },
+    {
+      "name": "Centro",
+      "price_per_sqm": 8050,
+      "prev_price_per_sqm": 8050,
+      "change_pct": 0.0,
+      "median_price": 700000,
+      "active_count": 2137,
+      "days_to_sell": 6.0
+    },
+    {
+      "name": "Moncloa-Aravaca",
+      "price_per_sqm": 7074,
+      "prev_price_per_sqm": 7074,
+      "change_pct": 0.0,
+      "median_price": 1130000,
+      "active_count": 684,
+      "days_to_sell": 7.0
+    },
+    {
+      "name": "Arganzuela",
+      "price_per_sqm": 6734,
+      "prev_price_per_sqm": 6734,
+      "change_pct": 0.0,
+      "median_price": 520500,
+      "active_count": 614,
+      "days_to_sell": 9.0
+    },
+    {
+      "name": "Tetuán",
+      "price_per_sqm": 6373,
+      "prev_price_per_sqm": 6373,
+      "change_pct": 0.0,
+      "median_price": 485000,
+      "active_count": 899,
+      "days_to_sell": 7.0
+    },
+    {
+      "name": "Hortaleza",
+      "price_per_sqm": 5588,
+      "prev_price_per_sqm": 5588,
+      "change_pct": 0.0,
+      "median_price": 630000,
+      "active_count": 623,
+      "days_to_sell": 6.0
+    },
+    {
+      "name": "Fuencarral-El Pardo",
+      "price_per_sqm": 5558,
+      "prev_price_per_sqm": 5558,
+      "change_pct": 0.0,
+      "median_price": 650000,
+      "active_count": 602,
+      "days_to_sell": 6.0
+    },
+    {
+      "name": "Ciudad Lineal",
+      "price_per_sqm": 5379,
+      "prev_price_per_sqm": 5379,
+      "change_pct": 0.0,
+      "median_price": 405000,
+      "active_count": 854,
+      "days_to_sell": 6.0
+    },
+    {
+      "name": "Barajas",
+      "price_per_sqm": 4866,
+      "prev_price_per_sqm": 4866,
+      "change_pct": 0.0,
+      "median_price": 525000,
+      "active_count": 129,
+      "days_to_sell": 12.5
+    },
+    {
+      "name": "Moratalaz",
+      "price_per_sqm": 4670,
+      "prev_price_per_sqm": 4670,
+      "change_pct": 0.0,
+      "median_price": 329000,
+      "active_count": 191,
+      "days_to_sell": 7.0
+    },
+    {
+      "name": "San Blas-Canillejas",
+      "price_per_sqm": 4201,
+      "prev_price_per_sqm": 4201,
+      "change_pct": 0.0,
+      "median_price": 349000,
+      "active_count": 605,
+      "days_to_sell": 7.0
+    },
+    {
+      "name": "Latina",
+      "price_per_sqm": 4185,
+      "prev_price_per_sqm": 4185,
+      "change_pct": 0.0,
+      "median_price": 275000,
+      "active_count": 572,
+      "days_to_sell": 6.0
+    },
+    {
+      "name": "Vicálvaro",
+      "price_per_sqm": 4127,
+      "prev_price_per_sqm": 4127,
+      "change_pct": 0.0,
+      "median_price": 395000,
+      "active_count": 389,
+      "days_to_sell": 7.0
+    },
+    {
+      "name": "Carabanchel",
+      "price_per_sqm": 4031,
+      "prev_price_per_sqm": 4031,
+      "change_pct": 0.0,
+      "median_price": 273500,
+      "active_count": 906,
+      "days_to_sell": 6.0
+    },
+    {
+      "name": "Usera",
+      "price_per_sqm": 3831,
+      "prev_price_per_sqm": 3831,
+      "change_pct": 0.0,
+      "median_price": 285000,
+      "active_count": 489,
+      "days_to_sell": 7.0
+    },
+    {
+      "name": "Villa de Vallecas",
+      "price_per_sqm": 3808,
+      "prev_price_per_sqm": 3808,
+      "change_pct": 0.0,
+      "median_price": 329865,
+      "active_count": 364,
+      "days_to_sell": 6.0
+    },
+    {
+      "name": "Puente de Vallecas",
+      "price_per_sqm": 3434,
+      "prev_price_per_sqm": 3434,
+      "change_pct": 0.0,
+      "median_price": 220000,
+      "active_count": 773,
+      "days_to_sell": 6.0
+    },
+    {
+      "name": "Villaverde",
+      "price_per_sqm": 3062,
+      "prev_price_per_sqm": 3062,
+      "change_pct": 0.0,
+      "median_price": 225000,
+      "active_count": 503,
+      "days_to_sell": 6.0
+    }
+  ],
+  "top_risers": [
+    {
+      "name": "Salamanca",
+      "price_per_sqm": 11357,
+      "prev_price_per_sqm": 11357,
+      "change_pct": 0.0,
+      "median_price": 1510000,
+      "active_count": 2384,
+      "days_to_sell": 9.0
+    },
+    {
+      "name": "Chamberí",
+      "price_per_sqm": 9315,
+      "prev_price_per_sqm": 9315,
+      "change_pct": 0.0,
+      "median_price": 1200000,
+      "active_count": 1181,
+      "days_to_sell": 6.0
+    },
+    {
+      "name": "Moncloa-Aravaca",
+      "price_per_sqm": 7074,
+      "prev_price_per_sqm": 7074,
+      "change_pct": 0.0,
+      "median_price": 1130000,
+      "active_count": 684,
+      "days_to_sell": 7.0
+    }
+  ],
+  "top_fallers": [
+    {
+      "name": "Puente de Vallecas",
+      "price_per_sqm": 3434,
+      "prev_price_per_sqm": 3434,
+      "change_pct": 0.0,
+      "median_price": 220000,
+      "active_count": 773,
+      "days_to_sell": 6.0
+    },
+    {
+      "name": "Villaverde",
+      "price_per_sqm": 3062,
+      "prev_price_per_sqm": 3062,
+      "change_pct": 0.0,
+      "median_price": 225000,
+      "active_count": 503,
+      "days_to_sell": 6.0
+    },
+    {
+      "name": "Carabanchel",
+      "price_per_sqm": 4031,
+      "prev_price_per_sqm": 4031,
+      "change_pct": 0.0,
+      "median_price": 273500,
+      "active_count": 906,
+      "days_to_sell": 6.0
+    }
+  ],
+  "most_expensive": {
+    "name": "Salamanca",
+    "price_per_sqm": 11357,
+    "prev_price_per_sqm": 11357,
+    "change_pct": 0.0,
+    "median_price": 1510000,
+    "active_count": 2384,
+    "days_to_sell": 9.0
+  },
+  "cheapest": {
+    "name": "Villaverde",
+    "price_per_sqm": 3062,
+    "prev_price_per_sqm": 3062,
+    "change_pct": 0.0,
+    "median_price": 225000,
+    "active_count": 503,
+    "days_to_sell": 6.0
+  },
+  "fastest_selling": {
+    "name": "Chamberí",
+    "price_per_sqm": 9315,
+    "prev_price_per_sqm": 9315,
+    "change_pct": 0.0,
+    "median_price": 1200000,
+    "active_count": 1181,
+    "days_to_sell": 6.0
+  },
+  "slowest_selling": {
+    "name": "Barajas",
+    "price_per_sqm": 4866,
+    "prev_price_per_sqm": 4866,
+    "change_pct": 0.0,
+    "median_price": 525000,
+    "active_count": 129,
+    "days_to_sell": 12.5
+  }
+}

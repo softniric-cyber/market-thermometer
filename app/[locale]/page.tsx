@@ -240,6 +240,12 @@ export default async function Home({
         >
           {t("faq_link")}
         </Link>
+        <Link
+          href="/informe"
+          className="inline-block px-5 py-2.5 rounded-lg bg-slate-800/60 border border-slate-700/50 text-slate-300 text-sm hover:bg-slate-700/50 hover:text-white transition-colors"
+        >
+          {t("reports_link")}
+        </Link>
       </section>
 
       {/* Footer */}
