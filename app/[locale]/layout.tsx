@@ -23,7 +23,7 @@ export async function generateMetadata({
   return {
     metadataBase: new URL(SITE_URL),
     title: {
-      default: `${t("home_title", { year })} | madridhome.tech`,
+      default: `${t("home_title", { year, month: monthCap })} | madridhome.tech`,
       template: "%s | madridhome.tech",
     },
     description: t("home_description", { year, month: monthCap }),
@@ -32,7 +32,7 @@ export async function generateMetadata({
       languages: { es: "/es", en: "/en" },
     },
     openGraph: {
-      title: t("home_title", { year }),
+      title: t("home_title", { year, month: monthCap }),
       description: t("home_description", { year, month: monthCap }),
       url: SITE_URL,
       siteName: "madridhome.tech",
@@ -49,8 +49,8 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: t("home_title"),
-      description: t("home_description"),
+      title: t("home_title", { year, month: monthCap }),
+      description: t("home_description", { year, month: monthCap }),
       images: ["/og-image.png"],
     },
     robots: {
