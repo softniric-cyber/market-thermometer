@@ -17,6 +17,8 @@ import PriceDropZones from "@/components/PriceDropZones";
 import SellerDistribution from "@/components/SellerDistribution";
 import DistrictHeatMap from "@/components/DistrictHeatMap";
 import Footer from "@/components/Footer";
+import NextUpdateCountdown from "@/components/NextUpdateCountdown";
+import { HomeJsonLd } from "@/components/JsonLd";
 import { getAllBlogPosts } from "@/lib/blog/registry";
 
 // ISR: revalidar cada hora (3600s). Vercel sirve HTML cacheado
@@ -78,6 +80,14 @@ export default async function Home({
 
   return (
     <main className="min-h-screen px-4 py-8 max-w-6xl mx-auto">
+      {/* JSON-LD structured data for SEO rich snippets */}
+      <HomeJsonLd
+        locale={params.locale}
+        medianSqm={medianSqm}
+        zonesCount={data.zones.length}
+        generatedAt={data.metadata.generated_at}
+      />
+
       {/* Header */}
       <header className="flex flex-col items-center mb-10 animate-fade-in">
         <img
@@ -91,7 +101,7 @@ export default async function Home({
       <h1 className="text-center text-slate-300 text-base sm:text-lg font-medium -mt-6 mb-1">
         {tc("madrid")} — {t("price_history")}
       </h1>
-      <p className="text-center text-slate-500 text-sm mb-8">
+      <p className="text-center text-slate-500 text-sm mb-2">
         {tc("data_updated_on", {
           date: fmtDate(data.metadata.generated_at, params.locale, {
             weekday: "long",
@@ -113,6 +123,9 @@ export default async function Home({
           </>
         )}
       </p>
+      <div className="text-center mb-8">
+        <NextUpdateCountdown locale={params.locale} />
+      </div>
 
       {/* Thermometer + Score */}
       <section className="flex justify-center mb-10 animate-fade-in animate-delay-1">
