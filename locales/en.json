@@ -302,6 +302,7 @@
   },
   "footer": {
     "data_updated": "Data updated {ago}",
+    "next_update": "Next update: {date}",
     "old_data": "old data",
     "source": "Source: aggregated Madrid real estate market data",
     "disclaimer": "The displayed data is for reference only and does not constitute financial advice"

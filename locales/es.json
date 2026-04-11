@@ -302,6 +302,7 @@
   },
   "footer": {
     "data_updated": "Datos actualizados {ago}",
+    "next_update": "Próxima actualización: {date}",
     "old_data": "datos antiguos",
     "source": "Fuente: datos agregados de mercado inmobiliario Madrid",
     "disclaimer": "Los datos mostrados son orientativos y no constituyen asesoramiento financiero"
