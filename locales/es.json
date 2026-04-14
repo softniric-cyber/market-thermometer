@@ -380,8 +380,8 @@
   "meta": {
     "home_title": "Precio vivienda Madrid {year} — Precio m² por distrito y barrio ({month})",
     "home_description": "Precio metro cuadrado en Madrid actualizado en {month} {year}. Mapa interactivo por distrito y barrio, precio real (notarial) vs ofertado, rentabilidad alquiler, hipoteca y tendencias del mercado inmobiliario.",
-    "district_title": "Precio vivienda {name} Madrid {year} — {sqm} €/m² ({month})",
-    "district_description": "{name} (Madrid) en {month} {year}: precio metro cuadrado {sqm}, precio mediano {price}, {count} pisos en venta. Precio real notarial, evolución semanal, rentabilidad alquiler y tendencia actualizada.",
+    "district_title": "Precio metro cuadrado {name} Madrid — {sqm} €/m² en {month} {year}",
+    "district_description": "¿Cuánto cuesta comprar piso en {name} (Madrid)? En {month} {year}: {sqm} €/m² (ofertado), precio mediano {price}, {count} pisos en venta. Precio real notarial, evolución histórica y rentabilidad del alquiler actualizados.",
     "barrio_title": "Precio vivienda barrio {barrio} ({distrito}) Madrid {year} — {sqm} €/m²",
     "barrio_description": "Barrio {barrio}, {distrito} (Madrid) en {month} {year}: {sqm} €/m², {count} pisos en venta. Precio real notarial, evolución de precios y tendencias del mercado inmobiliario actualizadas."
   },
